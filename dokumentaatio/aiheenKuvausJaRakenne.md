@@ -1,6 +1,6 @@
 ## fuk-roglyk seikkailupeli
 
-#Aihe:
+###Aihe:
 
 Toteutetaan pienimuotoinen seikkailupeli.
 
@@ -9,11 +9,11 @@ heidän puolestaan pienimuotoisia tehtäviä pelin maailmassa liikkuen.
 
 Pelin toteutustavoitteena on luoda pienehkö staattinen maailmakehys ja pelaajan siinä liikkuminen sekä toimiva inventaariojärjestelmä, keskusteluinteraktiot sekä mahdolliset tehtävänantointeraktiot pelaajan ja pelin hahmojen välille.
 
-#Käyttäjät:
+###Käyttäjät:
 
 Pelaaja
 
-#Kaikkien käyttäjien toiminnot:
+###Kaikkien käyttäjien toiminnot:
 
 - Maailmassa liikkuminen
 - Pelin hahmojen kanssa vuorovaikuttaminen
