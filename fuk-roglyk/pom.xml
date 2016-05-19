@@ -34,6 +34,16 @@
                 <groupId>org.pitest</groupId>
                 <artifactId>pitest-maven</artifactId>
                 <version>1.1.8</version>
+                <configuration>
+                    <targetClasses>
+                        <param>ristinolla.logiikka.*</param>
+                        <param>ristinolla.tekoaly.*</param>
+                    </targetClasses>
+                    <targetTests>
+                        <param>ristinolla.logiikka.*</param>
+                        <param>ristinolla.tekoaly.*</param>
+                    </targetTests>
+                </configuration>
             </plugin>
         </plugins>
     </build>
