@@ -1,5 +1,5 @@
-# fuk-roglyk
-Short adventure game about the life and times of rogs
+### fuk-roglyk
 
-Epic times ahead!
-Derp.
+###### Friends, unity and knives
+
+An adventure game about the life and times of rogs
