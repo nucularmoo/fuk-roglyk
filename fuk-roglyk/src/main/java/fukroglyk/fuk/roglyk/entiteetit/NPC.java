@@ -6,7 +6,6 @@ public class NPC extends Hahmo {
     private int x;
     private int y;
     private String nimi;
-    
 
     public NPC(int id, String nimi, int x, int y) {
         this.id = id;
@@ -38,8 +37,8 @@ public class NPC extends Hahmo {
 
     @Override
     public char getChar() {
-       // char derp = Character.forDigit(this.id, 10);
-        return (char) this.id;
+
+        return Character.forDigit(this.id, 10);
     }
 
 }

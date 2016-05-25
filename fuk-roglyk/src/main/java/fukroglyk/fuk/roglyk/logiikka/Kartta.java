@@ -19,7 +19,7 @@ public class Kartta {
     public Kartta(Pelaaja pelaaja) {
         this.kartta = new char[5][20];
         this.boundsY = this.kartta.length - 1;
-        this.boundsX = this.kartta[0].length -1;
+        this.boundsX = this.kartta[0].length - 1;
         this.pelaaja = pelaaja;
     }
 
