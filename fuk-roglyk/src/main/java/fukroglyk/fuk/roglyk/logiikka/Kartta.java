@@ -9,6 +9,9 @@ import java.util.ArrayList;
 public class Kartta {
 
     //Aloitetaan sillä että kartta hoitaa pelaajan liikuttelun ja päivittämisen
+    //TODO: Löytyykö useammalle kartalle ratkaisu vai toteutuuko yhdellä
+    //Luokka ei saa paisua liikaa
+    
     private char[][] kartta;
     private ArrayList<Hahmo> hahmot;
     private ArrayList<Tavara> tavarat;
@@ -23,18 +26,19 @@ public class Kartta {
         this.pelaaja = pelaaja;
     }
 
+    //Alustetaan kartta
     public void init() {
         generoiHahmot();
         generoiTavarat();
         update();
         print();
     }
-    
+
     public void generoiHahmot() {
         Hahmogeneraattori hage = new Hahmogeneraattori(this.pelaaja);
         this.hahmot = hage.generoi();
     }
-    
+
     public void generoiTavarat() {
         Tavarageneraattori tage = new Tavarageneraattori();
         this.tavarat = tage.generoi();
@@ -67,6 +71,17 @@ public class Kartta {
         return onkoHahmo(x, y);
     }
 
+    //Asuuko koordinaatissa hahmo
+    public boolean onkoHahmo(int x, int y) {
+        for (Hahmo hahmo : this.hahmot) {
+            if (x == hahmo.getX() && y == hahmo.getY()) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    //Poimitaan jos on jotain poimittavaa
     public void poimi(int x, int y) {
         if (onkoPoimittavaTavara(x, y)) {
             for (Tavara tavara : this.tavarat) {
@@ -79,6 +94,7 @@ public class Kartta {
         }
     }
 
+    //Tarkistetaan poimittavuus
     public boolean onkoPoimittavaTavara(int x, int y) {
         for (Tavara tavara : this.tavarat) {
             if (x == tavara.getX() && y == tavara.getY()) {
@@ -91,22 +107,14 @@ public class Kartta {
         return false;
     }
 
-    //Asuuko koordinaatissa hahmo
-    public boolean onkoHahmo(int x, int y) {
-        for (Hahmo hahmo : this.hahmot) {
-            if (x == hahmo.getX() && y == hahmo.getY()) {
-                return true;
-            }
-        }
-        return false;
-    }
-
+    //Kartan päivitys
     public void update() {
         tyhjaKartta();
         lisaaTavarat();
         lisaaHahmot();
     }
 
+    //Luodaan karttamatriisi
     public void tyhjaKartta() {
         for (int i = 0; i < this.kartta.length; i++) {
             for (int j = 0; j < this.kartta[i].length; j++) {
@@ -115,12 +123,7 @@ public class Kartta {
         }
     }
 
-    public void lisaaHahmot() {
-        for (Hahmo hahmo : this.hahmot) {
-            this.kartta[hahmo.getY()][hahmo.getX()] = hahmo.getChar();
-        }
-    }
-
+    //Lisätään karttamatriisiin tavarat
     public void lisaaTavarat() {
         for (Tavara tavara : this.tavarat) {
             if (!tavara.poimittu()) {
@@ -129,6 +132,14 @@ public class Kartta {
         }
     }
 
+    //Lisätään karttamatriisiin hahmot
+    public void lisaaHahmot() {
+        for (Hahmo hahmo : this.hahmot) {
+            this.kartta[hahmo.getY()][hahmo.getX()] = hahmo.getChar();
+        }
+    }
+
+    //Kartan tuloste
     public void print() {
         for (int i = 0; i < this.kartta.length; i++) {
             for (int j = 0; j < this.kartta[i].length; j++) {
