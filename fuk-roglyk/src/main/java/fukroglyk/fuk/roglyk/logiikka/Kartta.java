@@ -1,7 +1,6 @@
 package fukroglyk.fuk.roglyk.logiikka;
 
 import fukroglyk.fuk.roglyk.entiteetit.Hahmo;
-import fukroglyk.fuk.roglyk.entiteetit.NPC;
 import fukroglyk.fuk.roglyk.entiteetit.Pelaaja;
 import fukroglyk.fuk.roglyk.entiteetit.Tavara;
 import java.util.ArrayList;
@@ -11,27 +10,38 @@ public class Kartta {
     //Aloitetaan sillä että kartta hoitaa pelaajan liikuttelun ja päivittämisen
     //TODO: Löytyykö useammalle kartalle ratkaisu vai toteutuuko yhdellä
     //Luokka ei saa paisua liikaa
-    private char[][] kartta;
     private ArrayList<Hahmo> hahmot;
     private ArrayList<Tavara> tavarat;
     private Pelaaja pelaaja;
     private int boundsX;
     private int boundsY;
+    private Karttatulostin tulostin;
 
     public Kartta(Pelaaja pelaaja) {
-        this.kartta = new char[5][20];
-        this.boundsY = this.kartta.length - 1;
-        this.boundsX = this.kartta[0].length - 1;
+
+        this.boundsY = 4;
+        this.boundsX = 19;
         this.pelaaja = pelaaja;
+        this.tulostin = new Karttatulostin(19, 4);
+    }
+
+    public Kartta(Pelaaja pelaaja, ArrayList<Hahmo> hahmot, ArrayList<Tavara> tavarat) {
+
+        this.boundsY = 4;
+        this.boundsX = 19;
+        this.pelaaja = pelaaja;
+        this.hahmot = hahmot;
+        this.tavarat = tavarat;
     }
 
     //Alustetaan kartta
     public void init() {
-        validoiPelaaja(this.pelaaja);
         generoiHahmot();
         generoiTavarat();
-        update();
-        print();
+        validoiPelaaja(this.pelaaja);
+
+        tulostin.update();
+        tulostin.print();
     }
 
     //Validointi omaan luokkaansa myöhemmin
@@ -58,11 +68,13 @@ public class Kartta {
     public void generoiHahmot() {
         Hahmogeneraattori hage = new Hahmogeneraattori(this.pelaaja);
         this.hahmot = hage.generoi();
+        tulostin.hahmoLista(this.hahmot);
     }
 
     public void generoiTavarat() {
         Tavarageneraattori tage = new Tavarageneraattori();
         this.tavarat = tage.generoi();
+        tulostin.tavaraLista(this.tavarat);
     }
 
     public void move(int xa, int ya) {
@@ -73,18 +85,16 @@ public class Kartta {
             poimi(nx, ny);
             this.pelaaja.moveX(xa);
             this.pelaaja.moveY(ya);
-            update();
-            print();
+            tulostin.update();
+            tulostin.print();
         }
-
     }
 
     public boolean collision(int x, int y) {
-        //Bounds check
+
         if (lowerBoundsCheck(x, y)) {
             return true;
         }
-        //Bounds check
         if (upperBoundsCheck(x, y)) {
             return true;
         }
@@ -110,7 +120,9 @@ public class Kartta {
     public boolean onkoHahmo(int x, int y) {
         for (Hahmo hahmo : this.hahmot) {
             if (x == hahmo.getX() && y == hahmo.getY()) {
-                return true;
+                if (hahmo.getId() != this.pelaaja.getId()) {
+                    return true;
+                }
             }
         }
         return false;
@@ -123,7 +135,6 @@ public class Kartta {
                 if (x == tavara.getX() && y == tavara.getY()) {
                     tavara.poimi();
                     this.pelaaja.poimi(tavara);
-
                 }
             }
         }
@@ -134,7 +145,6 @@ public class Kartta {
         for (Tavara tavara : this.tavarat) {
             if (x == tavara.getX() && y == tavara.getY()) {
                 if (!tavara.poimittu()) {
-
                     return true;
                 }
             }
@@ -142,46 +152,11 @@ public class Kartta {
         return false;
     }
 
-    //Kartan päivitys
-    public void update() {
-        tyhjaKartta();
-        lisaaTavarat();
-        lisaaHahmot();
+    public int getBoundsX() {
+        return this.boundsX;
     }
 
-    //Alustetaan karttamatriisi
-    public void tyhjaKartta() {
-        for (int i = 0; i < this.kartta.length; i++) {
-            for (int j = 0; j < this.kartta[i].length; j++) {
-                this.kartta[i][j] = '.';
-            }
-        }
+    public int getBoundsY() {
+        return this.boundsY;
     }
-
-    //Lisätään karttamatriisiin tavarat
-    public void lisaaTavarat() {
-        for (Tavara tavara : this.tavarat) {
-            if (!tavara.poimittu()) {
-                this.kartta[tavara.getY()][tavara.getX()] = tavara.getChar();
-            }
-        }
-    }
-
-    //Lisätään karttamatriisiin hahmot
-    public void lisaaHahmot() {
-        for (Hahmo hahmo : this.hahmot) {
-            this.kartta[hahmo.getY()][hahmo.getX()] = hahmo.getChar();
-        }
-    }
-
-    //Kartan konsolituloste
-    public void print() {
-        for (int i = 0; i < this.kartta.length; i++) {
-            for (int j = 0; j < this.kartta[i].length; j++) {
-                System.out.print(this.kartta[i][j]);
-            }
-            System.out.println("");
-        }
-    }
-
 }

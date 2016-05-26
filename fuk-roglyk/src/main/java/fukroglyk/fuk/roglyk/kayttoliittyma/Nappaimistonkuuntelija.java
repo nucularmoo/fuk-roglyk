@@ -31,8 +31,6 @@ public class Nappaimistonkuuntelija implements KeyListener {
             kartta.move(0, -1);
         } else if (e.getKeyCode() == KeyEvent.VK_S) {
             kartta.move(0, 1);
-        } else if (e.getKeyCode() == KeyEvent.VK_F) {
-            //interaktio
         }
 
     }

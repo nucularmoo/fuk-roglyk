@@ -1,5 +1,7 @@
 package fukroglyk.fuk.roglyk.logiikka;
 
+import fukroglyk.fuk.roglyk.entiteetit.NPC;
+import fukroglyk.fuk.roglyk.entiteetit.Pelaaja;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -28,7 +30,62 @@ public class KarttaTest {
     public void tearDown() {
     }
 
+    //Testataan että kartta resetoi pelaajan koordinaatit oikein ja
+    //oikeissa tilanteissa
     @Test
-    public void karttaLiikuttaaPelaajaa() {
+    public void karttaResetoiPelaajanKoordinaatit() {
+        Pelaaja tp = new Pelaaja(0, "testi", 5, 3);
+        Kartta tk = new Kartta(tp);
+        tk.resetPlayer();
+        assertTrue("X not reset", tp.getX() == 0);
+        assertTrue("Y not reset", tp.getY() == 0);
+
     }
+
+    @Test
+    public void karttaResetoiPelaajanKoordinaatitJosXNegatiivinen() {
+        Pelaaja tp = new Pelaaja(0, "testi", -5, 1);
+        Kartta tk = new Kartta(tp);
+        tk.validoiPelaaja(tp);
+        assertTrue("X not reset", tp.getX() == 0);
+        assertTrue("Y not reset", tp.getY() == 0);
+    }
+
+    @Test
+    public void karttaResetoiPelaajanKoordinaatitJosYNegatiivinen() {
+        Pelaaja tp = new Pelaaja(0, "testi", 1, -5);
+        Kartta tk = new Kartta(tp);
+        tk.validoiPelaaja(tp);
+        assertTrue("X not reset", tp.getX() == 0);
+        assertTrue("Y not reset", tp.getY() == 0);
+    }
+
+    @Test
+    public void karttaResetoiPelaajanKoordinaatitJosXOutOfBounds() {
+        Pelaaja tp = new Pelaaja(0, "testi", 100, 0);
+        Kartta tk = new Kartta(tp);
+        tk.validoiPelaaja(tp);
+        assertTrue("X not reset", tp.getX() == 0);
+        assertTrue("Y not reset", tp.getY() == 0);
+    }
+
+    @Test
+    public void karttaResetoiPelaajanKoordinaatitJosYOnOutOfBounds() {
+        Pelaaja tp = new Pelaaja(0, "testi", 0, 100);
+        Kartta tk = new Kartta(tp);
+        tk.validoiPelaaja(tp);
+        assertTrue("X not reset", tp.getX() == 0);
+        assertTrue("Y not reset", tp.getY() == 0);
+    }
+
+//    @Test
+//    public void karttaResetoiPelaajanKoordinaatitJosPaikallaOnNPC() {
+//        Pelaaja tp = new Pelaaja(0, "testi", 0, 1);
+//        NPC tnpc = new NPC(1, "test", 0, 1);
+//        Kartta tk = new Kartta(tp);
+//        tk.validoiPelaaja(tp);
+//        assertTrue("X not reset", tp.getX() == 0);
+//        assertTrue("Y not reset", tp.getY() == 0);
+//
+//    }
 }
