@@ -8,3 +8,4 @@ Päivä | Tunnit | Kuvaus
 24.05.2016 | 5h | Suunnittelua ja koodia
 25.05.2016 | 5h | Koodia ja testien valmistelua
 25.05.2016 | 2h | Koodin siistimistä, luokkakaavio
+26.06.2016 | 7h | Testejä ja koodia ja deadlineen tarvittavat jutut
