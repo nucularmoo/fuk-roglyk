@@ -22,23 +22,35 @@ public class Pelaaja extends Hahmo {
         this.x += xa;
 
     }
-    
+
     public void moveY(int ya) {
         this.y += ya;
     }
-    
+
     public char getChar() {
         return '@';
     }
-    
+
     public void poimi(Tavara tavara) {
-        this.laukku.add(tavara);
-        System.out.println("Poimit juuri: " + tavara.getNimi());
-        
+        if (!tavara.poimittu()) {
+            this.laukku.add(tavara);
+            System.out.println("Poimit juuri: " + tavara.getNimi());
+        }
+
     }
 
-    public void interact() {
+    public boolean onkoLaukussa(Tavara tavara) {
+        int tid = tavara.getId();
+        for (Tavara etsitaan : this.laukku) {
+            if (etsitaan.getId() == tid) {
+                return true;
+            }
+        }
+        return false;
+    }
 
+    public ArrayList<Tavara> palautaLaukku() {
+        return this.laukku;
     }
 
     @Override
@@ -55,11 +67,11 @@ public class Pelaaja extends Hahmo {
     public int getY() {
         return this.y;
     }
-    
+
     public void setX(int nx) {
         this.x = nx;
     }
-    
+
     public void setY(int ny) {
         this.y = ny;
     }

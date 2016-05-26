@@ -25,10 +25,10 @@ public class Kartta {
         this.tulostin = new Karttatulostin(19, 4);
     }
 
-    public Kartta(Pelaaja pelaaja, ArrayList<Hahmo> hahmot, ArrayList<Tavara> tavarat) {
+    public Kartta(Pelaaja pelaaja, ArrayList<Hahmo> hahmot, ArrayList<Tavara> tavarat, int boundsX, int boundsY) {
 
-        this.boundsY = 4;
-        this.boundsX = 19;
+        this.boundsY = boundsY;
+        this.boundsX = boundsX;
         this.pelaaja = pelaaja;
         this.hahmot = hahmot;
         this.tavarat = tavarat;
@@ -39,9 +39,12 @@ public class Kartta {
         generoiHahmot();
         generoiTavarat();
         validoiPelaaja(this.pelaaja);
-
         tulostin.update();
         tulostin.print();
+    }
+    
+    public void testInit() {
+        validoiPelaaja(this.pelaaja);
     }
 
     //Validointi omaan luokkaansa myöhemmin

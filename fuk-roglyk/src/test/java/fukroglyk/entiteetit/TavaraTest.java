@@ -1,4 +1,3 @@
-
 package fukroglyk.entiteetit;
 
 import org.junit.After;
@@ -8,31 +7,38 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
-
 public class TavaraTest {
-    
+
     public TavaraTest() {
     }
-    
+
     @BeforeClass
     public static void setUpClass() {
     }
-    
+
     @AfterClass
     public static void tearDownClass() {
     }
-    
+
     @Before
     public void setUp() {
     }
-    
+
     @After
     public void tearDown() {
     }
 
-    // TODO add test methods here.
-    // The methods must be annotated with annotation @Test. For example:
-    //
-    // @Test
-    // public void hello() {}
+    @Test
+    public void kunTavaraLuodaanPoimittuOnFalse() {
+        Tavara tt = new Tavara(1, "tt", 0, 0);
+
+        assertFalse(tt.poimittu());
+    }
+
+    @Test
+    public void kunTavaraPoimitaanPoimittuOnTrue() {
+        Tavara tt = new Tavara(1, "tt", 0, 0);
+        tt.poimi();
+        assertTrue(tt.poimittu());
+    }
 }
