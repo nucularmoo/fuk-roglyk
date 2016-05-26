@@ -31,19 +31,19 @@
                 <version>3.3</version>
             </plugin>
             <plugin>
-                <groupId>org.pitest</groupId>
+                <groupId>fukroglyk</groupId>
                 <artifactId>pitest-maven</artifactId>
                 <version>1.1.8</version>
                 <configuration>
                     <targetClasses>
-                        <param>fukroglyk.fuk.roglyk.entiteetit.*</param>
-                        <param>fukroglyk.fuk.roglyk.logiikka.*</param>
-                        <param>fukroglyk.fuk.roglyk.tekoaly.*</param>
+                        <param>fukroglyk.entiteetit.*</param>
+                        <param>fukroglyk.logiikka.*</param>
+                        <param>fukroglyk.tekoaly.*</param>
                     </targetClasses>
                     <targetTests>
-                        <param>fukroglyk.fuk.roglyk.entiteetit.*</param>
-                        <param>fukroglyk.fuk.roglyk.logiikka.*</param>
-                        <param>fukroglyk.fuk.roglyk.tekoaly.*</param>
+                        <param>fukroglyk.entiteetit.*</param>
+                        <param>fukroglyk.logiikka.*</param>
+                        <param>fukroglyk.tekoaly.*</param>
                     </targetTests>
                 </configuration>
             </plugin>

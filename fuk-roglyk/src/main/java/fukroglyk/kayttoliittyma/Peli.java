@@ -1,7 +1,7 @@
-package fukroglyk.fuk.roglyk.kayttoliittyma;
+package fukroglyk.kayttoliittyma;
 
-import fukroglyk.fuk.roglyk.entiteetit.Pelaaja;
-import fukroglyk.fuk.roglyk.logiikka.Kartta;
+import fukroglyk.entiteetit.Pelaaja;
+import fukroglyk.logiikka.Kartta;
 import java.awt.BorderLayout;
 import javax.swing.JFrame;
 import java.awt.Canvas;

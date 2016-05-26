@@ -1,6 +1,6 @@
-package fukroglyk.fuk.roglyk.logiikka;
+package fukroglyk.logiikka;
 
-import fukroglyk.fuk.roglyk.entiteetit.Tavara;
+import fukroglyk.entiteetit.Tavara;
 import java.util.ArrayList;
 
 public class Tavarageneraattori {

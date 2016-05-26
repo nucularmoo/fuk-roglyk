@@ -1,44 +1,49 @@
-package fukroglyk.fuk.roglyk.entiteetit;
 
-public class NPC extends Hahmo {
+package fukroglyk.entiteetit;
 
+public class Tavara {
+    
     private int id;
+    private String nimi;
     private int x;
     private int y;
-    private String nimi;
-
-    public NPC(int id, String nimi, int x, int y) {
+    private boolean poimittu;
+    
+    public Tavara(int id, String nimi, int x, int y) {
         this.id = id;
         this.nimi = nimi;
         this.x = x;
         this.y = y;
-
+        this.poimittu = false;
+        
     }
-
-    @Override
+    
     public int getId() {
         return this.id;
     }
-
-    @Override
+    
     public int getX() {
         return this.x;
     }
-
-    @Override
+    
     public int getY() {
         return this.y;
     }
-
-    @Override
+    
     public String getNimi() {
         return this.nimi;
     }
-
-    @Override
-    public char getChar() {
-
-        return Character.forDigit(this.id, 10);
+    
+    public boolean poimittu() {
+        return this.poimittu;
     }
-
+    
+    public void poimi() {
+        this.poimittu = true;
+    }
+    
+    public char getChar() {
+        return '?';
+    }
+    
 }

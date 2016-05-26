@@ -1,7 +1,7 @@
 
-package fukroglyk.fuk.roglyk;
+package fukroglyk.main;
 
-import fukroglyk.fuk.roglyk.kayttoliittyma.Peli;
+import fukroglyk.kayttoliittyma.Peli;
 
 
 public class NewMain {

@@ -1,8 +1,8 @@
-package fukroglyk.fuk.roglyk.kayttoliittyma;
+package fukroglyk.kayttoliittyma;
 
-import fukroglyk.fuk.roglyk.entiteetit.Hahmo;
-import fukroglyk.fuk.roglyk.entiteetit.Pelaaja;
-import fukroglyk.fuk.roglyk.logiikka.Kartta;
+import fukroglyk.entiteetit.Hahmo;
+import fukroglyk.entiteetit.Pelaaja;
+import fukroglyk.logiikka.Kartta;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 

@@ -1,8 +1,8 @@
-package fukroglyk.fuk.roglyk.logiikka;
+package fukroglyk.logiikka;
 
-import fukroglyk.fuk.roglyk.entiteetit.Hahmo;
-import fukroglyk.fuk.roglyk.entiteetit.Pelaaja;
-import fukroglyk.fuk.roglyk.entiteetit.Tavara;
+import fukroglyk.entiteetit.Hahmo;
+import fukroglyk.entiteetit.Pelaaja;
+import fukroglyk.entiteetit.Tavara;
 import java.util.ArrayList;
 
 public class Kartta {

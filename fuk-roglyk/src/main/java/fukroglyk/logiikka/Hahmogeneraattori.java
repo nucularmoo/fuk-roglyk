@@ -1,14 +1,13 @@
-package fukroglyk.fuk.roglyk.logiikka;
+package fukroglyk.logiikka;
 
-import fukroglyk.fuk.roglyk.entiteetit.Hahmo;
-import fukroglyk.fuk.roglyk.entiteetit.NPC;
-import fukroglyk.fuk.roglyk.entiteetit.Pelaaja;
+import fukroglyk.entiteetit.Hahmo;
+import fukroglyk.entiteetit.NPC;
+import fukroglyk.entiteetit.Pelaaja;
 import java.util.ArrayList;
 
 //Kun hahmogenerointi automatisoidaan pitää keksiä miten ratkaista mahdolliset
 //hahmojen väliset koordinaattikonfliktit tai toteutus ettei niitä pääse
 //tapahtumaan
-
 public class Hahmogeneraattori {
 
     private ArrayList<Hahmo> hahmot;
@@ -17,11 +16,6 @@ public class Hahmogeneraattori {
         this.hahmot = new ArrayList();
         this.hahmot.add(pelaaja);
 
-    }
-    
-    public ArrayList<Hahmo> lisaaYksittainenHahmo(NPC npc) {
-        this.hahmot.add(npc);
-        return this.hahmot;
     }
 
     public ArrayList<Hahmo> generoi() {
@@ -32,7 +26,5 @@ public class Hahmogeneraattori {
         this.hahmot.add(kirahvi);
         return this.hahmot;
     }
-    
-    
 
 }

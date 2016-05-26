@@ -1,5 +1,5 @@
 
-package fukroglyk.fuk.roglyk.entiteetit;
+package fukroglyk.entiteetit;
 
 import org.junit.After;
 import org.junit.AfterClass;
@@ -9,9 +9,9 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 
-public class PelaajaTest {
+public class TavaraTest {
     
-    public PelaajaTest() {
+    public TavaraTest() {
     }
     
     @BeforeClass

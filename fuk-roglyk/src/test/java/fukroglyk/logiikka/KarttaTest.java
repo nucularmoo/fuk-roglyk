@@ -1,7 +1,8 @@
-package fukroglyk.fuk.roglyk.logiikka;
+package fukroglyk.logiikka;
 
-import fukroglyk.fuk.roglyk.entiteetit.NPC;
-import fukroglyk.fuk.roglyk.entiteetit.Pelaaja;
+import fukroglyk.logiikka.Kartta;
+import fukroglyk.entiteetit.NPC;
+import fukroglyk.entiteetit.Pelaaja;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;

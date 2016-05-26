@@ -1,4 +1,4 @@
-package fukroglyk.fuk.roglyk.entiteetit;
+package fukroglyk.entiteetit;
 
 import java.util.ArrayList;
 
