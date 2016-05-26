@@ -32,13 +32,13 @@ public class TavaraTest {
     public void kunTavaraLuodaanPoimittuOnFalse() {
         Tavara tt = new Tavara(1, "tt", 0, 0);
 
-        assertFalse(tt.poimittu());
+        assertFalse("Tavaran tila on väärä", tt.poimittu());
     }
 
     @Test
     public void kunTavaraPoimitaanPoimittuOnTrue() {
         Tavara tt = new Tavara(1, "tt", 0, 0);
         tt.poimi();
-        assertTrue(tt.poimittu());
+        assertTrue("Tavaran tila on väärä", tt.poimittu());
     }
 }
