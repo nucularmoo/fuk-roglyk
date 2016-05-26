@@ -19,3 +19,7 @@ Pelaaja
 - Pelin hahmojen kanssa vuorovaikuttaminen
 - Pelissä olevien poimittavien esineiden poimiminen
 - Pelissä olevien käytettävien esineiden käyttäminen/objektien aktivaatio
+
+###Luokkakaavio:
+
+![Luokkaakavio DL 2](Luokkakaavio_v1.png)
