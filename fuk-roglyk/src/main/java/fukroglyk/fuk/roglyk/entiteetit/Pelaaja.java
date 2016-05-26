@@ -55,6 +55,14 @@ public class Pelaaja extends Hahmo {
     public int getY() {
         return this.y;
     }
+    
+    public void setX(int nx) {
+        this.x = nx;
+    }
+    
+    public void setY(int ny) {
+        this.y = ny;
+    }
 
     @Override
     public String getNimi() {

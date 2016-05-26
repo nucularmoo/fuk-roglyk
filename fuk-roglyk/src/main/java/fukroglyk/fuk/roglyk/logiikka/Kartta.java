@@ -11,7 +11,6 @@ public class Kartta {
     //Aloitetaan sillä että kartta hoitaa pelaajan liikuttelun ja päivittämisen
     //TODO: Löytyykö useammalle kartalle ratkaisu vai toteutuuko yhdellä
     //Luokka ei saa paisua liikaa
-    
     private char[][] kartta;
     private ArrayList<Hahmo> hahmot;
     private ArrayList<Tavara> tavarat;
@@ -28,10 +27,32 @@ public class Kartta {
 
     //Alustetaan kartta
     public void init() {
+        validoiPelaaja(this.pelaaja);
         generoiHahmot();
         generoiTavarat();
         update();
         print();
+    }
+
+    //Validointi omaan luokkaansa myöhemmin
+    //Eli halutaan varmistaa että pelaaja spawnaa oikeaan paikkaan
+    public void validoiPelaaja(Pelaaja pelaaja) {
+        int px = this.pelaaja.getX();
+        int py = this.pelaaja.getY();
+
+        if (lowerBoundsCheck(px, py)) {
+            resetPlayer();
+        } else if (upperBoundsCheck(px, py)) {
+            resetPlayer();
+        } else if (onkoHahmo(px, py)) {
+            resetPlayer();
+        }
+    }
+
+    //Tässävaiheessa pelaajan oletuskoordinaatit alussa 0, 0
+    public void resetPlayer() {
+        this.pelaaja.setX(0);
+        this.pelaaja.setY(0);
     }
 
     public void generoiHahmot() {
@@ -60,15 +81,29 @@ public class Kartta {
 
     public boolean collision(int x, int y) {
         //Bounds check
-        if (x < 0 || y < 0) {
+        if (lowerBoundsCheck(x, y)) {
             return true;
         }
         //Bounds check
-        if (x > boundsX || y > boundsY) {
+        if (upperBoundsCheck(x, y)) {
             return true;
         }
         //NPC collision check
         return onkoHahmo(x, y);
+    }
+
+    public boolean lowerBoundsCheck(int x, int y) {
+        if (x < 0 || y < 0) {
+            return true;
+        }
+        return false;
+    }
+
+    public boolean upperBoundsCheck(int x, int y) {
+        if (x > boundsX || y > boundsY) {
+            return true;
+        }
+        return false;
     }
 
     //Asuuko koordinaatissa hahmo
@@ -139,7 +174,7 @@ public class Kartta {
         }
     }
 
-    //Kartan tuloste
+    //Kartan konsolituloste
     public void print() {
         for (int i = 0; i < this.kartta.length; i++) {
             for (int j = 0; j < this.kartta[i].length; j++) {
