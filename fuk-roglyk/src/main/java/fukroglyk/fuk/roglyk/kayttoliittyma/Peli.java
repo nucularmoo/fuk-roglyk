@@ -26,7 +26,7 @@ public class Peli extends Canvas implements Runnable {
 
     public Peli() {
 
-        this.pelaaja = new Pelaaja(0, "Pelaaja", 0, 0);
+        this.pelaaja = new Pelaaja(0, "Pelaaja", 10, -1);
         this.kartta = new Kartta(this.pelaaja);
         this.kuuntelija = new Nappaimistonkuuntelija(this.kartta);
 
