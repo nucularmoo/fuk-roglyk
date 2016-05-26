@@ -114,7 +114,7 @@ public class Kartta {
         lisaaHahmot();
     }
 
-    //Luodaan karttamatriisi
+    //Alustetaan karttamatriisi
     public void tyhjaKartta() {
         for (int i = 0; i < this.kartta.length; i++) {
             for (int j = 0; j < this.kartta[i].length; j++) {
