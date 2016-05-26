@@ -9,11 +9,15 @@ import static org.junit.Assert.*;
 
 public class TavaraTest {
 
+    Tavara ttdef;
+
     public TavaraTest() {
+
     }
 
     @BeforeClass
     public static void setUpClass() {
+
     }
 
     @AfterClass
@@ -22,6 +26,7 @@ public class TavaraTest {
 
     @Before
     public void setUp() {
+        ttdef = new Tavara(4, "ttdef", 3, 6);
     }
 
     @After
@@ -40,5 +45,30 @@ public class TavaraTest {
         Tavara tt = new Tavara(1, "tt", 0, 0);
         tt.poimi();
         assertTrue("Tavaran tila on väärä", tt.poimittu());
+    }
+    
+    @Test
+    public void tavaranGetIdPalauttaaOikein() {
+        assertTrue("Palauttaa väärän ID:n", ttdef.getId() == 4);
+    }
+    
+    @Test
+    public void tavaranGetNimiPalauttaaOikein() {
+        assertTrue("Palauttaa väärän nimen", ttdef.getNimi() == "ttdef");
+    }
+    
+    @Test
+    public void tavaranGetXPalauttaaOikein() {
+        assertTrue("Palauttaa väärän X", ttdef.getX() == 3);
+    }
+    
+    @Test
+    public void tavaranGetYPalauttaaOikein() {
+        assertTrue("Palauttaa väärän Y", ttdef.getY()== 6);
+    }
+    
+    @Test
+    public void tavaranGetCharPalauttaaOikein() {
+        assertTrue("Palauttaa väärän merkin", ttdef.getChar() == '?');
     }
 }

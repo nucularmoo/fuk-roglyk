@@ -42,10 +42,6 @@ public class Kartta {
         tulostin.update();
         tulostin.print();
     }
-    
-    public void testInit() {
-        validoiPelaaja(this.pelaaja);
-    }
 
     //Validointi omaan luokkaansa myöhemmin
     //Eli halutaan varmistaa että pelaaja spawnaa oikeaan paikkaan
@@ -106,14 +102,21 @@ public class Kartta {
     }
 
     public boolean lowerBoundsCheck(int x, int y) {
-        if (x < 0 || y < 0) {
+        if (x < 0) {
+            return true;
+        }
+        if (y < 0) {
             return true;
         }
         return false;
     }
 
     public boolean upperBoundsCheck(int x, int y) {
-        if (x > boundsX || y > boundsY) {
+        if (x > boundsX) {
+            return true;
+        }
+        if (y > boundsY) {
+
             return true;
         }
         return false;

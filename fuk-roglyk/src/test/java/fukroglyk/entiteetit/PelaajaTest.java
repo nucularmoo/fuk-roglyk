@@ -8,6 +8,8 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class PelaajaTest {
+    
+    Pelaaja tpdef;
 
     public PelaajaTest() {
     }
@@ -22,10 +24,21 @@ public class PelaajaTest {
 
     @Before
     public void setUp() {
+        tpdef = new Pelaaja(20, "tpdef", 67, 23);
     }
 
     @After
     public void tearDown() {
+    }
+    
+    @Test
+    public void pelaajanGetNimiPalauttaaOikein() {
+        assertTrue("Palauttaa väärän nimen", tpdef.getNimi() == "tpdef");
+    }
+    
+    @Test
+    public void pelaajanGetCharPalauttaaOikein() {
+        assertTrue("Palauttaa väärän merkin", tpdef.getChar() == '@');
     }
 
     @Test
