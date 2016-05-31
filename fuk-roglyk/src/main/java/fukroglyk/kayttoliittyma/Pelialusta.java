@@ -1,8 +1,6 @@
 package fukroglyk.kayttoliittyma;
 
-import fukroglyk.entiteetit.Pelaaja;
 import fukroglyk.entiteetit.Piirrettava;
-import fukroglyk.logiikka.Kartta;
 import fukroglyk.logiikka.Peli;
 import java.awt.BorderLayout;
 import javax.swing.JFrame;
@@ -24,16 +22,11 @@ public class Pelialusta extends Canvas implements Runnable {
     //peli käynnissä vai ei
     public boolean kaynnissa = false;
 
-    public Pelaaja pelaaja;
-    public Kartta kartta;
-
-    public ArrayList<Piirrettava> piirrettavat;
     public Peli peli;
 
     public Pelialusta() {
 
         this.peli = new Peli();
-        this.piirrettavat = new ArrayList();
         this.peli.init();
     }
 

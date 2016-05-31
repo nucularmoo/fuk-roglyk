@@ -55,7 +55,6 @@ public class Peli {
         }
         for (Tavara tavara : this.tavarat) {
             this.piirrettavat.add(tavara);
-
         }
     }
 
