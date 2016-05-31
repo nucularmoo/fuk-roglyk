@@ -1,12 +1,9 @@
 package fukroglyk.kayttoliittyma;
 
-import fukroglyk.entiteetit.Hahmo;
 import fukroglyk.entiteetit.Pelaaja;
 import fukroglyk.entiteetit.Piirrettava;
-import fukroglyk.entiteetit.Tavara;
-import fukroglyk.logiikka.Hahmogeneraattori;
 import fukroglyk.logiikka.Kartta;
-import fukroglyk.logiikka.Tavarageneraattori;
+import fukroglyk.logiikka.Peli;
 import java.awt.BorderLayout;
 import javax.swing.JFrame;
 import java.awt.Canvas;
@@ -14,14 +11,13 @@ import java.awt.Container;
 import java.awt.Dimension;
 import java.util.ArrayList;
 
-public class Peli extends Canvas implements Runnable {
+public class Pelialusta extends Canvas implements Runnable {
 
     // ikkunan kokotiedot ja title
     public static final int WIDTH = 160;
     public static final int HEIGHT = WIDTH / 12 * 9;
     public static final int SCALE = 3;
     public static final String NAME = "fuk-roglyk";
-    public Nappaimistonkuuntelija kuuntelija;
 
     private JFrame frame;
 
@@ -30,53 +26,20 @@ public class Peli extends Canvas implements Runnable {
 
     public Pelaaja pelaaja;
     public Kartta kartta;
-    public ArrayList<Hahmo> hahmot;
-    public ArrayList<Tavara> tavarat;
+
     public ArrayList<Piirrettava> piirrettavat;
+    public Peli peli;
 
-    public Peli() {
+    public Pelialusta() {
 
-        this.pelaaja = new Pelaaja(0, "Pelaaja", 10, -1);
-        
+        this.peli = new Peli();
         this.piirrettavat = new ArrayList();
-        //this.kuuntelija = new Nappaimistonkuuntelija(this.kartta);
-
-        init();
-
+        this.peli.init();
     }
 
     public void init() {
         asetaIkkunanKoko();
-        generoiHahmot();
-        generoiTavarat();
-        listaaPiirrettavat();
-        generoiKartta();
         rakennaKehys();
-    }
-    
-    public void generoiKartta() {
-        this.kartta = new Kartta(this.pelaaja, hahmot, tavarat, 19, 18);
-    }
-
-    public void generoiHahmot() {
-        Hahmogeneraattori hage = new Hahmogeneraattori(this.pelaaja);
-        hage.generoi();
-        this.hahmot = hage.getHahmot();
-    }
-
-    public void generoiTavarat() {
-        Tavarageneraattori tage = new Tavarageneraattori();
-        this.tavarat = tage.generoi();
-    }
-
-    public void listaaPiirrettavat() {
-        for (Hahmo hahmo : this.hahmot) {
-            this.piirrettavat.add(hahmo);
-        }
-        for (Tavara tavara : this.tavarat) {
-            this.piirrettavat.add(tavara);
-            
-        }
     }
 
     public void asetaIkkunanKoko() {
@@ -93,9 +56,6 @@ public class Peli extends Canvas implements Runnable {
         frame.setPreferredSize(new Dimension(WIDTH * SCALE, HEIGHT * SCALE));
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        //lisätään näppäimistönkuuntelija
-        //frame.addKeyListener(kuuntelija);
-
         //luodaan ikkunan layout
         frame.setLayout(new BorderLayout());
         frame.add(this, BorderLayout.CENTER);
@@ -108,16 +68,18 @@ public class Peli extends Canvas implements Runnable {
     }
 
     public void luoKomponetit(Container container) {
-        Piirtoalusta piirtoalusta = new Piirtoalusta(this.piirrettavat);
+        Piirtoalusta piirtoalusta = new Piirtoalusta(peli.getPiirrettavat());
         container.add(piirtoalusta);
-        Nappaimistonkuuntelija testi = new Nappaimistonkuuntelija(this.kartta, piirtoalusta);
-        frame.addKeyListener(testi);
+        Nappaimistonkuuntelija kuuntelija = new Nappaimistonkuuntelija(peli.getKartta(), piirtoalusta);
+        frame.addKeyListener(kuuntelija);
     }
 
     public synchronized void kaynnista() {
+        init();
         kaynnissa = true;
         new Thread(this).start();
-        kartta.init();
+
+        peli.piirra();
 
     }
 

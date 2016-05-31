@@ -12,9 +12,13 @@ public class Tavarageneraattori {
 
     }
 
-    public ArrayList<Tavara> generoi() {
+    public void generoi() {
         Tavara banaani = new Tavara(10, "Ananas", 3, 2);
         this.tavarat.add(banaani);
+
+    }
+
+    public ArrayList<Tavara> getTavarat() {
         return this.tavarat;
     }
 }

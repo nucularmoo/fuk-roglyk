@@ -1,7 +1,5 @@
 package fukroglyk.kayttoliittyma;
 
-import fukroglyk.entiteetit.Hahmo;
-import fukroglyk.entiteetit.Pelaaja;
 import fukroglyk.entiteetit.Piirrettava;
 import java.awt.Color;
 import java.awt.Graphics;

@@ -35,7 +35,8 @@ public class TavarageneraattoriTest {
 
     @Test
     public void eiGeneroiTyhjaa() { 
-        ArrayList<Tavara> tl = ttg.generoi();
+        ttg.generoi();
+        ArrayList<Tavara> tl = ttg.getTavarat();
         assertTrue("Lista on null", tl != null);
     }
 }

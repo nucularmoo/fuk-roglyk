@@ -1,5 +1,6 @@
-package fukroglyk.entiteetit;
+package fukroglyk.logiikka;
 
+import fukroglyk.entiteetit.Tavara;
 import java.util.ArrayList;
 
 public class Laukku {
