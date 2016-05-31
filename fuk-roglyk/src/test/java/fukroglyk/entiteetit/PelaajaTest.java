@@ -60,5 +60,8 @@ public class PelaajaTest {
         assertTrue("Pelaaja väärässä koordinaatissa liikkeen jälkeen", tp.getY() == liike);
 
     }
-
+    @Test
+    public void piirretaankoPalauttaaTrue() {
+        assertTrue("Piirto palauttaa false", tpdef.piirretaanko());
+    }
 }

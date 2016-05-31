@@ -20,6 +20,8 @@ public class Peli {
         this.pelaaja = new Pelaaja(0, "Pelaaja", 10, -1);
         this.laukku = new Laukku();
         this.piirrettavat = new ArrayList();
+        this.hahmot = new ArrayList();
+        this.tavarat = new ArrayList();
     }
 
     public void init() {
@@ -64,6 +66,14 @@ public class Peli {
 
     public Kartta getKartta() {
         return this.kartta;
+    }
+    
+    public ArrayList<Hahmo> getHahmot() {
+        return this.hahmot;
+    }
+    
+    public ArrayList<Tavara> getTavarat() {
+        return this.tavarat;
     }
     
     public void poimi(Tavara tavara) {

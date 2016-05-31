@@ -57,4 +57,20 @@ public class NPCTest {
     public void npcnGetCharPalauttaaOikein() {
         assertTrue("Palauttaa char väärin", tnpcdef.getChar() == '3');
     }
+    
+    @Test
+    public void setMissionAsettaaTrue() {
+        tnpcdef.setMission();
+        assertTrue("Mission on false", tnpcdef.getMission());
+    }
+    @Test
+    public void disMissionAsettaaFalse() {
+        tnpcdef.setMission();
+        tnpcdef.disMission();
+        assertFalse("Mission on true", tnpcdef.getMission());
+    }
+    @Test
+    public void piirretaankoPalauttaaTrue() {
+        assertTrue("Piirto palauttaa false", tnpcdef.piirretaanko());
+    }
 }

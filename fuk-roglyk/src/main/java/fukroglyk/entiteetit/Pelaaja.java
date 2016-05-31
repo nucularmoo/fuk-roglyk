@@ -9,6 +9,7 @@ public class Pelaaja extends Hahmo {
     private int x;
     private int y;
     private String nimi;
+    private Color color;
 
     private boolean draw;
 
@@ -17,7 +18,7 @@ public class Pelaaja extends Hahmo {
         this.id = id;
         this.x = x;
         this.y = y;
-
+        this.color = Color.MAGENTA;
         this.draw = true;
     }
 
@@ -64,7 +65,7 @@ public class Pelaaja extends Hahmo {
 
     @Override
     public void piirra(Graphics graphics) {
-        graphics.setColor(Color.MAGENTA);
+        graphics.setColor(this.color);
         graphics.fillOval(x * 15, y * 15, 10, 10);
     }
 

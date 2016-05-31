@@ -71,4 +71,10 @@ public class TavaraTest {
     public void tavaranGetCharPalauttaaOikein() {
         assertTrue("Palauttaa väärän merkin", ttdef.getChar() == '?');
     }
+    
+    @Test
+    public void piirretaankoPalauttaaOikeinKunPoimittu() {
+        ttdef.poimi();
+        assertFalse("Piirto palauttaa väärin", ttdef.piirretaanko());
+    }
 }
