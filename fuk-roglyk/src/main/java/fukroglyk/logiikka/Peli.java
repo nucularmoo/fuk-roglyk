@@ -34,7 +34,7 @@ public class Peli {
     }
 
     public void generoiKartta() {
-        this.kartta = new Kartta(this.pelaaja, hahmot, tavarat, 19, 18);
+        this.kartta = new Kartta(this.pelaaja, hahmot, tavarat, 19, 18, this);
     }
 
     public void generoiHahmot() {
@@ -64,6 +64,10 @@ public class Peli {
 
     public Kartta getKartta() {
         return this.kartta;
+    }
+    
+    public void poimi(Tavara tavara) {
+        this.laukku.lisaaTavara(tavara);
     }
 
 }

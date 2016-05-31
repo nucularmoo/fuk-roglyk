@@ -20,12 +20,6 @@ public class Hahmogeneraattori {
 
     }
 
-    public void init() {
-        alustaHahmot();
-        lisaaPelaaja();
-
-    }
-
     public void generoi() {
 
         generoiTaverna();

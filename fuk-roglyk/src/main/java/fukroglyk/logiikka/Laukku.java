@@ -25,6 +25,7 @@ public class Laukku {
     public void lisaaTavara(Tavara tavara) {
         if (onkoTavara(tavara)) {
             this.laukku.add(tavara);
+            System.out.println(tavara.getNimi());
         }
     }
 

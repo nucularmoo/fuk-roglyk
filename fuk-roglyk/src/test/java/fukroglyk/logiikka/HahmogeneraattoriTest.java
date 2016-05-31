@@ -50,22 +50,11 @@ public class HahmogeneraattoriTest {
     }
 
     @Test
-    public void initToimiiKutenPitaa() {
-        ArrayList<Hahmo> tl = new ArrayList();
-        NPC derp = new NPC(1, "tnpc", 56, 23);
-        tl.add(derp);
-        hgt.init();
-        ArrayList<Hahmo> haehahmot = hgt.getHahmot();
-        Hahmo tpm = haehahmot.get(0);
-        assertTrue("Pelaajaa ei löydy", tpm.getId() == 0);
-    }
-
-    @Test
     public void pelaajanLisaysToimii() {
         hgt.lisaaPelaaja();
         assertTrue("Pelaajaa ei löytynyt", hgt.hahmoListanKoko() != 0);
     }
-    
+
     @Test
     public void pelaajanLisaysToimiiVaikkaListassaJoJotain() {
         ArrayList<Hahmo> tl = new ArrayList();

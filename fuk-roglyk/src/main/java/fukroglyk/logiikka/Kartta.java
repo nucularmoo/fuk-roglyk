@@ -18,6 +18,7 @@ public class Kartta {
     private int boundsX;
     private int boundsY;
     private Karttatulostin tulostin;
+    private Peli peli;
 
     public Kartta(Pelaaja pelaaja, ArrayList<Hahmo> hahmot, ArrayList<Tavara> tavarat, int boundsX, int boundsY) {
 
@@ -27,6 +28,12 @@ public class Kartta {
         this.hahmot = hahmot;
         this.tavarat = tavarat;
         this.tulostin = new Karttatulostin(this.boundsX, this.boundsY);
+
+    }
+
+    public Kartta(Pelaaja pelaaja, ArrayList<Hahmo> hahmot, ArrayList<Tavara> tavarat, int boundsX, int boundsY, Peli peli) {
+        this(pelaaja, hahmot, tavarat, boundsX, boundsY);
+        this.peli = peli;
     }
 
     //Alustetaan kartta
@@ -58,7 +65,7 @@ public class Kartta {
         tulostin.tavaraLista(this.tavarat);
     }
 
-    //Tässävaiheessa pelaajan oletuskoordinaatit alussa 0, 0
+    //Tässävaiheessa pelaajan oletuskoordinaatit alussa 1, 1
     public void resetPlayer() {
         this.pelaaja.setX(1);
         this.pelaaja.setY(1);
@@ -133,7 +140,7 @@ public class Kartta {
             for (Tavara tavara : this.tavarat) {
                 if (x == tavara.getX() && y == tavara.getY()) {
                     tavara.poimi();
-                    this.pelaaja.poimi(tavara);
+                    this.peli.poimi(tavara);
                 }
             }
         }
