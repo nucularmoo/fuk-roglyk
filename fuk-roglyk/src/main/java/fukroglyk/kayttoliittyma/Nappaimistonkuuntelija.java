@@ -1,7 +1,5 @@
 package fukroglyk.kayttoliittyma;
 
-import fukroglyk.entiteetit.Hahmo;
-import fukroglyk.entiteetit.Pelaaja;
 import fukroglyk.logiikka.Kartta;
 import java.awt.Component;
 import java.awt.event.KeyEvent;

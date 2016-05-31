@@ -2,7 +2,6 @@
 package fukroglyk.logiikka;
 
 import fukroglyk.entiteetit.Tavara;
-import fukroglyk.logiikka.Laukku;
 import java.util.ArrayList;
 import org.junit.After;
 import org.junit.AfterClass;

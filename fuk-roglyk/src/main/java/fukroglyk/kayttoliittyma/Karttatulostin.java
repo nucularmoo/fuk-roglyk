@@ -4,6 +4,9 @@ import fukroglyk.entiteetit.Hahmo;
 import fukroglyk.entiteetit.Tavara;
 import java.util.ArrayList;
 
+//Luokkaa käytetään vain pelin kehittämiseen, karttasuunnitteluun ja
+//toimintojen oikeellisuuden tarkistamiseen
+
 public class Karttatulostin {
 
     private char[][] kartta;

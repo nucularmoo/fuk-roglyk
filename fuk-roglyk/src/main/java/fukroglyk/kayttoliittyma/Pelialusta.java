@@ -73,7 +73,6 @@ public class Pelialusta extends Canvas implements Runnable {
         new Thread(this).start();
 
         peli.piirra();
-
     }
 
     public synchronized void sammuta() {

@@ -1,7 +1,6 @@
 package fukroglyk.logiikka;
 
 import fukroglyk.entiteetit.Hahmo;
-import fukroglyk.logiikka.Kartta;
 import fukroglyk.entiteetit.NPC;
 import fukroglyk.entiteetit.Pelaaja;
 import fukroglyk.entiteetit.Tavara;
