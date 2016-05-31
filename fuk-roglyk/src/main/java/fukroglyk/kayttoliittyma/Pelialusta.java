@@ -1,13 +1,11 @@
 package fukroglyk.kayttoliittyma;
 
-import fukroglyk.entiteetit.Piirrettava;
 import fukroglyk.logiikka.Peli;
 import java.awt.BorderLayout;
 import javax.swing.JFrame;
 import java.awt.Canvas;
 import java.awt.Container;
 import java.awt.Dimension;
-import java.util.ArrayList;
 
 public class Pelialusta extends Canvas implements Runnable {
 
@@ -61,8 +59,10 @@ public class Pelialusta extends Canvas implements Runnable {
     }
 
     public void luoKomponetit(Container container) {
+        //Haetaan peliltä lista piirrettävistä
         Piirtoalusta piirtoalusta = new Piirtoalusta(peli.getPiirrettavat());
         container.add(piirtoalusta);
+        //Annetaan näppäimistönkuuntelijalle pelin kartta sekä äsken luotu piirtoalusta
         Nappaimistonkuuntelija kuuntelija = new Nappaimistonkuuntelija(peli.getKartta(), piirtoalusta);
         frame.addKeyListener(kuuntelija);
     }
