@@ -67,14 +67,17 @@ public class KarttaTest {
     public void testataanCollisionKunYLowerOutOfBounds() {
         assertTrue("OOB ei havaittu", ktdef.collision(6, -3));
     }
+
     @Test
     public void testataanCollisionKunXUpperOutOfBounds() {
         assertTrue("OOB ei havaittu", ktdef.collision(100, 4));
     }
+
     @Test
     public void testataanCollisionKunYUpperOutOfBounds() {
         assertTrue("OOB ei havaittu", ktdef.collision(3, 200));
     }
+
     @Test
     public void TestataanLowerBoundsCheckXjaY() {
         assertTrue("OOB ei havaittu", ktdef.collision(-100, -24));
@@ -82,63 +85,55 @@ public class KarttaTest {
 
     @Test
     public void kartanGetBoundsXPalauttaaOikein() {
-        Pelaaja tp = new Pelaaja(0, "testi", 5, 3);
-        Kartta tk = new Kartta(tp);
-        assertTrue("Palauttaa väärin BoundsX", tk.getBoundsX() == 19);
+        assertTrue("Palauttaa väärin BoundsX", ktdef.getBoundsX() == 10);
 
     }
 
     @Test
     public void kartanGetBoundsYPalauttaaOikein() {
-        Pelaaja tp = new Pelaaja(0, "testi", 5, 3);
-        Kartta tk = new Kartta(tp);
-        assertTrue("Palauttaa väärin BoundsY", tk.getBoundsY() == 4);
+        assertTrue("Palauttaa väärin BoundsY", ktdef.getBoundsY() == 10);
     }
 
     @Test
     public void karttaResetoiPelaajanKoordinaatit() {
-        Pelaaja tp = new Pelaaja(0, "testi", 5, 3);
-        Kartta tk = new Kartta(tp);
-        tk.resetPlayer();
-        assertTrue("X not reset", tp.getX() == 0);
-        assertTrue("Y not reset", tp.getY() == 0);
+        ptdef.setX(465);
+        ptdef.setY(2345);
+        ktdef.resetPlayer();
+        assertTrue("X not reset", ptdef.getX() == 1);
+        assertTrue("Y not reset", ptdef.getY() == 1);
 
     }
 
     @Test
     public void karttaResetoiPelaajanKoordinaatitJosXNegatiivinen() {
-        Pelaaja tp = new Pelaaja(0, "testi", -5, 1);
-        Kartta tk = new Kartta(tp);
-        tk.validoiPelaaja(tp);
-        assertTrue("X not reset", tp.getX() == 0);
-        assertTrue("Y not reset", tp.getY() == 0);
+        ptdef.setX(-43);
+        ktdef.validoiPelaaja(ptdef);
+        assertTrue("X not reset", ptdef.getX() == 1);
+        assertTrue("Y not reset", ptdef.getY() == 1);
     }
 
     @Test
     public void karttaResetoiPelaajanKoordinaatitJosYNegatiivinen() {
-        Pelaaja tp = new Pelaaja(0, "testi", 1, -5);
-        Kartta tk = new Kartta(tp);
-        tk.validoiPelaaja(tp);
-        assertTrue("X not reset", tp.getX() == 0);
-        assertTrue("Y not reset", tp.getY() == 0);
+        ptdef.setY(-43);
+        ktdef.validoiPelaaja(ptdef);
+        assertTrue("X not reset", ptdef.getX() == 1);
+        assertTrue("Y not reset", ptdef.getY() == 1);
     }
 
     @Test
     public void karttaResetoiPelaajanKoordinaatitJosXOutOfBounds() {
-        Pelaaja tp = new Pelaaja(0, "testi", 100, 0);
-        Kartta tk = new Kartta(tp);
-        tk.validoiPelaaja(tp);
-        assertTrue("X not reset", tp.getX() == 0);
-        assertTrue("Y not reset", tp.getY() == 0);
+        ptdef.setX(234526);
+        ktdef.validoiPelaaja(ptdef);
+        assertTrue("X not reset", ptdef.getX() == 1);
+        assertTrue("Y not reset", ptdef.getY() == 1);
     }
 
     @Test
     public void karttaResetoiPelaajanKoordinaatitJosYOnOutOfBounds() {
-        Pelaaja tp = new Pelaaja(0, "testi", 0, 100);
-        Kartta tk = new Kartta(tp);
-        tk.validoiPelaaja(tp);
-        assertTrue("X not reset", tp.getX() == 0);
-        assertTrue("Y not reset", tp.getY() == 0);
+        ptdef.setY(23456);
+        ktdef.validoiPelaaja(ptdef);
+        assertTrue("X not reset", ptdef.getX() == 1);
+        assertTrue("Y not reset", ptdef.getY() == 1);
     }
 
     @Test
@@ -153,19 +148,26 @@ public class KarttaTest {
         tavarat.add(tt);
         Kartta tk = new Kartta(tp, hahmot, tavarat, 7, 7);
         tk.validoiPelaaja(tp);
-        assertTrue("X not reset", tp.getX() == 0);
-        assertTrue("Y not reset", tp.getY() == 0);
+        assertTrue("X not reset", tp.getX() == 1);
+        assertTrue("Y not reset", tp.getY() == 1);
     }
 
     @Test
     public void karttaLiikuttaaPelaajaaOikeinXJaY() {
-        Pelaaja tp = new Pelaaja(0, "testi", 0, 0);
-        Kartta tk = new Kartta(tp);
+        Pelaaja tp = new Pelaaja(0, "testi", 1, 1);
+        NPC tnpc = new NPC(1, "tnpc", 5, 5);
+        ArrayList<Hahmo> hahmot = new ArrayList();
+        hahmot.add(tp);
+        hahmot.add(tnpc);
+        Tavara tt = new Tavara(2, "tt", 3, 3);
+        ArrayList<Tavara> tavarat = new ArrayList();
+        tavarat.add(tt);
+        Kartta tk = new Kartta(tp, hahmot, tavarat, 7, 7);
         tk.init();
         tk.move(1, 0);
         tk.move(0, 4);
-        assertTrue("Kartta liikuttaa väärin X", tp.getX() == 1);
-        assertTrue("Kartta liikuttaa väärin Y", tp.getY() == 4);
+        assertTrue("Kartta liikuttaa väärin X", tp.getX() == 2);
+        assertTrue("Kartta liikuttaa väärin Y", tp.getY() == 5);
 
     }
 

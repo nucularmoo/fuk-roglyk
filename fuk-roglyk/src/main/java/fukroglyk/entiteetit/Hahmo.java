@@ -1,6 +1,8 @@
 package fukroglyk.entiteetit;
 
-public abstract class Hahmo {
+import java.awt.Graphics;
+
+public abstract class Hahmo extends Piirrettava {
 
     private int id;
     private int x;
@@ -21,5 +23,8 @@ public abstract class Hahmo {
     public abstract int getY();
 
     public abstract String getNimi();
+    
+    @Override
+    public abstract void piirra(Graphics graphics);
 
 }

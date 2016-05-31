@@ -1,18 +1,37 @@
 package fukroglyk.entiteetit;
 
+import java.awt.Color;
+import java.awt.Graphics;
+
 public class NPC extends Hahmo {
 
     private int id;
     private int x;
     private int y;
     private String nimi;
+    private boolean draw;
+    private boolean mission;
 
     public NPC(int id, String nimi, int x, int y) {
         this.id = id;
         this.nimi = nimi;
         this.x = x;
         this.y = y;
+        this.draw = true;
+        this.mission = false;
 
+    }
+
+    public boolean getMission() {
+        return this.mission;
+    }
+
+    public void setMission() {
+        this.mission = true;
+    }
+
+    public void disMission() {
+        this.mission = false;
     }
 
     @Override
@@ -37,8 +56,22 @@ public class NPC extends Hahmo {
 
     @Override
     public char getChar() {
-
         return Character.forDigit(this.id, 10);
+    }
+
+    public void piirra(Graphics graphics) {
+        if (getMission()) {
+            graphics.setColor(Color.GREEN);
+            graphics.fillOval(x * 15, y * 15, 10, 10);
+        } else {
+            graphics.setColor(Color.orange);
+            graphics.fillOval(x * 15, y * 15, 10, 10);
+        }
+    }
+
+    @Override
+    public boolean piirretaanko() {
+        return this.draw;
     }
 
 }

@@ -1,4 +1,4 @@
-package fukroglyk.logiikka;
+package fukroglyk.kayttoliittyma;
 
 import fukroglyk.entiteetit.Hahmo;
 import fukroglyk.entiteetit.Tavara;
@@ -35,9 +35,23 @@ public class Karttatulostin {
     public void tyhjaKartta() {
         for (int i = 0; i < this.kartta.length; i++) {
             for (int j = 0; j < this.kartta[i].length; j++) {
-                this.kartta[i][j] = '.';
+                if (i == 0) {
+                    teeSeina(i, j);
+                } else if (i == this.kartta.length - 1) {
+                    teeSeina(i, j);
+                } else if (j == 0) {
+                    teeSeina(i, j);
+                } else if (j == this.kartta[i].length - 1) {
+                    teeSeina(i, j);
+                } else {
+                    this.kartta[i][j] = '.';
+                }
             }
         }
+    }
+
+    public void teeSeina(int x, int y) {
+        this.kartta[x][y] = '#';
     }
 
     //Lisätään karttamatriisiin tavarat

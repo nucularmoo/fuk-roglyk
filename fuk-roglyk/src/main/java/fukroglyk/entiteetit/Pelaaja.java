@@ -1,5 +1,7 @@
 package fukroglyk.entiteetit;
 
+import java.awt.Color;
+import java.awt.Graphics;
 import java.util.ArrayList;
 
 public class Pelaaja extends Hahmo {
@@ -8,14 +10,16 @@ public class Pelaaja extends Hahmo {
     private int x;
     private int y;
     private String nimi;
-    private ArrayList<Tavara> laukku;
+    private Laukku laukku;
+    private boolean draw;
 
     public Pelaaja(int id, String nimi, int x, int y) {
         this.nimi = nimi;
         this.id = id;
         this.x = x;
         this.y = y;
-        this.laukku = new ArrayList();
+        this.laukku = new Laukku();
+        this.draw = true;
     }
 
     public void moveX(int xa) {
@@ -33,7 +37,7 @@ public class Pelaaja extends Hahmo {
 
     public void poimi(Tavara tavara) {
         if (!tavara.poimittu()) {
-            this.laukku.add(tavara);
+            this.laukku.lisaaTavara(tavara);
             System.out.println("Poimit juuri: " + tavara.getNimi());
         }
 
@@ -41,16 +45,11 @@ public class Pelaaja extends Hahmo {
 
     public boolean onkoLaukussa(Tavara tavara) {
         int tid = tavara.getId();
-        for (Tavara etsitaan : this.laukku) {
-            if (etsitaan.getId() == tid) {
-                return true;
-            }
-        }
-        return false;
+        return this.laukku.poistaTavara(tid);
     }
 
     public ArrayList<Tavara> palautaLaukku() {
-        return this.laukku;
+        return this.laukku.getLaukku();
     }
 
     @Override
@@ -79,6 +78,16 @@ public class Pelaaja extends Hahmo {
     @Override
     public String getNimi() {
         return this.nimi;
+    }
+    @Override
+    public void piirra(Graphics graphics) {
+        graphics.setColor(Color.MAGENTA);
+        graphics.fillOval(x*15, y*15, 10, 10);
+    }
+
+    @Override
+    public boolean piirretaanko() {
+        return this.draw;
     }
 
 }

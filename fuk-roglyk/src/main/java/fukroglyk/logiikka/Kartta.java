@@ -1,6 +1,8 @@
 package fukroglyk.logiikka;
 
+import fukroglyk.kayttoliittyma.Karttatulostin;
 import fukroglyk.entiteetit.Hahmo;
+import fukroglyk.entiteetit.NPC;
 import fukroglyk.entiteetit.Pelaaja;
 import fukroglyk.entiteetit.Tavara;
 import java.util.ArrayList;
@@ -17,14 +19,6 @@ public class Kartta {
     private int boundsY;
     private Karttatulostin tulostin;
 
-    public Kartta(Pelaaja pelaaja) {
-
-        this.boundsY = 4;
-        this.boundsX = 19;
-        this.pelaaja = pelaaja;
-        this.tulostin = new Karttatulostin(19, 4);
-    }
-
     public Kartta(Pelaaja pelaaja, ArrayList<Hahmo> hahmot, ArrayList<Tavara> tavarat, int boundsX, int boundsY) {
 
         this.boundsY = boundsY;
@@ -32,13 +26,14 @@ public class Kartta {
         this.pelaaja = pelaaja;
         this.hahmot = hahmot;
         this.tavarat = tavarat;
+        this.tulostin = new Karttatulostin(this.boundsX, this.boundsY);
     }
 
     //Alustetaan kartta
     public void init() {
-        generoiHahmot();
-        generoiTavarat();
+
         validoiPelaaja(this.pelaaja);
+        alustaTulostin();
         tulostin.update();
         tulostin.print();
     }
@@ -58,22 +53,15 @@ public class Kartta {
         }
     }
 
+    public void alustaTulostin() {
+        tulostin.hahmoLista(this.hahmot);
+        tulostin.tavaraLista(this.tavarat);
+    }
+
     //Tässävaiheessa pelaajan oletuskoordinaatit alussa 0, 0
     public void resetPlayer() {
-        this.pelaaja.setX(0);
-        this.pelaaja.setY(0);
-    }
-
-    public void generoiHahmot() {
-        Hahmogeneraattori hage = new Hahmogeneraattori(this.pelaaja);
-        this.hahmot = hage.generoi();
-        tulostin.hahmoLista(this.hahmot);
-    }
-
-    public void generoiTavarat() {
-        Tavarageneraattori tage = new Tavarageneraattori();
-        this.tavarat = tage.generoi();
-        tulostin.tavaraLista(this.tavarat);
+        this.pelaaja.setX(1);
+        this.pelaaja.setY(1);
     }
 
     public void move(int xa, int ya) {
@@ -102,20 +90,20 @@ public class Kartta {
     }
 
     public boolean lowerBoundsCheck(int x, int y) {
-        if (x < 0) {
+        if (x < 1) {
             return true;
         }
-        if (y < 0) {
+        if (y < 1) {
             return true;
         }
         return false;
     }
 
     public boolean upperBoundsCheck(int x, int y) {
-        if (x > boundsX) {
+        if (x > boundsX - 1) {
             return true;
         }
-        if (y > boundsY) {
+        if (y > boundsY - 1) {
 
             return true;
         }
@@ -127,6 +115,11 @@ public class Kartta {
         for (Hahmo hahmo : this.hahmot) {
             if (x == hahmo.getX() && y == hahmo.getY()) {
                 if (hahmo.getId() != this.pelaaja.getId()) {
+                    NPC derp = (NPC) (Hahmo) hahmo;
+                    if (derp.getMission()) {
+                        System.out.println("QUEEEST");
+                        derp.disMission();
+                    }
                     return true;
                 }
             }

@@ -3,16 +3,19 @@ package fukroglyk.kayttoliittyma;
 import fukroglyk.entiteetit.Hahmo;
 import fukroglyk.entiteetit.Pelaaja;
 import fukroglyk.logiikka.Kartta;
+import java.awt.Component;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
 public class Nappaimistonkuuntelija implements KeyListener {
 
     private Kartta kartta;
+    private Component component;
 
-    public Nappaimistonkuuntelija(Kartta kartta) {
+    public Nappaimistonkuuntelija(Kartta kartta, Component component) {
 
         this.kartta = kartta;
+        this.component = component;
 
     }
 
@@ -32,6 +35,7 @@ public class Nappaimistonkuuntelija implements KeyListener {
         } else if (e.getKeyCode() == KeyEvent.VK_S) {
             kartta.move(0, 1);
         }
+        component.repaint();
 
     }
 
