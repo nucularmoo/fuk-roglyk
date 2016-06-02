@@ -11,3 +11,4 @@ Päivä | Tunnit | Kuvaus
 26.05.2016 | 7h | Testejä ja koodia ja deadlineen tarvittavat jutut
 30.05.2016 | 6h | Refaktorointia, testejä ja hahmot piirtymään ikkunaan
 31.05.2016 | 8h | Refaktorointia, koodia, testejä
+02.06.2016 | 2h | Luokkakaavio, dokumentaatio, palautus
