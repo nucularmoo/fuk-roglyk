@@ -13,3 +13,5 @@ Projektin aihe on seikkailupeli jossa pelaaja etenee x ja y-koordinaatteja hyvä
 [Tuntikirjanpito](dokumentaatio/tuntikirjanpito.md)
 
 [Pit-raportti](https://htmlpreview.github.io/?https://github.com/nucularmoo/fuk-roglyk/blob/master/dokumentaatio/pit-raportti/index.html)
+
+[Checkstyle-raportti](https://htmlpreview.github.io/?https://github.com/nucularmoo/fuk-roglyk/blob/master/dokumentaatio/checkstyle-raportti/checkstyle.html)
