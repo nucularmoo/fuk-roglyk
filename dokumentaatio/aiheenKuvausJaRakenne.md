@@ -22,4 +22,4 @@ Pelaaja
 
 ###Luokkakaavio (Deadline 2):
 
-![Luokkaakavio DL 2](Luokkakaavio_v1.png)
+![Luokkaakavio DL 2](Luokkakaavio_v2.png)
