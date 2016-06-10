@@ -1,5 +1,6 @@
 package fukroglyk.logiikka;
 
+import fukroglyk.entiteetit.Ovi;
 import fukroglyk.kayttoliittyma.Karttatulostin;
 import fukroglyk.entiteetit.Hahmo;
 import fukroglyk.entiteetit.NPC;
@@ -7,6 +8,11 @@ import fukroglyk.entiteetit.Pelaaja;
 import fukroglyk.entiteetit.Tavara;
 import java.util.ArrayList;
 
+/**
+ * Luokka hallinnoi pelaajan liikkeitä.
+ *
+ * @author NukeCow
+ */
 public class Kartta {
 
     //Aloitetaan sillä että kartta hoitaa pelaajan liikuttelun ja päivittämisen
@@ -14,11 +20,13 @@ public class Kartta {
     //Luokka ei saa paisua liikaa
     private ArrayList<Hahmo> hahmot;
     private ArrayList<Tavara> tavarat;
+    private ArrayList<Ovi> ovet;
     private Pelaaja pelaaja;
     private int boundsX;
     private int boundsY;
     private Karttatulostin tulostin;
     private Peli peli;
+    private Alue alue;
 
     public Kartta(Pelaaja pelaaja, ArrayList<Hahmo> hahmot, ArrayList<Tavara> tavarat, int boundsX, int boundsY) {
 
@@ -28,21 +36,41 @@ public class Kartta {
         this.hahmot = hahmot;
         this.tavarat = tavarat;
         this.tulostin = new Karttatulostin(this.boundsX, this.boundsY);
-
+        this.ovet = new ArrayList();
     }
 
     public Kartta(Pelaaja pelaaja, ArrayList<Hahmo> hahmot, ArrayList<Tavara> tavarat, int boundsX, int boundsY, Peli peli) {
         this(pelaaja, hahmot, tavarat, boundsX, boundsY);
         this.peli = peli;
+        this.alue = peli.getAlue();
     }
 
     //Alustetaan kartta
     public void init() {
-
         validoiPelaaja(this.pelaaja);
         alustaTulostin();
         tulostin.update();
         tulostin.print();
+    }
+
+    public ArrayList<Ovi> getOvet() {
+        return this.ovet;
+    }
+
+    public void setHahmot(ArrayList<Hahmo> hahmot) {
+        this.hahmot = hahmot;
+    }
+
+    public void setTavarat(ArrayList<Tavara> tavarat) {
+        this.tavarat = tavarat;
+    }
+
+    public void setOvet(ArrayList<Ovi> ovet) {
+        this.ovet = ovet;
+    }
+    
+    public void setAlue(Alue alue) {
+        this.alue = alue;
     }
 
     //Validointi omaan luokkaansa myöhemmin
@@ -52,23 +80,29 @@ public class Kartta {
         int py = this.pelaaja.getY();
 
         if (lowerBoundsCheck(px, py)) {
-            resetPlayer();
+            resetPlayerByAlue();
         } else if (upperBoundsCheck(px, py)) {
-            resetPlayer();
+            resetPlayerByAlue();
         } else if (onkoHahmo(px, py)) {
-            resetPlayer();
+            resetPlayerByAlue();
         }
     }
 
     public void alustaTulostin() {
         tulostin.hahmoLista(this.hahmot);
         tulostin.tavaraLista(this.tavarat);
+        tulostin.oviLista(ovet);
     }
 
     //Tässävaiheessa pelaajan oletuskoordinaatit alussa 1, 1
     public void resetPlayer() {
         this.pelaaja.setX(1);
         this.pelaaja.setY(1);
+    }
+    
+    public void resetPlayerByAlue() {
+        this.pelaaja.setX(this.alue.getAloitusX());
+        this.pelaaja.setY(this.alue.getAloitusY());
     }
 
     public void move(int xa, int ya) {
@@ -164,5 +198,9 @@ public class Kartta {
 
     public int getBoundsY() {
         return this.boundsY;
+    }
+    
+    public Alue getAlue() {
+        return this.alue;
     }
 }

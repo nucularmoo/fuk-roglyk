@@ -7,11 +7,15 @@ import java.awt.Canvas;
 import java.awt.Container;
 import java.awt.Dimension;
 
+/**
+ * Luokka luo ja hallinnoi graafista käyttöliittymää.
+ * @author NukeCow
+ */
 public class Pelialusta extends Canvas implements Runnable {
 
     // ikkunan kokotiedot ja title
     public static final int WIDTH = 160;
-    public static final int HEIGHT = WIDTH / 12 * 9;
+    public static final int HEIGHT = WIDTH;
     public static final int SCALE = 3;
     public static final String NAME = "fuk-roglyk";
 

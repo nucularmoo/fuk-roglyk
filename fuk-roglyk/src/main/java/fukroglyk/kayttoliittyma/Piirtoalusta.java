@@ -15,6 +15,10 @@ public class Piirtoalusta extends JPanel {
 
         this.piirrettavat = piirrettavat;
     }
+    
+    public void setPiirrettavat(ArrayList<Piirrettava> piirrettavat) {
+        this.piirrettavat = piirrettavat;
+    }
 
     protected void paintComponent(Graphics graphics) {
 
@@ -24,7 +28,7 @@ public class Piirtoalusta extends JPanel {
                 piirretaan.piirra(graphics);
             }
         }
-        this.piirrettavat.get(0).piirra(graphics);
+        
     }
 
 }

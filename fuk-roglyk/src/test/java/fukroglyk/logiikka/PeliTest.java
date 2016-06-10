@@ -74,7 +74,6 @@ public class PeliTest {
      public void peliListaaPiirrettavat() {
          peli.generoiHahmot();
          peli.generoiTavarat();
-         peli.listaaPiirrettavat();
          ArrayList<Piirrettava> piirrettavat = peli.getPiirrettavat();
          assertTrue("Piirrettäviä ei ole", piirrettavat != null);
      }

@@ -20,6 +20,7 @@ public class KarttaTest {
     ArrayList<Tavara> tltdef;
     NPC npctdef;
     Tavara ttdef;
+    Alue adef;
 
     public KarttaTest() {
     }
@@ -45,7 +46,16 @@ public class KarttaTest {
         tltdef = new ArrayList<Tavara>();
         tltdef.add(ttdef);
 
-        ktdef = new Kartta(ptdef, hltdef, tltdef, 10, 10);
+        ktdef = new Kartta(ptdef, hltdef, tltdef, 20, 20);
+        int[] x = new int[]{13, 14, 15, 2, 13, 4, 14, 12, 13, 15, 4, 9, 13};
+        int[] y = new int[]{2, 5, 7, 9, 10, 12, 12, 15, 15, 15, 17, 18, 18};
+        Alue atdef = new Alue(0, "Taverna", x, y, 1, 1);
+        atdef.generoiSeinat();
+        atdef.generoiOvet();
+        atdef.generoiHahmot();
+        atdef.generoiTavarat();
+        atdef.listaaPiirrettavat();
+        ktdef.setAlue(atdef);
     }
 
     @After
@@ -84,13 +94,13 @@ public class KarttaTest {
 
     @Test
     public void kartanGetBoundsXPalauttaaOikein() {
-        assertTrue("Palauttaa väärin BoundsX", ktdef.getBoundsX() == 10);
+        assertTrue("Palauttaa väärin BoundsX", ktdef.getBoundsX() == 20);
 
     }
 
     @Test
     public void kartanGetBoundsYPalauttaaOikein() {
-        assertTrue("Palauttaa väärin BoundsY", ktdef.getBoundsY() == 10);
+        assertTrue("Palauttaa väärin BoundsY", ktdef.getBoundsY() == 20);
     }
 
     @Test

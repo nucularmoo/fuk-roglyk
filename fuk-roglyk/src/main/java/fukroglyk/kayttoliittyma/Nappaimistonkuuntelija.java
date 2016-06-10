@@ -5,6 +5,12 @@ import java.awt.Component;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
+/**
+ * Luokka vastaanottaa käyttäjän näppäinkomennot, käskee karttaa muuttamaan
+ * pelaajan koordinaatteja näppäinkomentojen mukaisesti sekä piirtoalustaa
+ * päivittymään.
+ * @author NukeCow
+ */
 public class Nappaimistonkuuntelija implements KeyListener {
 
     private Kartta kartta;

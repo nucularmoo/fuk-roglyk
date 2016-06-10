@@ -3,6 +3,10 @@ package fukroglyk.entiteetit;
 import java.awt.Color;
 import java.awt.Graphics;
 
+/**
+ * Luokka ilmentää pelin pelattavaa hahmoa
+ * @author NukeCow
+ */
 public class Pelaaja extends Hahmo {
 
     private int id;

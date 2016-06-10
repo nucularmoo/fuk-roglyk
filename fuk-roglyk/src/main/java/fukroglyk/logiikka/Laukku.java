@@ -3,6 +3,10 @@ package fukroglyk.logiikka;
 import fukroglyk.entiteetit.Tavara;
 import java.util.ArrayList;
 
+/**
+ * Luokka käsittelee pelaajan keräämiä tavaroita.
+ * @author NukeCow
+ */
 public class Laukku {
 
     private ArrayList<Tavara> laukku;

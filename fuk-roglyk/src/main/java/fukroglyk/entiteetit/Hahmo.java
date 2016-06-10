@@ -2,6 +2,10 @@ package fukroglyk.entiteetit;
 
 import java.awt.Graphics;
 
+/**
+ * Abstrakti luokka kuvaa pelissä olevien hahmojen ominaisuuksia.
+ * @author NukeCow
+ */
 public abstract class Hahmo extends Piirrettava {
 
     private int id;

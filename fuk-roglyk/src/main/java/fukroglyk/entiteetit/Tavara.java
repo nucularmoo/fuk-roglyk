@@ -3,6 +3,10 @@ package fukroglyk.entiteetit;
 import java.awt.Color;
 import java.awt.Graphics;
 
+/**
+ * Luokka ilmentää pelissä olevia tavaroita ja niiden tilaa maailmassa.
+ * @author NukeCow
+ */
 public class Tavara extends Piirrettava {
 
     private int id;

@@ -2,6 +2,7 @@ package fukroglyk.kayttoliittyma;
 
 import fukroglyk.entiteetit.Hahmo;
 import fukroglyk.entiteetit.Tavara;
+import fukroglyk.entiteetit.Ovi;
 import java.util.ArrayList;
 
 //Luokkaa käytetään vain pelin kehittämiseen, karttasuunnitteluun ja
@@ -12,6 +13,7 @@ public class Karttatulostin {
     private char[][] kartta;
     private ArrayList<Hahmo> hahmot;
     private ArrayList<Tavara> tavarat;
+    private ArrayList<Ovi> ovet;
 
     public Karttatulostin(int x, int y) {
 
@@ -26,10 +28,15 @@ public class Karttatulostin {
     public void tavaraLista(ArrayList<Tavara> tavarat) {
         this.tavarat = tavarat;
     }
+    
+    public void oviLista(ArrayList<Ovi> ovet) {
+        this.ovet = ovet;
+    }
 
     //Kartan päivitys
     public void update() {
         tyhjaKartta();
+        lisaaOvet();
         lisaaTavarat();
         lisaaHahmot();
     }
@@ -70,6 +77,11 @@ public class Karttatulostin {
     public void lisaaHahmot() {
         for (Hahmo hahmo : this.hahmot) {
             this.kartta[hahmo.getY()][hahmo.getX()] = hahmo.getChar();
+        }
+    }
+    public void lisaaOvet() {
+        for (Ovi ovi : this.ovet) {
+            this.kartta[ovi.getY()][ovi.getX()] = 'o';
         }
     }
 

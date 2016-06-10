@@ -18,7 +18,7 @@ public class HahmogeneraattoriTest {
 
     public HahmogeneraattoriTest() {
         this.tp = new Pelaaja(0, "tp", 1, 1);
-        this.hgt = new Hahmogeneraattori(this.tp);
+        this.hgt = new Hahmogeneraattori();
     }
 
     @BeforeClass
@@ -51,7 +51,7 @@ public class HahmogeneraattoriTest {
 
     @Test
     public void pelaajanLisaysToimii() {
-        hgt.lisaaPelaaja();
+        hgt.lisaaPelaaja(tp);
         assertTrue("Pelaajaa ei löytynyt", hgt.hahmoListanKoko() != 0);
     }
 
@@ -60,7 +60,7 @@ public class HahmogeneraattoriTest {
         ArrayList<Hahmo> tl = new ArrayList();
         NPC derp = new NPC(1, "tnpc", 56, 23);
         tl.add(derp);
-        hgt.lisaaPelaaja();
+        hgt.lisaaPelaaja(tp);
         assertTrue("Pelaajaa ei löytynyt", hgt.hahmoListanKoko() == 1);
         assertFalse("Listassa liikaa tavaraa", hgt.hahmoListanKoko() > 1);
     }

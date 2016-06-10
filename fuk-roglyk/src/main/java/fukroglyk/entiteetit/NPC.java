@@ -3,6 +3,10 @@ package fukroglyk.entiteetit;
 import java.awt.Color;
 import java.awt.Graphics;
 
+/**
+ * Luokka ilmentää pelissä olevia ei-pelattavissa olevia hahmoja.
+ * @author NukeCow
+ */
 public class NPC extends Hahmo {
 
     private int id;

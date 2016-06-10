@@ -1,6 +1,7 @@
 package fukroglyk.logiikka;
 
 import fukroglyk.entiteetit.Hahmo;
+import fukroglyk.entiteetit.Ovi;
 import fukroglyk.entiteetit.Pelaaja;
 import fukroglyk.entiteetit.Piirrettava;
 import fukroglyk.entiteetit.Tavara;
@@ -14,6 +15,9 @@ public class Peli {
     private ArrayList<Hahmo> hahmot;
     private ArrayList<Tavara> tavarat;
     private ArrayList<Piirrettava> piirrettavat;
+    private Maailma maailma;
+    private ArrayList<Ovi> ovet;
+    private Alue alue;
 
     public Peli() {
 
@@ -22,12 +26,17 @@ public class Peli {
         this.piirrettavat = new ArrayList();
         this.hahmot = new ArrayList();
         this.tavarat = new ArrayList();
+        this.ovet = new ArrayList();
+        this.maailma = new Maailma(this.pelaaja);
+        this.maailma.luoMaailma();
+        this.alue = getAlue();
     }
 
     public void init() {
         generoiHahmot();
         generoiTavarat();
-        listaaPiirrettavat();
+        generoiOvet();
+        setPiirrettavat();
         generoiKartta();
     }
 
@@ -35,47 +44,56 @@ public class Peli {
         this.kartta.init();
     }
 
+    public Alue getAlue() {
+        return this.maailma.getCurrentAlue();
+    }
+
+    public void setAlue(Alue alue) {
+        this.alue = alue;
+    }
+
     public void generoiKartta() {
-        this.kartta = new Kartta(this.pelaaja, hahmot, tavarat, 19, 18, this);
+        this.kartta = new Kartta(this.pelaaja, hahmot, tavarat, 20, 20, this);
+    }
+
+    public void luoMaailma() {
+
     }
 
     public void generoiHahmot() {
-        Hahmogeneraattori hage = new Hahmogeneraattori(this.pelaaja);
-        hage.generoi();
-        this.hahmot = hage.getHahmot();
+        this.hahmot = this.maailma.getCurrentHahmot();
+        this.hahmot.add(pelaaja);
     }
 
     public void generoiTavarat() {
-        Tavarageneraattori tage = new Tavarageneraattori();
-        tage.generoi();
-        this.tavarat = tage.getTavarat();
+        this.tavarat = this.maailma.getCurrentTavarat();
     }
 
-    public void listaaPiirrettavat() {
-        for (Hahmo hahmo : this.hahmot) {
-            this.piirrettavat.add(hahmo);
-        }
-        for (Tavara tavara : this.tavarat) {
-            this.piirrettavat.add(tavara);
-        }
+    public void generoiOvet() {
+        this.ovet = this.maailma.getCurrentOvet();
     }
 
     public ArrayList<Piirrettava> getPiirrettavat() {
         return this.piirrettavat;
     }
 
+    public void setPiirrettavat() {
+        this.piirrettavat = maailma.getPiirrettavat();
+        this.piirrettavat.add(pelaaja);
+    }
+
     public Kartta getKartta() {
         return this.kartta;
     }
-    
+
     public ArrayList<Hahmo> getHahmot() {
         return this.hahmot;
     }
-    
+
     public ArrayList<Tavara> getTavarat() {
         return this.tavarat;
     }
-    
+
     public void poimi(Tavara tavara) {
         this.laukku.lisaaTavara(tavara);
     }
