@@ -18,14 +18,30 @@ public abstract class Hahmo extends Piirrettava {
         
     }
 
+    /**
+     * Palauttaa Hahmo-olion char-merkin. 
+     * @return Hahmon char-merkki
+     */
     public abstract char getChar();
     
     public abstract int getId();
 
+    /**
+     * Palauttaa Hahmo-olion x-koordinaatin.
+     * @return x-koordinaatin arvo
+     */
     public abstract int getX();
 
+    /**
+     * Palauttaa Hahmo-olion y-koordinaatin.
+     * @return y-koordinaatin arvo
+     */
     public abstract int getY();
 
+    /**
+     * Palauttaa Hahmo-olion nimen.
+     * @return hahmon nimi
+     */
     public abstract String getNimi();
     
     @Override

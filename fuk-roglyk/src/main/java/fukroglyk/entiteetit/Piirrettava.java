@@ -13,8 +13,16 @@ public abstract class Piirrettava {
         
     }
     
+    /**
+     * Piirtää piirrettävän olion ilmentymän käyttöliittymän ikkunaan.
+     * @param graphics
+     */
     public abstract void piirra(Graphics graphics);
     
+    /**
+     * Palauttaa tiedon siitä, piirretäänkö olio vai ei.
+     * @return Tieto onko olio piirretävässä tilassa vai ei
+     */
     public abstract boolean piirretaanko();
     
 }
