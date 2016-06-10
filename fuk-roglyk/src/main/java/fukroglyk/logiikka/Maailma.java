@@ -50,9 +50,12 @@ public class Maailma {
         int[] y = new int[]{3, 8, 2};
         Alue niitty = new Alue(1, "Niitty", x, y, 1, 19);
         niitty.generoiHahmot();
+        niitty.generoiOvet();
         niitty.listaaPiirrettavat();
         this.alueet.add(niitty);
     }
+    
+   
 
     public int getCurrentZone() {
         return this.currentzone;

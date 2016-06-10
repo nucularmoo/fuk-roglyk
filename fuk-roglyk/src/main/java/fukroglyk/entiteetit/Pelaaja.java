@@ -5,6 +5,7 @@ import java.awt.Graphics;
 
 /**
  * Luokka ilmentää pelin pelattavaa hahmoa
+ *
  * @author NukeCow
  */
 public class Pelaaja extends Hahmo {
@@ -26,11 +27,20 @@ public class Pelaaja extends Hahmo {
         this.draw = true;
     }
 
+    /**
+     * Metodi liikuttaa pelaajan x-koordinaattia annetun askelmäärän.
+     *
+     * @param xa Liikuttava askelmäärä
+     */
     public void moveX(int xa) {
         this.x += xa;
-
     }
 
+    /**
+     * Metodi liikuttaa pelaajan y-koordinaattia annetun askelmäärän.
+     *
+     * @param ya Liikuttava askelmäärä
+     */
     public void moveY(int ya) {
         this.y += ya;
     }
@@ -54,14 +64,29 @@ public class Pelaaja extends Hahmo {
         return this.y;
     }
 
+    /**
+     * Asettaa pelaajan x-koordinaatin parametrina annetuksi arvoksi.
+     *
+     * @param nx Haluttu uusi x-koordinaatin arvo
+     */
     public void setX(int nx) {
         this.x = nx;
     }
 
+    /**
+     * Asettaa pelaajan y-koordinaatin parametrina annetuksi arvoksi.
+     *
+     * @param ny Haluttu uusi y-koordinaatin arvo
+     */
     public void setY(int ny) {
         this.y = ny;
     }
 
+    /**
+     * Palauttaa pelaajan nimen.
+     * 
+     * @return Pelaajan nimi
+     */
     @Override
     public String getNimi() {
         return this.nimi;
