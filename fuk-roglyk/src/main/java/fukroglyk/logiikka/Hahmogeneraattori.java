@@ -2,7 +2,6 @@ package fukroglyk.logiikka;
 
 import fukroglyk.entiteetit.Hahmo;
 import fukroglyk.entiteetit.NPC;
-import fukroglyk.entiteetit.Pelaaja;
 import java.util.ArrayList;
 
 /**
@@ -46,10 +45,6 @@ public class Hahmogeneraattori {
             }
         }
 
-    }
-
-    public void lisaaPelaaja(Pelaaja pelaaja) {
-        this.hahmot.add(pelaaja);
     }
 
     public ArrayList<Hahmo> getHahmot() {

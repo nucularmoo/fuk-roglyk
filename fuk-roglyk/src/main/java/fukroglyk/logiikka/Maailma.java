@@ -18,14 +18,12 @@ public class Maailma {
     private int currentzone;
     private ArrayList<Alue> alueet;
     private Pelaaja pelaaja;
-    private Hahmogeneraattori hage;
    
 
     public Maailma(Pelaaja pelaaja) {
         this.pelaaja = pelaaja;
         this.currentzone = 0;
         this.alueet = new ArrayList();
-        this.hage = new Hahmogeneraattori();
     }
 
     public void luoMaailma() {
@@ -55,8 +53,6 @@ public class Maailma {
         this.alueet.add(niitty);
     }
     
-   
-
     public int getCurrentZone() {
         return this.currentzone;
     }
@@ -101,6 +97,10 @@ public class Maailma {
         return getCurrentAlue().getOvet();
     }
     
+    /**
+     * Palauttaa aktiivisen alueen piirrettävät oliot.
+     * @return Lista piirrettävistä olioista
+     */
     public ArrayList<Piirrettava> getPiirrettavat() {
         return getCurrentAlue().getPiirrettavat();
     }
