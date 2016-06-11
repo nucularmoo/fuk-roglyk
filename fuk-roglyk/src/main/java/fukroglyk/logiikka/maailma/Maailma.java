@@ -21,11 +21,18 @@ public class Maailma {
         this.alueet = new ArrayList();
     }
 
+    /**
+     * Luo tämänhetkisen maailman kaikki alueet.
+     */
     public void luoMaailma() {
         luoTaverna();
         luoNiitty();
     }
 
+    /**
+     * Ennenkuin alueiden tieto luetaan tiedostoista, luo pelin ensimmäisen
+     * alueen ja lisää sen listaan alueista.
+     */
     public void luoTaverna() {
         int[] x = new int[]{13, 14, 15, 2, 13, 4, 14, 12, 13, 15, 4, 9, 13};
         int[] y = new int[]{2, 5, 7, 9, 10, 12, 12, 15, 15, 15, 17, 18, 18};
@@ -34,6 +41,10 @@ public class Maailma {
         this.alueet.add(taverna);
     }
 
+    /**
+     * Ennenkuin alueiden tieto luetaan tiedostoista, luo pelin toisen alueen ja
+     * lisää sen listaan alueista.
+     */
     public void luoNiitty() {
         int[] x = new int[]{5, 7, 6};
         int[] y = new int[]{3, 8, 2};
@@ -42,14 +53,30 @@ public class Maailma {
         this.alueet.add(niitty);
     }
 
+    /**
+     * Palauttaa pelin aktiivisen alueen id:n.
+     *
+     * @return pelin aktiivisen alueen id
+     */
     public int getCurrentZone() {
         return this.currentzone;
     }
 
+    /**
+     * Palauttaa pelin viimeisen mahdollisen alueen id:n.
+     *
+     * @return
+     */
     public int getMaxZone() {
         return this.alueet.size() - 1;
     }
 
+    /**
+     * Asettaa seuraavan alueen aktiiviseksi alueeksi jos tämänhetkinen
+     * aktiivinen alue ei ole viimeinen mahdollinen alue.
+     *
+     * @return tieto siitä muutettiinko aluetta vai ei
+     */
     public boolean setNextZone() {
         if (this.currentzone < getMaxZone()) {
             this.currentzone++;
@@ -59,8 +86,10 @@ public class Maailma {
     }
 
     /**
-     * 
-     * @return
+     * Asettaa edellisen alueen aktiiviseksi alueeksi jos tämänhetkinen
+     * aktiivinen alue ei ole aloitusalue.
+     *
+     * @return tieto siitä muutettiinko aluetta vai ei
      */
     public boolean setPrevZone() {
         if (this.currentzone > 0) {
@@ -72,6 +101,7 @@ public class Maailma {
 
     /**
      * Palauttaa alueen jolla pelaaja tällähetkellä on.
+     *
      * @return Aktiivinen alue
      */
     public Alue getCurrentAlue() {
@@ -80,6 +110,7 @@ public class Maailma {
 
     /**
      * Palauttaa aktiivisen alueen laattatiedot.
+     *
      * @return Lista alueen laatoista
      */
     public ArrayList<Laatta> getCurrentLaatat() {

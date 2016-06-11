@@ -20,8 +20,16 @@ public interface Laatta {
      */
     void toiminto();
 
+    /**
+     * Palauttaa laatan x-koordinaatin.
+     * @return x-koordinaatin arvo
+     */
     int getX();
 
+    /**
+     * Palauttaa laatan y-koordinaatin.
+     * @return y-koordinaatin arvo
+     */
     int getY();
 
 }

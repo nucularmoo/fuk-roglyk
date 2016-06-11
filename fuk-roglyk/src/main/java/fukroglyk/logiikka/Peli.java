@@ -30,12 +30,19 @@ public class Peli {
 
     }
 
+    /**
+     * Hakee aktiivisen alueen laatat, asettaa piirrettävät käyttöliittymää
+     * varten sekä luo liikkeenhallinnan näppäimistönkuuntelijaa varten.
+     */
     public void init() {
         haeAlueenLaatat();
         setPiirrettavat();
         generoiLiikkeenhallinta();
     }
 
+    /**
+     * Alustaa liikkeenhallinnan.
+     */
     public void piirra() {
         this.lh.init();
     }
@@ -108,6 +115,11 @@ public class Peli {
         this.laatat = this.maailma.getCurrentLaatat();
     }
 
+    /**
+     * Palauttaa tällä hetkellä tiedossa olevien laattojen listan.
+     *
+     * @return lista laatoista
+     */
     public ArrayList<Laatta> getLaatat() {
         return this.laatat;
     }

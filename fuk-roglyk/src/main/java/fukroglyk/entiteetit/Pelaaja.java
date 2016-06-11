@@ -45,6 +45,7 @@ public class Pelaaja extends Hahmo {
         this.y += ya;
     }
 
+    @Override
     public char getChar() {
         return '@';
     }

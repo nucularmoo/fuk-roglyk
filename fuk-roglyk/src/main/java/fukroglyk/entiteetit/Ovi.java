@@ -23,14 +23,20 @@ public class Ovi extends Piirrettava implements Laatta {
         this.alue = alue;
     }
 
+    @Override
     public int getX() {
         return this.x;
     }
 
+    @Override
     public int getY() {
         return this.y;
     }
 
+    /**
+     * Palauttaa tiedon siitä millä alueella ovi on.
+     * @return alue jolla ovi sijaitsee
+     */
     public Alue getAlue() {
         return this.alue;
     }
@@ -54,6 +60,6 @@ public class Ovi extends Piirrettava implements Laatta {
 
     @Override
     public void toiminto() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
     }
 }

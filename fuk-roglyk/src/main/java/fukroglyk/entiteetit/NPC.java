@@ -28,14 +28,24 @@ public class NPC extends Hahmo implements Laatta {
 
     }
 
+    /**
+     * Palauttaa tiedon siitä onko NPC interaktoitavissa vai ei.
+     * @return tieto siitä onko NPC:llä interaktiota tarjolla vai ei
+     */
     public boolean getMission() {
         return this.mission;
     }
 
+    /**
+     * Asettaa NPC:n tilaan jossa interaktio on tarjolla.
+     */
     public void setMission() {
         this.mission = true;
     }
 
+    /**
+     * Asettaa NPC:n tilaan jossa interaktiota ei ole tarjolla.
+     */
     public void disMission() {
         this.mission = false;
     }

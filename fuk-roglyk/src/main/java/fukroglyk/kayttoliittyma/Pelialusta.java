@@ -99,6 +99,9 @@ public class Pelialusta extends Canvas implements Runnable {
         peli.piirra();
     }
 
+    /**
+     * Sammuttaa pelin.
+     */
     public synchronized void sammuta() {
         kaynnissa = false;
     }

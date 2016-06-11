@@ -4,6 +4,12 @@ import fukroglyk.logiikka.maailma.Laatta;
 import java.awt.Color;
 import java.awt.Graphics;
 
+/**
+ * Tässä hetkessä seinä ilmaisee alueen rajoja sekä piirtää ne graafiseen
+ * käyttöliittymään.
+ *
+ * @author NukeCow
+ */
 public class Seina extends Piirrettava implements Laatta {
 
     private int x;

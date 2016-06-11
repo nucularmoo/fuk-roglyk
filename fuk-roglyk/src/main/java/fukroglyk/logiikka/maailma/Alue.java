@@ -41,6 +41,9 @@ public class Alue {
 
     }
 
+    /**
+     * Kasaa aluetta ympäröivät seinät.
+     */
     public void generoiSeinat() {
         for (int i = 0; i < boundsY + 1; i++) {
             for (int j = 0; j < boundsX + 1; j++) {
@@ -57,12 +60,22 @@ public class Alue {
         }
     }
 
+    /**
+     * Rakentaa seinän haluttuun koordinaattiin ja lisää sen listaan laatoista
+     * sekä listaan piirrettävistä.
+     *
+     * @param x x-koordinaatin arvo
+     * @param y y-koordinaatin arvo
+     */
     public void teeSeina(int x, int y) {
         Seina seina = new Seina(x, y);
         this.laatat.add(seina);
         this.piirrettavat.add(seina);
     }
 
+    /**
+     * Generoi kaikki alueen laatat.
+     */
     public void generoiLaatat() {
         generoiSeinat();
         generoiOvet();
@@ -71,6 +84,9 @@ public class Alue {
 
     }
 
+    /**
+     * Generoi alueen ovet.
+     */
     public void generoiOvet() {
         Ovi ovi = new Ovi(20, 19);
         this.laatat.add(ovi);
@@ -78,6 +94,9 @@ public class Alue {
 
     }
 
+    /**
+     * Generoi alueen hahmot alueen koordinaattilistojen mukaan.
+     */
     public void generoiHahmot() {
         Hahmogeneraattori hage = new Hahmogeneraattori(this.x, this.y);
         hage.generoi();
@@ -89,6 +108,9 @@ public class Alue {
 
     }
 
+    /**
+     * Generoi alueen tavarat.
+     */
     public void generoiTavarat() {
         Tavarageneraattori tage = new Tavarageneraattori();
         tage.generoi();
@@ -99,22 +121,47 @@ public class Alue {
         }
     }
 
+    /**
+     * Palauttaa listan alueen piirrettävistä hahmoista.
+     *
+     * @return lista piirrettävistä hahmoista
+     */
     public ArrayList<Piirrettava> getPiirrettavat() {
         return this.piirrettavat;
     }
 
+    /**
+     * Palauttaa tiedon alueelle saapuvan pelaajan halutusta x-koordinaatista.
+     *
+     * @return halutin x-koordinaatin arvo
+     */
     public int getAloitusX() {
         return this.aloitusX;
     }
 
+    /**
+     * Palauttaa tiedon alueelle saapuvan pelaajan halutusta y-koordinaatista.
+     *
+     * @return
+     */
     public int getAloitusY() {
         return this.aloitusY;
     }
 
+    /**
+     * Palauttaa tiedon x-koordinaatin mahdollisesta maksimiarvosta alueella.
+     *
+     * @return x-koordinaatin maksimiarvo
+     */
     public int getBoundsX() {
         return this.boundsX;
     }
 
+    /**
+     * Palauttaa tiedon y-koordinaatin mahdollisesta maksimiarvosta alueella.
+     *
+     * @return y-koordinaatin maksimiarvo
+     */
     public int getBoundsY() {
         return this.boundsY;
     }
