@@ -123,5 +123,9 @@ public class Peli {
     public ArrayList<Laatta> getLaatat() {
         return this.laatat;
     }
+    
+    public Laukku getLaukku() {
+        return this.laukku;
+    }
 
 }

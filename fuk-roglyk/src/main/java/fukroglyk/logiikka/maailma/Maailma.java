@@ -70,6 +70,10 @@ public class Maailma {
     public int getMaxZone() {
         return this.alueet.size() - 1;
     }
+    
+    public int getAlueidenMaara() {
+        return this.alueet.size();
+    }
 
     /**
      * Asettaa seuraavan alueen aktiiviseksi alueeksi jos tämänhetkinen
