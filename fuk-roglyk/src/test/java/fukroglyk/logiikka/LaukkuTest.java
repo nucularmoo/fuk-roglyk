@@ -71,4 +71,14 @@ public class LaukkuTest {
          assertTrue("Laukku palautuu nullina", laukku != null);
          assertTrue("Laukku ei palaudu tyhjänä", laukku.isEmpty());
      }
+     @Test
+     public void poistaTavaraPalauttaaFalseJosTavaraaEiOleLaukussa() {
+         this.lt.lisaaTavara(tt);
+         assertFalse("Palauttaa true vaikka tavaraa ei ole laukussa", this.lt.poistaTavara(5));
+     }
+     @Test
+     public void poistaTavaraPalauttaaTrueJosTavaraOnLaukussa() {
+         this.lt.lisaaTavara(tt);
+         assertTrue("Palauttaa false vaikka tavara on laukussa", this.lt.poistaTavara(2));
+     }
 }

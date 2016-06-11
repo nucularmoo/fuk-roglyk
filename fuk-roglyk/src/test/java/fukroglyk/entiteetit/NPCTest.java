@@ -75,4 +75,9 @@ public class NPCTest {
     public void piirretaankoPalauttaaTrue() {
         assertTrue("Piirto palauttaa false", tnpcdef.piirretaanko());
     }
+    
+    @Test
+    public void eiPelattavanHahmonCollisionPalauttaaAinaTrue() {
+        assertTrue("Collision on false", tnpcdef.collision());
+    }
 }

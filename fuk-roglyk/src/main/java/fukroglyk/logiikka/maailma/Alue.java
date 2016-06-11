@@ -26,6 +26,14 @@ public class Alue {
     private int aloitusY;
     private int boundsX;
     private int boundsY;
+    
+    public Alue(int id, int aX, int aY) {
+        this.id = id;
+        this.aloitusX = aX;
+        this.aloitusY = aY;
+        this.boundsX = 20;
+        this.boundsY = 20;
+    }
 
     public Alue(int id, String nimi, int[] x, int[] y, int aX, int aY) {
         this.id = id;
@@ -39,6 +47,14 @@ public class Alue {
         this.boundsX = 20;
         this.boundsY = 20;
 
+    }
+    
+    /**
+     * Palauttaa alueen id:n.
+     * @return alueen id
+     */
+    public int getId() {
+        return this.id;
     }
 
     /**

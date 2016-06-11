@@ -43,7 +43,7 @@ public class TavaraTest {
     @Test
     public void kunTavaraPoimitaanPoimittuOnTrue() {
         Tavara tt = new Tavara(1, "tt", 0, 0);
-        tt.poimi();
+        tt.toiminto();
         assertTrue("Tavaran tila on väärä", tt.poimittu());
     }
     
@@ -76,5 +76,10 @@ public class TavaraTest {
     public void piirretaankoPalauttaaOikeinKunPoimittu() {
         ttdef.poimi();
         assertFalse("Piirto palauttaa väärin", ttdef.piirretaanko());
+    }
+    
+    @Test
+    public void tavarallaEiOleCollisionPaalla() {
+        assertFalse("Tavaralla on collision päällä", ttdef.collision());
     }
 }

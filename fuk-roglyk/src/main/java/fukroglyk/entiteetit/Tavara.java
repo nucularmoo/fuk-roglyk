@@ -48,7 +48,6 @@ public class Tavara extends Piirrettava implements Laatta {
      * @return tavaran tila
      */
     public boolean poimittu() {
-        System.out.println(this.poimittu);
         return this.poimittu;
     }
 

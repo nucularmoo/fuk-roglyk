@@ -64,4 +64,21 @@ public class PelaajaTest {
     public void piirretaankoPalauttaaTrue() {
         assertTrue("Piirto palauttaa false", tpdef.piirretaanko());
     }
+    
+    @Test
+    public void pelaajanXKoordinaatinAsetustoimiiKutenPitaa() {
+        tpdef.setX(7);
+        assertTrue("Pelaajan X-koordinaatti asettuu väärin", tpdef.getX() == 7);
+    }
+    
+    @Test
+    public void pelaajanYKoordinaatinAsetusToimiiKutenPitaa() {
+        tpdef.setY(7);
+        assertTrue("Pelaajan Y-koordinaatti asettuu väärin", tpdef.getY() == 7);
+    }
+    
+    @Test
+    public void pelaajanIdPalauttaaOikein() {
+        assertTrue("Pelaajan id palautuu väärin", tpdef.getId() == 20);
+    }
 }

@@ -18,12 +18,55 @@ public class Liikkeenhallinta {
     private Alue alue;
     private boolean playerSet;
 
+    public Liikkeenhallinta() {
+        this.playerSet = false;
+    }
+
     public Liikkeenhallinta(Peli peli, Pelaaja pelaaja, ArrayList<Laatta> laatat) {
         this.peli = peli;
         this.pelaaja = pelaaja;
         this.laatat = laatat;
         this.alue = this.peli.getAlue();
         this.playerSet = false;
+    }
+
+    /**
+     * Asettaa alueen jolla tällähetkellä liikutaan.
+     *
+     * @param alue aktiivinen alue
+     */
+    public void setAlue(Alue alue) {
+        this.alue = alue;
+    }
+    
+    public int haeAlueenId() {
+        return this.alue.getId();
+    }
+
+    /**
+     * Asettaa halutun listan laatoista joilla liikutaan.
+     *
+     * @param laatat lista laatoista
+     */
+    public void setLaatat(ArrayList<Laatta> laatat) {
+        this.laatat = laatat;
+    }
+
+    /**
+     * Asettaa halutun pelaajan liikuteltavaksi hahmoksi.
+     *
+     * @param pelaaja liikuteltava pelaaja
+     */
+    public void setPelaaja(Pelaaja pelaaja) {
+        this.pelaaja = pelaaja;
+    }
+    
+    public boolean getPlayerSet() {
+        return this.playerSet;
+    }
+    
+    public void setPlayerSet() {
+        this.playerSet = true;
     }
 
     /**
@@ -41,8 +84,8 @@ public class Liikkeenhallinta {
      * @param pelaaja pelin pelaaja
      */
     public void validoiPelaaja(Pelaaja pelaaja) {
-        int px = this.pelaaja.getX();
-        int py = this.pelaaja.getY();
+        int px = haePelaajanX();
+        int py = haePelaajanY();
 
         if (lowerBoundsCheck(px, py)) {
             resetPlayerByAlue();
@@ -51,7 +94,15 @@ public class Liikkeenhallinta {
         } else if (collision(px, py)) {
             resetPlayerByAlue();
         }
-        this.playerSet = true;
+        setPlayerSet();
+    }
+    
+    public int haePelaajanX() {
+        return this.pelaaja.getX();
+    }
+    
+    public int haePelaajanY() {
+        return this.pelaaja.getY();
     }
 
     /**
@@ -129,7 +180,7 @@ public class Liikkeenhallinta {
     public boolean collision(int x, int y) {
         for (Laatta laatta : this.laatat) {
             if (x == laatta.getX() && y == laatta.getY()) {
-                if (playerSet) {
+                if (getPlayerSet()) {
                     laatta.toiminto();
                 }
                 return laatta.collision();

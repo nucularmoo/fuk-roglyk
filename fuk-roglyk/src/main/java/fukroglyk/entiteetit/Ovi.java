@@ -20,7 +20,30 @@ public class Ovi extends Piirrettava implements Laatta {
     public Ovi(int x, int y) {
         this.x = x;
         this.y = y;
+    }
+    
+    /**
+     * Asettaa ovelle alueen jolla se sijaitsee.
+     * @param alue alue jolla ovi on
+     */
+    public void setAlue(Alue alue) {
         this.alue = alue;
+    }
+    
+    /**
+     * Asettaa oven x-koordinaatin haluttuun arvoon.
+     * @param nx x-koordinaatin uusi arvo
+     */
+    public void setX(int nx) {
+        this.x = nx;
+    }
+    
+    /**
+     * Asettaa oven y-koordinaatin haluttuun arvoon.
+     * @param ny y-koordinaatin uusi arvo
+     */
+    public void setY(int ny) {
+        this.y = ny;
     }
 
     @Override
