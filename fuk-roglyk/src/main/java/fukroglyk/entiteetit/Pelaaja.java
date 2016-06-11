@@ -84,7 +84,7 @@ public class Pelaaja extends Hahmo {
 
     /**
      * Palauttaa pelaajan nimen.
-     * 
+     *
      * @return Pelaajan nimi
      */
     @Override

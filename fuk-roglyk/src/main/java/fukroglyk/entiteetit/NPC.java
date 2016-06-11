@@ -6,6 +6,7 @@ import java.awt.Graphics;
 
 /**
  * Luokka ilmentää pelissä olevia ei-pelattavissa olevia hahmoja.
+ *
  * @author NukeCow
  */
 public class NPC extends Hahmo implements Laatta {
@@ -86,7 +87,7 @@ public class NPC extends Hahmo implements Laatta {
 
     @Override
     public void toiminto() {
-        
+
     }
 
 }

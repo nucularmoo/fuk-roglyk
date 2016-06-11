@@ -37,38 +37,40 @@ public class NPCTest {
         assertTrue("Nimi palautuu väärin", tnpcdef.getNimi() == "tnpcdef");
 
     }
-    
+
     @Test
     public void npcnGetIdPalauttaaOikein() {
         assertTrue("Id palauttaa väärin", tnpcdef.getId() == 3);
     }
-    
+
     @Test
     public void npcnGetXPalauttaaOikein() {
         assertTrue("Palauttaa väärin X", tnpcdef.getX() == 4);
     }
-    
+
     @Test
     public void npcnGetYPalauttaaOikein() {
         assertTrue("Palauttaa väärin Y", tnpcdef.getY() == 78);
     }
-    
+
     @Test
     public void npcnGetCharPalauttaaOikein() {
         assertTrue("Palauttaa char väärin", tnpcdef.getChar() == '3');
     }
-    
+
     @Test
     public void setMissionAsettaaTrue() {
         tnpcdef.setMission();
         assertTrue("Mission on false", tnpcdef.getMission());
     }
+
     @Test
     public void disMissionAsettaaFalse() {
         tnpcdef.setMission();
         tnpcdef.disMission();
         assertFalse("Mission on true", tnpcdef.getMission());
     }
+
     @Test
     public void piirretaankoPalauttaaTrue() {
         assertTrue("Piirto palauttaa false", tnpcdef.piirretaanko());

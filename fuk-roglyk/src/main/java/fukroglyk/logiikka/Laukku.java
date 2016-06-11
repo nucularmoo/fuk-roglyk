@@ -5,6 +5,7 @@ import java.util.ArrayList;
 
 /**
  * Luokka käsittelee pelaajan keräämiä tavaroita.
+ *
  * @author NukeCow
  */
 public class Laukku {
@@ -17,6 +18,7 @@ public class Laukku {
 
     /**
      * Palauttaa listaesityksen pelaajan keräämistä tavaroista.
+     *
      * @return listaesitys tavaroista
      */
     public ArrayList<Tavara> getLaukku() {
@@ -26,6 +28,7 @@ public class Laukku {
 
     /**
      * Asettaa pelaajan laukun parametrina annetuksi laukuksi.
+     *
      * @param laukku listaesitys joka halutaan käytössä olevaksi laukuksi
      */
     public void setLaukku(ArrayList<Tavara> laukku) {
@@ -36,6 +39,7 @@ public class Laukku {
 
     /**
      * Lisää tavaran pelaajan laukkuun.
+     *
      * @param tavara laukkuun lisättävä tavara
      */
     public void lisaaTavara(Tavara tavara) {
@@ -46,8 +50,9 @@ public class Laukku {
     }
 
     /**
-     * Jos haluttu tavara on laukussa, poistaa tavaran pelaajan laukusta ja 
+     * Jos haluttu tavara on laukussa, poistaa tavaran pelaajan laukusta ja
      * palauttaa tiedon poistettiinko tavara vai ei.
+     *
      * @param id Poistettavan tavaran id
      * @return tieto oliko tavara laukussa vai ei
      */
@@ -63,6 +68,7 @@ public class Laukku {
 
     /**
      * Tarkistaa että tavara joka halutaan lisätä laukkuun ei ole null.
+     *
      * @param tavara mahdollisesti kyseenalainen tavara
      * @return tieto siitä onko tavara null vai ei
      */
@@ -82,6 +88,7 @@ public class Laukku {
 
     /**
      * Palauttaa laukussa olevien tavaroiden määrän.
+     *
      * @return laukun tämänhetkinen koko
      */
     public int tavaroitaLaukussa() {

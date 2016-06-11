@@ -8,6 +8,7 @@ import javax.swing.JPanel;
 
 /**
  * Piirtää pelin piirrettävät asiat graafiseen käyttöliittymään
+ *
  * @author NukeCow
  */
 public class Piirtoalusta extends JPanel {
@@ -18,7 +19,7 @@ public class Piirtoalusta extends JPanel {
         super.setBackground(Color.WHITE);
         this.piirrettavat = piirrettavat;
     }
-  
+
     protected void paintComponent(Graphics graphics) {
 
         super.paintComponent(graphics);
@@ -27,7 +28,7 @@ public class Piirtoalusta extends JPanel {
                 piirretaan.piirra(graphics);
             }
         }
-        
+
     }
 
 }

@@ -101,6 +101,9 @@ public class Peli {
         this.laukku.lisaaTavara(tavara);
     }
 
+    /**
+     * Hakee listan tämän hetken aktiivisen alueen laatoista.
+     */
     public void haeAlueenLaatat() {
         this.laatat = this.maailma.getCurrentLaatat();
     }

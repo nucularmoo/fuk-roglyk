@@ -7,7 +7,6 @@ import java.util.ArrayList;
 
 //Luokkaa käytetään vain pelin kehittämiseen, karttasuunnitteluun ja
 //toimintojen oikeellisuuden tarkistamiseen
-
 public class Karttatulostin {
 
     private char[][] kartta;
@@ -28,7 +27,7 @@ public class Karttatulostin {
     public void tavaraLista(ArrayList<Tavara> tavarat) {
         this.tavarat = tavarat;
     }
-    
+
     public void oviLista(ArrayList<Ovi> ovet) {
         this.ovet = ovet;
     }
@@ -79,6 +78,7 @@ public class Karttatulostin {
             this.kartta[hahmo.getY()][hahmo.getX()] = hahmo.getChar();
         }
     }
+
     public void lisaaOvet() {
         for (Ovi ovi : this.ovet) {
             this.kartta[ovi.getY()][ovi.getX()] = 'o';

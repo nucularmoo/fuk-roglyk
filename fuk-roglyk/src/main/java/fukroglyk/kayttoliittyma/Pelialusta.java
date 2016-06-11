@@ -9,6 +9,7 @@ import java.awt.Dimension;
 
 /**
  * Luokka luo ja hallinnoi graafista käyttöliittymää.
+ *
  * @author NukeCow
  */
 public class Pelialusta extends Canvas implements Runnable {
@@ -75,6 +76,7 @@ public class Pelialusta extends Canvas implements Runnable {
     /**
      * Luo ikkunan komponentit piirrettävien piirtämiselle sekä
      * näppäimistökomnetojen kuuntelemiselle.
+     *
      * @param container
      */
     public void luoKomponetit(Container container) {

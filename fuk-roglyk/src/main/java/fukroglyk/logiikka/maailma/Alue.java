@@ -38,7 +38,7 @@ public class Alue {
         this.aloitusY = aY;
         this.boundsX = 20;
         this.boundsY = 20;
-        
+
     }
 
     public void generoiSeinat() {
@@ -62,20 +62,20 @@ public class Alue {
         this.laatat.add(seina);
         this.piirrettavat.add(seina);
     }
-    
+
     public void generoiLaatat() {
         generoiSeinat();
         generoiOvet();
         generoiTavarat();
         generoiHahmot();
-        
+
     }
-    
+
     public void generoiOvet() {
         Ovi ovi = new Ovi(20, 19);
         this.laatat.add(ovi);
         this.piirrettavat.add(ovi);
-        
+
     }
 
     public void generoiHahmot() {
@@ -102,19 +102,19 @@ public class Alue {
     public ArrayList<Piirrettava> getPiirrettavat() {
         return this.piirrettavat;
     }
-    
+
     public int getAloitusX() {
         return this.aloitusX;
     }
-    
+
     public int getAloitusY() {
         return this.aloitusY;
     }
-    
+
     public int getBoundsX() {
         return this.boundsX;
     }
-    
+
     public int getBoundsY() {
         return this.boundsY;
     }

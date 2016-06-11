@@ -1,4 +1,3 @@
-
 package fukroglyk.entiteetit;
 
 import fukroglyk.logiikka.maailma.Laatta;
@@ -6,15 +5,14 @@ import java.awt.Color;
 import java.awt.Graphics;
 
 public class Seina extends Piirrettava implements Laatta {
-    
+
     private int x;
     private int y;
-    
+
     public Seina(int x, int y) {
         this.x = x;
         this.y = y;
     }
-    
 
     @Override
     public void piirra(Graphics graphics) {
@@ -34,7 +32,7 @@ public class Seina extends Piirrettava implements Laatta {
 
     @Override
     public void toiminto() {
-        
+
     }
 
     @Override
@@ -46,5 +44,5 @@ public class Seina extends Piirrettava implements Laatta {
     public int getY() {
         return this.y;
     }
-    
+
 }

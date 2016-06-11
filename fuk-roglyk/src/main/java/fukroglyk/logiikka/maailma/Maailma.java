@@ -58,6 +58,10 @@ public class Maailma {
         return false;
     }
 
+    /**
+     * 
+     * @return
+     */
     public boolean setPrevZone() {
         if (this.currentzone > 0) {
             this.currentzone--;
@@ -66,10 +70,18 @@ public class Maailma {
         return false;
     }
 
+    /**
+     * Palauttaa alueen jolla pelaaja tällähetkellä on.
+     * @return Aktiivinen alue
+     */
     public Alue getCurrentAlue() {
         return this.alueet.get(this.currentzone);
     }
 
+    /**
+     * Palauttaa aktiivisen alueen laattatiedot.
+     * @return Lista alueen laatoista
+     */
     public ArrayList<Laatta> getCurrentLaatat() {
         return getCurrentAlue().getLaatat();
     }

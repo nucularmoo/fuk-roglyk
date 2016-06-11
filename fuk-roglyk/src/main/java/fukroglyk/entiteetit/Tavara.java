@@ -6,6 +6,7 @@ import java.awt.Graphics;
 
 /**
  * Luokka ilmentää pelissä olevia tavaroita ja niiden tilaa maailmassa.
+ *
  * @author NukeCow
  */
 public class Tavara extends Piirrettava implements Laatta {
@@ -43,6 +44,7 @@ public class Tavara extends Piirrettava implements Laatta {
 
     /**
      * Palauttaa onko tavara poimittu vai ei.
+     *
      * @return tavaran tila
      */
     public boolean poimittu() {

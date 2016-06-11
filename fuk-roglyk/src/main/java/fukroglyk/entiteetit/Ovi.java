@@ -8,6 +8,7 @@ import java.awt.Graphics;
 /**
  * Luokka kuvaa alueilla sijaitsevia siirtymäpisteitä sekä aluetta joille niistä
  * siirrytään.
+ *
  * @author NukeCow
  */
 public class Ovi extends Piirrettava implements Laatta {
@@ -21,16 +22,15 @@ public class Ovi extends Piirrettava implements Laatta {
         this.y = y;
         this.alue = alue;
     }
-    
+
     public int getX() {
         return this.x;
     }
-    
+
     public int getY() {
         return this.y;
     }
-    
-    
+
     public Alue getAlue() {
         return this.alue;
     }

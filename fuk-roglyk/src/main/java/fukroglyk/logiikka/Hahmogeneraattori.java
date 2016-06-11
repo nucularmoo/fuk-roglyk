@@ -6,6 +6,7 @@ import java.util.ArrayList;
 
 /**
  * Luokka generoi, listaa ja palauttaa maailman alueilta löytyvät hahmot.
+ *
  * @author NukeCow
  */
 public class Hahmogeneraattori {
