@@ -1,6 +1,7 @@
 package fukroglyk.entiteetit;
 
-import fukroglyk.logiikka.Alue;
+import fukroglyk.logiikka.maailma.Alue;
+import fukroglyk.logiikka.maailma.Laatta;
 import java.awt.Color;
 import java.awt.Graphics;
 
@@ -9,7 +10,7 @@ import java.awt.Graphics;
  * siirrytään.
  * @author NukeCow
  */
-public class Ovi extends Piirrettava {
+public class Ovi extends Piirrettava implements Laatta {
 
     private int x;
     private int y;
@@ -29,6 +30,7 @@ public class Ovi extends Piirrettava {
         return this.y;
     }
     
+    
     public Alue getAlue() {
         return this.alue;
     }
@@ -43,5 +45,15 @@ public class Ovi extends Piirrettava {
     @Override
     public boolean piirretaanko() {
         return true;
+    }
+
+    @Override
+    public boolean collision() {
+        return false;
+    }
+
+    @Override
+    public void toiminto() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }

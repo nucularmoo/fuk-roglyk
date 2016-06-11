@@ -1,5 +1,6 @@
 package fukroglyk.entiteetit;
 
+import fukroglyk.logiikka.maailma.Laatta;
 import java.awt.Color;
 import java.awt.Graphics;
 
@@ -7,7 +8,7 @@ import java.awt.Graphics;
  * Luokka ilmentää pelissä olevia ei-pelattavissa olevia hahmoja.
  * @author NukeCow
  */
-public class NPC extends Hahmo {
+public class NPC extends Hahmo implements Laatta {
 
     private int id;
     private int x;
@@ -76,6 +77,16 @@ public class NPC extends Hahmo {
     @Override
     public boolean piirretaanko() {
         return this.draw;
+    }
+
+    @Override
+    public boolean collision() {
+        return true;
+    }
+
+    @Override
+    public void toiminto() {
+        
     }
 
 }

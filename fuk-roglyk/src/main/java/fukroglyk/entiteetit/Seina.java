@@ -1,10 +1,11 @@
 
 package fukroglyk.entiteetit;
 
+import fukroglyk.logiikka.maailma.Laatta;
 import java.awt.Color;
 import java.awt.Graphics;
 
-public class Seina extends Piirrettava {
+public class Seina extends Piirrettava implements Laatta {
     
     private int x;
     private int y;
@@ -13,6 +14,7 @@ public class Seina extends Piirrettava {
         this.x = x;
         this.y = y;
     }
+    
 
     @Override
     public void piirra(Graphics graphics) {
@@ -23,6 +25,26 @@ public class Seina extends Piirrettava {
     @Override
     public boolean piirretaanko() {
         return true;
+    }
+
+    @Override
+    public boolean collision() {
+        return true;
+    }
+
+    @Override
+    public void toiminto() {
+        
+    }
+
+    @Override
+    public int getX() {
+        return this.x;
+    }
+
+    @Override
+    public int getY() {
+        return this.y;
     }
     
 }

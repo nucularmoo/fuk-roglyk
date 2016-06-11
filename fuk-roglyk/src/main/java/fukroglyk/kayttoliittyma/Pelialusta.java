@@ -32,11 +32,18 @@ public class Pelialusta extends Canvas implements Runnable {
         this.peli.init();
     }
 
+    /**
+     * Alustaa ikkunan tiedot ja rakentaa kehyksen jossa pelin graafinen
+     * toteutus tapahtuu.
+     */
     public void init() {
         asetaIkkunanKoko();
         rakennaKehys();
     }
 
+    /**
+     * Asettaa pelin ikkunan maksimi-, minimi- ja suosituskoon mitat.
+     */
     public void asetaIkkunanKoko() {
         // asetetaan ikkunan koko
         setMinimumSize(new Dimension(WIDTH * SCALE, HEIGHT * SCALE));
@@ -45,6 +52,9 @@ public class Pelialusta extends Canvas implements Runnable {
 
     }
 
+    /**
+     * Rakentaa pelin ikkunan ja tekee siitä näkyvän.
+     */
     public void rakennaKehys() {
         //luodaan ikkuna ja sen sulkeutuminen
         frame = new JFrame(NAME);
@@ -62,15 +72,23 @@ public class Pelialusta extends Canvas implements Runnable {
 
     }
 
+    /**
+     * Luo ikkunan komponentit piirrettävien piirtämiselle sekä
+     * näppäimistökomnetojen kuuntelemiselle.
+     * @param container
+     */
     public void luoKomponetit(Container container) {
         //Haetaan peliltä lista piirrettävistä
         Piirtoalusta piirtoalusta = new Piirtoalusta(peli.getPiirrettavat());
         container.add(piirtoalusta);
         //Annetaan näppäimistönkuuntelijalle pelin kartta sekä äsken luotu piirtoalusta
-        Nappaimistonkuuntelija kuuntelija = new Nappaimistonkuuntelija(peli.getKartta(), piirtoalusta);
+        Nappaimistonkuuntelija kuuntelija = new Nappaimistonkuuntelija(peli.getLH(), piirtoalusta);
         frame.addKeyListener(kuuntelija);
     }
 
+    /**
+     * Käynnistää pelin
+     */
     public synchronized void kaynnista() {
         init();
         kaynnissa = true;

@@ -1,12 +1,13 @@
 package fukroglyk.entiteetit;
 
+import fukroglyk.logiikka.maailma.Laatta;
 import java.awt.Graphics;
 
 /**
  * Abstrakti luokka kuvaa pelissä olevien hahmojen ominaisuuksia.
  * @author NukeCow
  */
-public abstract class Hahmo extends Piirrettava {
+public abstract class Hahmo extends Piirrettava implements Laatta {
 
     private int id;
     private int x;
@@ -46,5 +47,15 @@ public abstract class Hahmo extends Piirrettava {
     
     @Override
     public abstract void piirra(Graphics graphics);
+
+    @Override
+    public boolean collision() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void toiminto() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 
 }

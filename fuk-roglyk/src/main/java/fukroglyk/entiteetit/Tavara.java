@@ -1,5 +1,6 @@
 package fukroglyk.entiteetit;
 
+import fukroglyk.logiikka.maailma.Laatta;
 import java.awt.Color;
 import java.awt.Graphics;
 
@@ -7,7 +8,7 @@ import java.awt.Graphics;
  * Luokka ilmentää pelissä olevia tavaroita ja niiden tilaa maailmassa.
  * @author NukeCow
  */
-public class Tavara extends Piirrettava {
+public class Tavara extends Piirrettava implements Laatta {
 
     private int id;
     private String nimi;
@@ -40,13 +41,19 @@ public class Tavara extends Piirrettava {
         return this.nimi;
     }
 
+    /**
+     * Palauttaa onko tavara poimittu vai ei.
+     * @return tavaran tila
+     */
     public boolean poimittu() {
         System.out.println(this.poimittu);
         return this.poimittu;
     }
 
+    /**
+     * Poimittaessa tavara asettaa tavaran poimituksi.
+     */
     public void poimi() {
-
         this.poimittu = true;
     }
 
@@ -64,6 +71,16 @@ public class Tavara extends Piirrettava {
     @Override
     public boolean piirretaanko() {
         return !this.poimittu;
+    }
+
+    @Override
+    public boolean collision() {
+        return false;
+    }
+
+    @Override
+    public void toiminto() {
+        poimi();
     }
 
 }
