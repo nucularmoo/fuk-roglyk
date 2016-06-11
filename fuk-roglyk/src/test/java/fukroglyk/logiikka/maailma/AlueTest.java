@@ -8,6 +8,8 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class AlueTest {
+    
+    Alue aluetest;
 
     public AlueTest() {
     }
@@ -22,6 +24,7 @@ public class AlueTest {
 
     @Before
     public void setUp() {
+        this.aluetest = new Alue(0, 2, 2);
     }
 
     @After

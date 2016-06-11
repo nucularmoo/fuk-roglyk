@@ -25,7 +25,7 @@ under the License.
     <language>en-us</language>
     <copyright>&#169;2016</copyright>
     <item>
-      <title>File: 15,
+      <title>File: 21,
              Errors: 0,
              Warnings: 0,
              Infos: 0
@@ -61,6 +61,20 @@ under the License.
                           <tr>
                 <td>
                   <a href="${project.url}/checkstyle.html#fukroglyk.entiteetit.NPC.java">fukroglyk/entiteetit/NPC.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#fukroglyk.logiikka.maailma.Alue.java">fukroglyk/logiikka/maailma/Alue.java</a>
                 </td>
                 <td>
                   0
@@ -130,7 +144,7 @@ under the License.
               </tr>
                           <tr>
                 <td>
-                  <a href="${project.url}/checkstyle.html#fukroglyk.logiikka.Kartta.java">fukroglyk/logiikka/Kartta.java</a>
+                  <a href="${project.url}/checkstyle.html#fukroglyk.logiikka.Laukku.java">fukroglyk/logiikka/Laukku.java</a>
                 </td>
                 <td>
                   0
@@ -144,7 +158,21 @@ under the License.
               </tr>
                           <tr>
                 <td>
-                  <a href="${project.url}/checkstyle.html#fukroglyk.logiikka.Laukku.java">fukroglyk/logiikka/Laukku.java</a>
+                  <a href="${project.url}/checkstyle.html#fukroglyk.entiteetit.Ovi.java">fukroglyk/entiteetit/Ovi.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#fukroglyk.logiikka.maailma.Maailma.java">fukroglyk/logiikka/maailma/Maailma.java</a>
                 </td>
                 <td>
                   0
@@ -214,7 +242,63 @@ under the License.
               </tr>
                           <tr>
                 <td>
+                  <a href="${project.url}/checkstyle.html#fukroglyk.logiikka.Liikkeenhallinta.java">fukroglyk/logiikka/Liikkeenhallinta.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#fukroglyk.entiteetit.Seina.java">fukroglyk/entiteetit/Seina.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
                   <a href="${project.url}/checkstyle.html#fukroglyk.entiteetit.Piirrettava.java">fukroglyk/entiteetit/Piirrettava.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#fukroglyk.logiikka.maailma.Laatta.java">fukroglyk/logiikka/maailma/Laatta.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#fukroglyk.logiikka.maailma.Toiminto.java">fukroglyk/logiikka/maailma/Toiminto.java</a>
                 </td>
                 <td>
                   0

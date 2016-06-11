@@ -12,3 +12,6 @@ Päivä | Tunnit | Kuvaus
 30.05.2016 | 6h | Refaktorointia, testejä ja hahmot piirtymään ikkunaan
 31.05.2016 | 8h | Refaktorointia, koodia, testejä
 02.06.2016 | 2h | Luokkakaavio, dokumentaatio, palautus
+09.06.2016 | 5h | Javadocseja ja refaktoroinnin suunnittelua
+10.06.2016 | 8h | Javadocseja, refaktorointia ja maailman rakenteen hahmottelua
+11.06.2016 | 8h | Javadocseja, testejä, dokumentaatio, palautus, koodia

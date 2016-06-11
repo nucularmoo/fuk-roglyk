@@ -20,6 +20,6 @@ Pelaaja
 - Pelissä olevien poimittavien esineiden poimiminen
 - Pelissä olevien käytettävien esineiden käyttäminen/objektien aktivaatio
 
-###Luokkakaavio (Deadline 3):
+###Luokkakaavio (Deadline 4):
 
-![Luokkaakavio DL 2](Luokkakaavio_v2.png)
+![Luokkaakavio DL 4](Luokkakaavio_v3.png)
