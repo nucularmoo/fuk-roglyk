@@ -25,11 +25,11 @@ public class NPC extends Hahmo implements Laatta {
         this.y = y;
         this.draw = true;
         this.mission = false;
-
     }
 
     /**
      * Palauttaa tiedon siitä onko NPC interaktoitavissa vai ei.
+     *
      * @return tieto siitä onko NPC:llä interaktiota tarjolla vai ei
      */
     public boolean getMission() {
@@ -97,7 +97,9 @@ public class NPC extends Hahmo implements Laatta {
 
     @Override
     public void toiminto() {
-
+        if (getMission()) {
+            disMission();
+        }
     }
 
 }

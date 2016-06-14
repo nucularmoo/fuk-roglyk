@@ -35,7 +35,8 @@ public class LiikkeenhallintaTest {
     public void setUp() {
         this.lhtdef = new Liikkeenhallinta();
         this.pelaaja = new Pelaaja(0, "tp", 5, 7);
-        this.alue = new Alue(10, 1, 1);
+        this.alue = new Alue();
+        this.alue.setId(10);
         this.testilaattalista = new ArrayList();
         this.testilaatta = new NPC(1, "testinpc", 5, 7);
         this.testilaattalista.add(this.testilaatta);

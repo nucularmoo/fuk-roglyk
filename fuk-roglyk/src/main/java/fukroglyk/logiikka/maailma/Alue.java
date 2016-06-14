@@ -22,35 +22,37 @@ public class Alue {
     private int[] y;
     private ArrayList<Piirrettava> piirrettavat;
     private ArrayList<Laatta> laatat;
+    private ArrayList<Ovi> ovet;
     private int aloitusX;
     private int aloitusY;
     private int boundsX;
     private int boundsY;
-    
-    public Alue(int id, int aX, int aY) {
-        this.id = id;
-        this.aloitusX = aX;
-        this.aloitusY = aY;
+
+    public Alue() {
+        this.aloitusX = 1;
+        this.aloitusY = 1;
         this.boundsX = 20;
         this.boundsY = 20;
-    }
-
-    public Alue(int id, String nimi, int[] x, int[] y, int aX, int aY) {
-        this.id = id;
-        this.nimi = nimi;
         this.piirrettavat = new ArrayList();
         this.laatat = new ArrayList();
-        this.x = x;
-        this.y = y;
-        this.aloitusX = aX;
-        this.aloitusY = aY;
-        this.boundsX = 20;
-        this.boundsY = 20;
-
+        this.ovet = new ArrayList();
     }
-    
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public void setHahmoX(int[] x) {
+        this.x = x;
+    }
+
+    public void setHahmoY(int[] y) {
+        this.y = y;
+    }
+
     /**
      * Palauttaa alueen id:n.
+     *
      * @return alueen id
      */
     public int getId() {
@@ -94,20 +96,8 @@ public class Alue {
      */
     public void generoiLaatat() {
         generoiSeinat();
-        generoiOvet();
         generoiTavarat();
         generoiHahmot();
-
-    }
-
-    /**
-     * Generoi alueen ovet.
-     */
-    public void generoiOvet() {
-        Ovi ovi = new Ovi(20, 19);
-        this.laatat.add(ovi);
-        this.piirrettavat.add(ovi);
-
     }
 
     /**
@@ -121,7 +111,6 @@ public class Alue {
             this.laatat.add(hahmo);
             this.piirrettavat.add(hahmo);
         }
-
     }
 
     /**
@@ -184,6 +173,22 @@ public class Alue {
 
     ArrayList<Laatta> getLaatat() {
         return this.laatat;
+    }
+
+    public void teeOvi(int x, int y, int siirtyma, int nx, int ny) {
+        Ovi ovi = new Ovi(x, y);
+        ovi.setnx(nx);
+        ovi.setny(ny);
+        ovi.setAlue(this);
+        ovi.setSiirtyma(siirtyma);
+        this.ovet.add(ovi);
+        this.laatat.add(ovi);
+        this.piirrettavat.add(ovi);
+
+    }
+
+    public ArrayList<Ovi> getOvet() {
+        return this.ovet;
     }
 
 }

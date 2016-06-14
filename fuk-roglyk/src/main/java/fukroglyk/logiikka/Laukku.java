@@ -23,7 +23,6 @@ public class Laukku {
      */
     public ArrayList<Tavara> getLaukku() {
         return this.laukku;
-
     }
 
     /**

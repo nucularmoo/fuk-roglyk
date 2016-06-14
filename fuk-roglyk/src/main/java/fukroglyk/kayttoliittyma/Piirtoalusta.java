@@ -19,6 +19,10 @@ public class Piirtoalusta extends JPanel {
         super.setBackground(Color.WHITE);
         this.piirrettavat = piirrettavat;
     }
+    
+    public void setPiirrettavat(ArrayList<Piirrettava> pir) {
+        this.piirrettavat = pir;
+    }
 
     protected void paintComponent(Graphics graphics) {
 

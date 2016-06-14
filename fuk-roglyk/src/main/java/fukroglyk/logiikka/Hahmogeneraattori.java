@@ -31,10 +31,6 @@ public class Hahmogeneraattori {
 
     public void generoi() {
 
-        generoiTaverna();
-    }
-
-    public void generoiTaverna() {
         alustaHahmot();
 
         for (int i = 0; i < x.length; i++) {
@@ -45,7 +41,6 @@ public class Hahmogeneraattori {
                 npc.setMission();
             }
         }
-
     }
 
     public ArrayList<Hahmo> getHahmot() {

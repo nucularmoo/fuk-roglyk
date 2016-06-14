@@ -26,6 +26,8 @@ public class Pelialusta extends Canvas implements Runnable {
     public boolean kaynnissa = false;
 
     public Peli peli;
+    
+    public Piirtoalusta piirtoalusta;
 
     public Pelialusta() {
 
@@ -81,10 +83,10 @@ public class Pelialusta extends Canvas implements Runnable {
      */
     public void luoKomponetit(Container container) {
         //Haetaan peliltä lista piirrettävistä
-        Piirtoalusta piirtoalusta = new Piirtoalusta(peli.getPiirrettavat());
-        container.add(piirtoalusta);
+        this.piirtoalusta = new Piirtoalusta(peli.getPiirrettavat());
+        container.add(this.piirtoalusta);
         //Annetaan näppäimistönkuuntelijalle pelin kartta sekä äsken luotu piirtoalusta
-        Nappaimistonkuuntelija kuuntelija = new Nappaimistonkuuntelija(peli.getLH(), piirtoalusta);
+        Nappaimistonkuuntelija kuuntelija = new Nappaimistonkuuntelija(peli.getLH(), this.piirtoalusta);
         frame.addKeyListener(kuuntelija);
     }
 
@@ -95,8 +97,13 @@ public class Pelialusta extends Canvas implements Runnable {
         init();
         kaynnissa = true;
         new Thread(this).start();
+        while (kaynnissa) {
 
-        peli.piirra();
+            peli.piirra();
+            this.piirtoalusta.setPiirrettavat(peli.getPiirrettavat());
+            
+            
+        }
     }
 
     /**

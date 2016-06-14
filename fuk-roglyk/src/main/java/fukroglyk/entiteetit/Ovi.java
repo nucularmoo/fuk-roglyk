@@ -1,5 +1,6 @@
 package fukroglyk.entiteetit;
 
+import fukroglyk.logiikka.Alueenhallinta;
 import fukroglyk.logiikka.maailma.Alue;
 import fukroglyk.logiikka.maailma.Laatta;
 import java.awt.Color;
@@ -15,31 +16,75 @@ public class Ovi extends Piirrettava implements Laatta {
 
     private int x;
     private int y;
+    private int nx;
+    private int ny;
+    private int siirtyma;
     private Alue alue;
+    private Ovi uloskaynti;
+    private Alueenhallinta ah;
 
     public Ovi(int x, int y) {
         this.x = x;
         this.y = y;
     }
-    
+
+    public void setAlueenhallinta(Alueenhallinta ah) {
+        this.ah = ah;
+    }
+
+    public void setnx(int nx) {
+        this.nx = this.x + nx;
+    }
+
+    public void setny(int ny) {
+        this.ny = this.y + ny;
+    }
+
+    public int getnx() {
+        return this.nx;
+    }
+
+    public int getny() {
+        return this.ny;
+    }
+
     /**
      * Asettaa ovelle alueen jolla se sijaitsee.
+     *
      * @param alue alue jolla ovi on
      */
     public void setAlue(Alue alue) {
         this.alue = alue;
     }
-    
+
+    public void setSiirtyma(int siirtyma) {
+        this.siirtyma = siirtyma;
+    }
+
+    public int getSiirtyma() {
+        return this.siirtyma;
+    }
+
+    public void setUloskaynti(Ovi uloskaynti) {
+        this.uloskaynti = uloskaynti;
+    }
+
+    public Ovi getUloskaynti() {
+        return this.uloskaynti;
+    }
+
     /**
      * Asettaa oven x-koordinaatin haluttuun arvoon.
+     *
      * @param nx x-koordinaatin uusi arvo
      */
     public void setX(int nx) {
         this.x = nx;
     }
-    
+
     /**
      * Asettaa oven y-koordinaatin haluttuun arvoon.
+     *
      * @param ny y-koordinaatin uusi arvo
      */
     public void setY(int ny) {
@@ -58,6 +103,7 @@ public class Ovi extends Piirrettava implements Laatta {
 
     /**
      * Palauttaa tiedon siitä millä alueella ovi on.
+     *
      * @return alue jolla ovi sijaitsee
      */
     public Alue getAlue() {
@@ -66,7 +112,7 @@ public class Ovi extends Piirrettava implements Laatta {
 
     @Override
     public void piirra(Graphics graphics) {
-        graphics.setColor(Color.YELLOW);
+        graphics.setColor(Color.red);
         graphics.fillOval(x * 15, y * 15, 10, 10);
 
     }
@@ -83,6 +129,21 @@ public class Ovi extends Piirrettava implements Laatta {
 
     @Override
     public void toiminto() {
-        
+        this.ah.vaihdaAluettaByOvi(this.uloskaynti);
+    }
+
+    public boolean equals(Object o) {
+
+        if (o == null) {
+            return false;
+        }
+        if (getClass() != o.getClass()) {
+            return false;
+        }
+        Ovi verrattava = (Ovi) o;
+        if (this.x != verrattava.getX() || this.y != verrattava.getY()) {
+            return false;
+        }
+        return true;
     }
 }

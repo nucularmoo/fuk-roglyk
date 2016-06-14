@@ -66,7 +66,8 @@ public class OviTest {
     
     @Test
     public void oviPalauttaaSilleAsetetunAlueen() {
-        Alue alue = new Alue(0, 1, 1);
+        Alue alue = new Alue();
+        alue.setId(0);
         this.otdef.setAlue(alue);
         assertTrue("Alueen asetus ei toimi", this.otdef.getAlue().getId() == 0);
     }

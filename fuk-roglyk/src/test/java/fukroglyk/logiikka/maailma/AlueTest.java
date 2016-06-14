@@ -24,7 +24,7 @@ public class AlueTest {
 
     @Before
     public void setUp() {
-        this.aluetest = new Alue(0, 2, 2);
+       
     }
 
     @After

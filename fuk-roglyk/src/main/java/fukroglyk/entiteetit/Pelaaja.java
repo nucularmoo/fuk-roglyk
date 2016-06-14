@@ -4,7 +4,7 @@ import java.awt.Color;
 import java.awt.Graphics;
 
 /**
- * Luokka ilmentää pelin pelattavaa hahmoa
+ * Luokka ilmentää pelin pelattavaa hahmoa.
  *
  * @author NukeCow
  */

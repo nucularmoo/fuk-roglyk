@@ -19,15 +19,14 @@ public class Liikkeenhallinta {
     private boolean playerSet;
 
     public Liikkeenhallinta() {
-        this.playerSet = false;
+
     }
 
-    public Liikkeenhallinta(Peli peli, Pelaaja pelaaja, ArrayList<Laatta> laatat) {
-        this.peli = peli;
-        this.pelaaja = pelaaja;
-        this.laatat = laatat;
-        this.alue = this.peli.getAlue();
+    public Liikkeenhallinta(Peli peli) {
         this.playerSet = false;
+        this.peli = peli;
+        this.alue = this.peli.getAlue();
+        this.laatat = new ArrayList();
     }
 
     /**
@@ -38,7 +37,7 @@ public class Liikkeenhallinta {
     public void setAlue(Alue alue) {
         this.alue = alue;
     }
-    
+
     public int haeAlueenId() {
         return this.alue.getId();
     }
@@ -60,11 +59,11 @@ public class Liikkeenhallinta {
     public void setPelaaja(Pelaaja pelaaja) {
         this.pelaaja = pelaaja;
     }
-    
+
     public boolean getPlayerSet() {
         return this.playerSet;
     }
-    
+
     public void setPlayerSet() {
         this.playerSet = true;
     }
@@ -74,7 +73,9 @@ public class Liikkeenhallinta {
      * paikassa.
      */
     public void init() {
-        validoiPelaaja(this.pelaaja);
+        if (!getPlayerSet()) {
+            validoiPelaaja(this.pelaaja);
+        }
     }
 
     /**
@@ -96,11 +97,11 @@ public class Liikkeenhallinta {
         }
         setPlayerSet();
     }
-    
+
     public int haePelaajanX() {
         return this.pelaaja.getX();
     }
-    
+
     public int haePelaajanY() {
         return this.pelaaja.getY();
     }

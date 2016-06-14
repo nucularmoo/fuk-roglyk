@@ -6,10 +6,11 @@ import fukroglyk.entiteetit.Pelaaja;
 import fukroglyk.entiteetit.Piirrettava;
 import fukroglyk.entiteetit.Tavara;
 import fukroglyk.logiikka.maailma.Laatta;
+import fukroglyk.logiikka.maailma.Maailmakehys;
 import java.util.ArrayList;
 
 public class Peli {
-
+    
     private Pelaaja pelaaja;
     private Laukku laukku;
     private ArrayList<Piirrettava> piirrettavat;
@@ -17,17 +18,25 @@ public class Peli {
     private Maailma maailma;
     private Alue alue;
     private Liikkeenhallinta lh;
-
+    private Alueenhallinta ah;
+    private Maailmakehys mk;
+    
     public Peli() {
-
+        
         this.pelaaja = new Pelaaja(0, "Pelaaja", 10, -1);
         this.laukku = new Laukku();
         this.piirrettavat = new ArrayList();
         this.laatat = new ArrayList();
         this.maailma = new Maailma(this.pelaaja);
+        
+        this.ah = new Alueenhallinta(this.maailma);
+        this.mk = new Maailmakehys();
+        this.maailma.setMaailmakehys(this.mk);
+        this.maailma.setAlueenhallinta(this.ah);
+        this.maailma.setPeli(this);
         this.maailma.luoMaailma();
         this.alue = getAlue();
-
+        
     }
 
     /**
@@ -35,9 +44,22 @@ public class Peli {
      * varten sekä luo liikkeenhallinnan näppäimistönkuuntelijaa varten.
      */
     public void init() {
+        
         haeAlueenLaatat();
         setPiirrettavat();
         generoiLiikkeenhallinta();
+        setLiikkeenhallinta();
+        setAlueenhallinta();
+    }
+    
+    public void refreshAlue() {
+        setAlue(getAlue());
+        this.lh.setAlue(this.alue);
+        haeAlueenLaatat();
+        setPiirrettavat();
+        setLiikkeenhallinta();
+        setAlueenhallinta();
+        
     }
 
     /**
@@ -78,7 +100,21 @@ public class Peli {
      * Luo maailman tapahtumien hallinnoivan kartta-olion.
      */
     public void generoiLiikkeenhallinta() {
-        this.lh = new Liikkeenhallinta(this, this.pelaaja, this.laatat);
+        this.lh = new Liikkeenhallinta(this);
+        this.lh.setPelaaja(pelaaja);
+    }
+    
+    public void setLiikkeenhallinta() {
+        this.lh.setLaatat(this.laatat);
+        this.lh.init();
+    }
+    
+    public void generoiAlueenhallinta() {
+        this.ah = new Alueenhallinta(this.maailma);
+    }
+    
+    public void setAlueenhallinta() {
+        
     }
 
     /**
@@ -95,6 +131,7 @@ public class Peli {
      * piirrettävien joukkoon.
      */
     public void setPiirrettavat() {
+        
         this.piirrettavat = maailma.getPiirrettavat();
         this.piirrettavat.add(pelaaja);
     }
@@ -127,5 +164,5 @@ public class Peli {
     public Laukku getLaukku() {
         return this.laukku;
     }
-
+    
 }
