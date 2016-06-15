@@ -58,7 +58,6 @@ public class Maailma {
     }
 
     public void setCurrentAlue(Alue alue) {
-
         this.currentalue = alue;
     }
 
