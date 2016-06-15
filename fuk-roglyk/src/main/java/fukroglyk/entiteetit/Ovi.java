@@ -7,8 +7,8 @@ import java.awt.Color;
 import java.awt.Graphics;
 
 /**
- * Luokka kuvaa alueilla sijaitsevia siirtymäpisteitä sekä aluetta joille niistä
- * siirrytään.
+ * Luokka kuvaa siirtymäpisteitä joita käyttäen pelissä liikutaan alueelta 
+ * toiselle.
  *
  * @author NukeCow
  */
@@ -16,8 +16,6 @@ public class Ovi extends Piirrettava implements Laatta {
 
     private int x;
     private int y;
-    private int nx;
-    private int ny;
     private int siirtyma;
     private Alue alue;
     private Ovi uloskaynti;
@@ -30,22 +28,6 @@ public class Ovi extends Piirrettava implements Laatta {
 
     public void setAlueenhallinta(Alueenhallinta ah) {
         this.ah = ah;
-    }
-
-    public void setnx(int nx) {
-        this.nx = this.x + nx;
-    }
-
-    public void setny(int ny) {
-        this.ny = this.y + ny;
-    }
-
-    public int getnx() {
-        return this.nx;
-    }
-
-    public int getny() {
-        return this.ny;
     }
 
     /**

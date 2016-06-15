@@ -175,10 +175,8 @@ public class Alue {
         return this.laatat;
     }
 
-    public void teeOvi(int x, int y, int siirtyma, int nx, int ny) {
+    public void teeOvi(int x, int y, int siirtyma) {
         Ovi ovi = new Ovi(x, y);
-        ovi.setnx(nx);
-        ovi.setny(ny);
         ovi.setAlue(this);
         ovi.setSiirtyma(siirtyma);
         this.ovet.add(ovi);
