@@ -68,7 +68,7 @@ public class Tavara extends Piirrettava implements Laatta {
     public void piirra(Graphics graphics) {
         if (poimittu() && piirretaanko()) {
             graphics.setColor(Color.BLACK);
-            graphics.drawString("Poimit juuri: " + this.nimi, 20, 400);
+            graphics.drawString("You picked up: " + this.nimi, 20, 400);
             this.draw = false;
         }
         graphics.setColor(Color.BLACK);

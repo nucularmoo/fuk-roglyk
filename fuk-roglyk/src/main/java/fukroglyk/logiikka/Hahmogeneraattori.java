@@ -19,13 +19,6 @@ public class Hahmogeneraattori {
     private int[] x;
     private int[] y;
 
-    public Hahmogeneraattori() {
-        this.hahmot = new ArrayList();
-        this.x = new int[]{13, 14, 15, 2, 13, 4, 14, 12, 13, 15, 4, 9, 13};
-        this.y = new int[]{2, 5, 7, 9, 10, 12, 12, 15, 15, 15, 17, 18, 18};
-
-    }
-
     public Hahmogeneraattori(int[] x, int[] y) {
         this.hahmot = new ArrayList();
         this.x = x;
@@ -46,7 +39,8 @@ public class Hahmogeneraattori {
             if (i < 4) {
                 npc.setMissionexists();
                 npc.setMission();
-                String teksti = this.tervehdykset.get(this.random.nextInt(this.tervehdykset.size()));
+                int tervehdys = this.random.nextInt(this.tervehdykset.size());
+                String teksti = this.tervehdykset.get(tervehdys);
                 npc.setTervehdys(teksti);
             }
         }
@@ -64,8 +58,11 @@ public class Hahmogeneraattori {
         this.tervehdykset.add("I wish she'd hurry up and give us actual names, you know");
         this.tervehdykset.add("I used to be many things..");
         this.tervehdykset.add("Like and subscribe!");
-        this.tervehdykset.add("And just what do YOU think your purpose is here?");
+        this.tervehdykset.add("And just what do YOU think your purpose here is?");
         this.tervehdykset.add("*violently shanks you*");
+        this.tervehdykset.add("I long for the day I'll have an unique interaction");
+        this.tervehdykset.add("The rivers of Wintergrasp run red with the blood of the Alliance");
+        this.tervehdykset.add("Between you and me, I really have no idea what I'm doing.");
     }
 
     public ArrayList<Hahmo> getHahmot() {
