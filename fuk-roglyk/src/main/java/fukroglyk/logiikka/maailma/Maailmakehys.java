@@ -51,8 +51,8 @@ public class Maailmakehys {
         oneone.setId(3);
         this.alueet.add(oneone);
 
-        nilnil.teeOvi(19, 19, 1, -1, 0);
-        nilone.teeOvi(1, 19, 1, 1, 0);
+        nilnil.teeOvi(19, 18, 1, -1, 0);
+        nilone.teeOvi(1, 18, 1, 1, 0);
 
         nilone.teeOvi(10, 19, 2, 0, -1);
         onenil.teeOvi(10, 1, 2, 0, 1);

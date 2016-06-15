@@ -16,6 +16,7 @@ public class Tavara extends Piirrettava implements Laatta {
     private int x;
     private int y;
     private boolean poimittu;
+    private boolean draw;
 
     public Tavara(int id, String nimi, int x, int y) {
         this.id = id;
@@ -23,6 +24,7 @@ public class Tavara extends Piirrettava implements Laatta {
         this.x = x;
         this.y = y;
         this.poimittu = false;
+        this.draw = true;
 
     }
 
@@ -64,6 +66,11 @@ public class Tavara extends Piirrettava implements Laatta {
 
     @Override
     public void piirra(Graphics graphics) {
+        if (poimittu() && piirretaanko()) {
+            graphics.setColor(Color.BLACK);
+            graphics.drawString("Poimit juuri: " + this.nimi, 20, 400);
+            this.draw = false;
+        }
         graphics.setColor(Color.BLACK);
         graphics.fillOval(x * 15, y * 15, 10, 10);
 
@@ -71,7 +78,7 @@ public class Tavara extends Piirrettava implements Laatta {
 
     @Override
     public boolean piirretaanko() {
-        return !this.poimittu;
+        return this.draw;
     }
 
     @Override

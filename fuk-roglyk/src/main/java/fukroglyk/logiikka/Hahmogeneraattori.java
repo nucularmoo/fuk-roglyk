@@ -3,6 +3,7 @@ package fukroglyk.logiikka;
 import fukroglyk.entiteetit.Hahmo;
 import fukroglyk.entiteetit.NPC;
 import java.util.ArrayList;
+import java.util.Random;
 
 /**
  * Luokka generoi, listaa ja palauttaa maailman alueilta löytyvät hahmot.
@@ -12,6 +13,8 @@ import java.util.ArrayList;
 public class Hahmogeneraattori {
 
     private ArrayList<Hahmo> hahmot;
+    private ArrayList<String> tervehdykset;
+    private Random random;
 
     private int[] x;
     private int[] y;
@@ -27,6 +30,14 @@ public class Hahmogeneraattori {
         this.hahmot = new ArrayList();
         this.x = x;
         this.y = y;
+        this.tervehdykset = new ArrayList();
+        this.tervehdykset.add("Terve!");
+        this.tervehdykset.add("Moi");
+        this.tervehdykset.add("Mene pois");
+        this.tervehdykset.add("Derp");
+        this.tervehdykset.add("Have you seen my rogue?");
+        this.tervehdykset.add("MADNESS WILL CONSUME YOU");
+        this.random = new Random();
     }
 
     public void generoi() {
@@ -37,8 +48,11 @@ public class Hahmogeneraattori {
             String nimi = Integer.toString(i + 1);
             NPC npc = new NPC(i + 1, nimi, this.x[i], this.y[i]);
             this.hahmot.add(npc);
-            if (i == 1) {
+            if (i < 4) {
+                npc.setMissionexists();
                 npc.setMission();
+                String teksti = this.tervehdykset.get(this.random.nextInt(this.tervehdykset.size()));
+                npc.setTervehdys(teksti);
             }
         }
     }
