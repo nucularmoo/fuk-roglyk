@@ -63,11 +63,8 @@ public class Maailmakehys {
     }
 
     public void listaaOvet() {
-
         for (Alue alue : this.alueet) {
-            for (Ovi ovet : alue.getOvet()) {
-                this.ovet.add(ovet);
-            }
+            this.ovet.addAll(alue.getOvet());
         }
 
     }
