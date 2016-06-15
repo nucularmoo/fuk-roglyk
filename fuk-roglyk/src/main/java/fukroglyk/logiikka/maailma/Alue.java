@@ -2,7 +2,6 @@ package fukroglyk.logiikka.maailma;
 
 import fukroglyk.entiteetit.Ovi;
 import fukroglyk.entiteetit.Piirrettava;
-import fukroglyk.entiteetit.Tavara;
 import fukroglyk.logiikka.Hahmogeneraattori;
 import fukroglyk.logiikka.Tavarageneraattori;
 import java.util.ArrayList;

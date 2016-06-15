@@ -36,13 +36,13 @@ public class Hahmogeneraattori {
             String nimi = Integer.toString(i + 1);
             NPC npc = new NPC(i + 1, nimi, this.x[i], this.y[i]);
             this.hahmot.add(npc);
-            if (i < 4) {
-                npc.setMissionexists();
-                npc.setMission();
-                int tervehdys = this.random.nextInt(this.tervehdykset.size());
-                String teksti = this.tervehdykset.get(tervehdys);
-                npc.setTervehdys(teksti);
-            }
+
+            npc.setMissionexists();
+            npc.setMission();
+            int tervehdys = this.random.nextInt(this.tervehdykset.size());
+            String teksti = this.tervehdykset.get(tervehdys);
+            npc.setTervehdys(teksti);
+
         }
     }
 
@@ -62,7 +62,8 @@ public class Hahmogeneraattori {
         this.tervehdykset.add("*violently shanks you*");
         this.tervehdykset.add("I long for the day I'll have an unique interaction");
         this.tervehdykset.add("The rivers of Wintergrasp run red with the blood of the Alliance");
-        this.tervehdykset.add("Between you and me, I really have no idea what I'm doing.");
+        this.tervehdykset.add("Between you and me, I really have no idea what I'm doing here.");
+        this.tervehdykset.add("These are the highest-quality pixels that anyone has ever seen");
     }
 
     public ArrayList<Hahmo> getHahmot() {
