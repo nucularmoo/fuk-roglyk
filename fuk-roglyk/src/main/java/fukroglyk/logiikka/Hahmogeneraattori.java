@@ -31,17 +31,12 @@ public class Hahmogeneraattori {
         this.x = x;
         this.y = y;
         this.tervehdykset = new ArrayList();
-        this.tervehdykset.add("Terve!");
-        this.tervehdykset.add("Moi");
-        this.tervehdykset.add("Mene pois");
-        this.tervehdykset.add("Derp");
-        this.tervehdykset.add("Have you seen my rogue?");
-        this.tervehdykset.add("MADNESS WILL CONSUME YOU");
+
         this.random = new Random();
     }
 
     public void generoi() {
-
+        luoTervehdykset();
         alustaHahmot();
 
         for (int i = 0; i < x.length; i++) {
@@ -55,6 +50,22 @@ public class Hahmogeneraattori {
                 npc.setTervehdys(teksti);
             }
         }
+    }
+
+    public void luoTervehdykset() {
+        this.tervehdykset.add("Go away, scrub");
+        this.tervehdykset.add("Sup man");
+        this.tervehdykset.add("Yo");
+        this.tervehdykset.add("Derp");
+        this.tervehdykset.add("Have you seen my rogue?");
+        this.tervehdykset.add("MADNESS WILL CONSUME YOU");
+        this.tervehdykset.add("If only I had someone to water my cabbages...");
+        this.tervehdykset.add("Red pill, blue pill, ever tried a brown pill?");
+        this.tervehdykset.add("I wish she'd hurry up and give us actual names, you know");
+        this.tervehdykset.add("I used to be many things..");
+        this.tervehdykset.add("Like and subscribe!");
+        this.tervehdykset.add("And just what do YOU think your purpose is here?");
+        this.tervehdykset.add("*violently shanks you*");
     }
 
     public ArrayList<Hahmo> getHahmot() {
