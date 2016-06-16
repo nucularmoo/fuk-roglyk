@@ -21,4 +21,4 @@ Pelaaja
 
 ###Luokkakaavio (Deadline 4):
 
-![Luokkaakavio DL 4](luokkakaavio_v3.png)
+![Luokkaakavio DL 4](Luokkakaavio_v4.png)

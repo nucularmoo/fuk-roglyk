@@ -6,7 +6,6 @@ import fukroglyk.entiteetit.Pelaaja;
 import fukroglyk.entiteetit.Piirrettava;
 import fukroglyk.entiteetit.Tavara;
 import fukroglyk.logiikka.maailma.Laatta;
-import fukroglyk.logiikka.maailma.Maailmakehys;
 import java.util.ArrayList;
 
 public class Peli {
@@ -19,7 +18,6 @@ public class Peli {
     private Alue alue;
     private Liikkeenhallinta lh;
     private Alueenhallinta ah;
-    private Maailmakehys mk;
 
     public Peli() {
 
@@ -28,14 +26,13 @@ public class Peli {
         this.piirrettavat = new ArrayList();
         this.laatat = new ArrayList();
         this.maailma = new Maailma(this.pelaaja);
-        this.ah = new Alueenhallinta(this.maailma);
-        this.mk = new Maailmakehys();
+        
 
     }
 
     public void luoMaailmanHallinta() {
-        this.maailma.setMaailmakehys(this.mk);
-        this.maailma.setAlueenhallinta(this.ah);
+        this.maailma.setMaailmakehys();
+        this.maailma.setAlueenhallinta();
         this.maailma.setPeli(this);
     }
 
@@ -111,10 +108,6 @@ public class Peli {
     public void setLiikkeenhallinta() {
         this.lh.setLaatat(this.laatat);
         this.lh.init();
-    }
-
-    public void generoiAlueenhallinta() {
-        this.ah = new Alueenhallinta(this.maailma);
     }
 
     /**

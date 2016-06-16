@@ -38,12 +38,12 @@ public class Maailma {
         this.peli = peli;
     }
 
-    public void setMaailmakehys(Maailmakehys mk) {
-        this.mk = mk;
+    public void setMaailmakehys() {
+        this.mk = new Maailmakehys();
     }
 
-    public void setAlueenhallinta(Alueenhallinta ah) {
-        this.ah = ah;
+    public void setAlueenhallinta() {
+        this.ah = new Alueenhallinta(this);
     }
 
     /**
