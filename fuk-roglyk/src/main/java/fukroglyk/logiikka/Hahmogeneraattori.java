@@ -19,6 +19,14 @@ public class Hahmogeneraattori {
     private int[] x;
     private int[] y;
 
+    /**
+     * Konstruktori ottaa taulukon luotavien hahmojen x-koordinaateista ja
+     * taulukon luotavien hahmojen y-koordinaateista, sekä alustaa luokan
+     * käyttämän hahmolistan, tervehdyslistan sekä randomin.
+     *
+     * @param x taulukko hahmojen x-koordinaatteja
+     * @param y taulukko hahmojen y-koordinaatteja
+     */
     public Hahmogeneraattori(int[] x, int[] y) {
         this.hahmot = new ArrayList();
         this.x = x;
@@ -27,6 +35,11 @@ public class Hahmogeneraattori {
         this.random = new Random();
     }
 
+    /**
+     * Luo listan tervehdyksistä, tyhjentää hahmolistan jotta lista sisältäisi
+     * vain halutut hahmot, sekä generoi listaan olioita ja lisää niille
+     * tervehdyksiä (tämä on vieläkin placeholder).
+     */
     public void generoi() {
         luoTervehdykset();
         alustaHahmot();
@@ -45,6 +58,10 @@ public class Hahmogeneraattori {
         }
     }
 
+    /**
+     * Luo listan tervehdyksiä jotka lisätään generaattorin luomille hahmoille
+     * (placeholder).
+     */
     public void luoTervehdykset() {
         this.tervehdykset.add("Go away, scrub");
         this.tervehdykset.add("Sup man");
@@ -65,20 +82,29 @@ public class Hahmogeneraattori {
         this.tervehdykset.add("These are the highest-quality pixels that anyone has ever seen");
     }
 
+    /**
+     * Palauttaa hahmogeneraattorin sisältämän hahmolistan.
+     *
+     * @return lista hahmoja
+     */
     public ArrayList<Hahmo> getHahmot() {
         return this.hahmot;
     }
 
+    /**
+     * Asettaa hahmolistan halutuksi hahmolistaksi.
+     *
+     * @param lista lista hahmoja
+     */
     public void setHahmot(ArrayList<Hahmo> lista) {
         this.hahmot = lista;
     }
 
+    /**
+     * Tyhjentää hahmolistan.
+     */
     public void alustaHahmot() {
         this.hahmot.clear();
-    }
-
-    public int hahmoListanKoko() {
-        return this.hahmot.size();
     }
 
 }

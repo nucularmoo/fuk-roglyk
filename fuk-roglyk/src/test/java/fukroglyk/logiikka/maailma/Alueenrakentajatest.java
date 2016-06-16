@@ -10,6 +10,8 @@ import static org.junit.Assert.*;
 
 public class Alueenrakentajatest {
     
+    Alueenrakentaja ar;
+    
     public Alueenrakentajatest() {
     }
     
@@ -23,6 +25,7 @@ public class Alueenrakentajatest {
     
     @Before
     public void setUp() {
+        this.ar = new Alueenrakentaja();
     }
     
     @After

@@ -21,6 +21,16 @@ public class NPC extends Hahmo implements Laatta {
     private boolean missionexists;
     private boolean met;
 
+    /**
+     * Konstruktori ottaa tiedon NPC:n tunnisteesta, nimestä sekä x- ja
+     * y-koordinaateista, sekä asettaa tiedot piirtämisestä sekä interaktioista
+     * oletustiloihinsa.
+     *
+     * @param id NPC:n tunniste
+     * @param nimi NPC:n nimi
+     * @param x NPC:n x-koordinaatin arvo
+     * @param y NPC:n y-koordinaatin arvo
+     */
     public NPC(int id, String nimi, int x, int y) {
         this.id = id;
         this.nimi = nimi;
@@ -55,12 +65,40 @@ public class NPC extends Hahmo implements Laatta {
         this.mission = false;
     }
 
+    /**
+     * Asettaa NPC:n tilaan jossa NPC:llä on olemassa interaktio.
+     */
     public void setMissionexists() {
         this.missionexists = true;
     }
 
+    /**
+     * Asettaa NPC:lle halutun interaktio-viestin.
+     *
+     * @param tervehdys NPC:n interaktioviesti
+     */
     public void setTervehdys(String tervehdys) {
         this.tervehdys = tervehdys;
+    }
+
+    /**
+     * Palauttaa tiedon siitä, onko pelaaja tavannut NPC:tä.
+     *
+     * @return tieto onko pelaaja tavannut vai ei
+     */
+    public boolean getMet() {
+        return this.met;
+    }
+
+    /**
+     * Vaihtaa NPC:n tapaamistilan true:sta falseksi ja falsesta trueksi.
+     */
+    public void setMet() {
+        if (this.met == false) {
+            this.met = true;
+        } else {
+            this.met = false;
+        }
     }
 
     @Override
@@ -78,18 +116,6 @@ public class NPC extends Hahmo implements Laatta {
         return this.y;
     }
 
-    public boolean getMet() {
-        return this.met;
-    }
-
-    public void setMet() {
-        if (this.met == false) {
-            this.met = true;
-        } else {
-            this.met = false;
-        }
-    }
-
     @Override
     public String getNimi() {
         return this.nimi;
@@ -100,6 +126,7 @@ public class NPC extends Hahmo implements Laatta {
         return Character.forDigit(this.id, 10);
     }
 
+    @Override
     public void piirra(Graphics graphics) {
         if (getMet()) {
             graphics.setColor(Color.black);

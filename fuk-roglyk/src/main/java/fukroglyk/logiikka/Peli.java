@@ -131,7 +131,6 @@ public class Peli {
      * piirrettävien joukkoon.
      */
     public void setPiirrettavat() {
-
         this.piirrettavat = maailma.getPiirrettavat();
         this.piirrettavat.add(pelaaja);
     }

@@ -26,7 +26,15 @@ public class Alueenrakentaja {
 
         this.laatat = new ArrayList();
         this.piirrettavat = new ArrayList();
+    }
 
+    /**
+     * Asettaa alueenrakentajan alueen.
+     *
+     * @param alue alue jonka oliot alueenrakentaja rakentaa.
+     */
+    public void setAlue(Alue alue) {
+        this.alue = alue;
     }
 
     /**
@@ -45,15 +53,6 @@ public class Alueenrakentaja {
      */
     public void setHahmoY(int[] y) {
         this.y = y;
-    }
-
-    /**
-     * Asettaa alueenrakentajan alueen.
-     *
-     * @param alue alue jonka oliot alueenrakentaja rakentaa.
-     */
-    public void setAlue(Alue alue) {
-        this.alue = alue;
     }
 
     /**

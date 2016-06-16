@@ -18,6 +18,15 @@ public class Tavara extends Piirrettava implements Laatta {
     private boolean poimittu;
     private boolean draw;
 
+    /**
+     * Konstruktori ottaa tavaran tunnisteen, nimen, koordinaatit sekä asettaa
+     * tavaran poimimisen sekä piirtämisen oletustilaan.
+     *
+     * @param id tavaran tunniste
+     * @param nimi tavaran nimi
+     * @param x tavaran x-koordinaatin arvo
+     * @param y tavaran y-koordinaatin arvo
+     */
     public Tavara(int id, String nimi, int x, int y) {
         this.id = id;
         this.nimi = nimi;
@@ -28,18 +37,20 @@ public class Tavara extends Piirrettava implements Laatta {
 
     }
 
+    /**
+     * Palauttaa tavaran tunnisteen.
+     *
+     * @return tavaran tunniste
+     */
     public int getId() {
         return this.id;
     }
 
-    public int getX() {
-        return this.x;
-    }
-
-    public int getY() {
-        return this.y;
-    }
-
+    /**
+     * Palauttaa tavaran nimen.
+     *
+     * @return tavaran nimi
+     */
     public String getNimi() {
         return this.nimi;
     }
@@ -60,12 +71,30 @@ public class Tavara extends Piirrettava implements Laatta {
         this.poimittu = true;
     }
 
+    /**
+     * Palauttaa tavaran char-merkin.
+     *
+     * @return tavaran char-merkki
+     */
     public char getChar() {
         return '?';
     }
-    
+
+    /**
+     * Asettaa tavaran tilaan jossa sitä ei piirretä.
+     */
     public void noDraw() {
         this.draw = false;
+    }
+
+    @Override
+    public int getX() {
+        return this.x;
+    }
+
+    @Override
+    public int getY() {
+        return this.y;
     }
 
     @Override
