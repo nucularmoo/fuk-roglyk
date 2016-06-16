@@ -38,8 +38,8 @@ public class Liikkeenhallinta {
         this.alue = alue;
     }
 
-    public int haeAlueenId() {
-        return this.alue.getId();
+    public Alue getAlue() {
+        return this.alue;
     }
 
     /**

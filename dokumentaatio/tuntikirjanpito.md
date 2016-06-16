@@ -15,3 +15,5 @@ Päivä | Tunnit | Kuvaus
 09.06.2016 | 5h | Javadocseja ja refaktoroinnin suunnittelua
 10.06.2016 | 8h | Javadocseja, refaktorointia ja maailman rakenteen hahmottelua
 11.06.2016 | 8h | Javadocseja, testejä, dokumentaatio, palautus, koodia
+14.06.2016 | 5h | Ovet ja alueelta toiselle liikkuminen kuntoon
+15.06.2016 | 7h | Maailman ja alueen hallinnoinnin refaktorointia

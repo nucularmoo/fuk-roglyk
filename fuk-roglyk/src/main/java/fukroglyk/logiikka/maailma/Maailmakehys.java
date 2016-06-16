@@ -3,11 +3,19 @@ package fukroglyk.logiikka.maailma;
 import fukroglyk.entiteetit.Ovi;
 import java.util.ArrayList;
 
+/**
+ * Rakentaa maailman kehyksen, alueet ja niiden ovet ja kansoittaa alueet.
+ *
+ * @author NukeCow
+ */
 public class Maailmakehys {
 
     ArrayList<Ovi> ovet;
     ArrayList<Alue> alueet;
 
+    /**
+     * Konstruktori alustaa listat ovia ja alueita varten.
+     */
     public Maailmakehys() {
 
         this.ovet = new ArrayList();
@@ -15,6 +23,13 @@ public class Maailmakehys {
 
     }
 
+    /**
+     * Kansoittaa sille annetun alueen.
+     *
+     * @param alue alue joka halutaan kansoittaa
+     * @param x taulukko hahmojen x-koordinaattien arvoja
+     * @param y taulukko hahmojen y-koordinaattien arvoja
+     */
     public void kansoita(Alue alue, int[] x, int[] y) {
         Alueenrakentaja ar = new Alueenrakentaja();
         ar.setAlue(alue);
@@ -26,6 +41,10 @@ public class Maailmakehys {
         alue.haePiirrettavat();
     }
 
+    /**
+     * Rakentaa maailmakehyksen ja siinä olevat alueet placeholder-dataa
+     * käyttäen sekä luo luomilleen alueille ovet.
+     */
     public void teeMaailmaKehys() {
         int[] x = new int[]{13, 14, 15, 2, 13, 4, 14, 12, 13, 15, 4, 9, 13};
         int[] y = new int[]{2, 5, 7, 9, 10, 12, 12, 15, 15, 15, 17, 18, 18};
@@ -68,6 +87,9 @@ public class Maailmakehys {
 
     }
 
+    /**
+     * Hakee maailman alueiden listat ovista ja lisää ne omaan listaansa.
+     */
     public void listaaOvet() {
         for (Alue alue : this.alueet) {
             this.ovet.addAll(alue.getOvet());
@@ -75,6 +97,9 @@ public class Maailmakehys {
 
     }
 
+    /**
+     * Linkittää listassaan olevat ovet ovien siirtymänumeron perusteella.
+     */
     public void linkitaOvet() {
         for (Ovi ovet : this.ovet) {
             for (Ovi ovia : this.ovet) {
@@ -88,12 +113,22 @@ public class Maailmakehys {
         }
     }
 
+    /**
+     * Listaa ja linkittää maailmassa olevat ovet sekä palauttaa listan niistä.
+     *
+     * @return lista linkitetyistä ovista
+     */
     public ArrayList<Ovi> getLinkitetytOvet() {
         listaaOvet();
         linkitaOvet();
         return this.ovet;
     }
 
+    /**
+     * Palauttaa listan maailmassa olevista alueista.
+     *
+     * @return lista maailman alueista
+     */
     public ArrayList<Alue> getAlueet() {
         return this.alueet;
     }

@@ -87,7 +87,7 @@ public class LiikkeenhallintaTest {
     @Test
     public void asetettuAluePalautuuOikein() {
         this.lhtdef.setAlue(this.alue);
-        assertTrue("Asetettu alue ei ole oikea", this.lhtdef.haeAlueenId() == 10);
+        assertTrue("Asetettu alue ei ole oikea", this.lhtdef.getAlue().getId() == 10);
     }
 
     @Test

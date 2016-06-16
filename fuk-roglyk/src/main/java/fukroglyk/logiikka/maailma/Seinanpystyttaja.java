@@ -3,20 +3,38 @@ package fukroglyk.logiikka.maailma;
 import fukroglyk.entiteetit.Seina;
 import java.util.ArrayList;
 
+/**
+ * Rakentaa alueita ympäröivät seinät.
+ *
+ * @author NukeCow
+ */
 public class Seinanpystyttaja {
 
     private int boundsX;
     private int boundsY;
     private ArrayList<Seina> seinat;
 
+    /**
+     * Konstruktori alustaa seiniä sisältävän listan.
+     */
     public Seinanpystyttaja() {
         this.seinat = new ArrayList();
     }
 
+    /**
+     * Asettaa alueen rajan x-koordinaatin.
+     *
+     * @param x alueen rajan x-koordinaatin arvo
+     */
     public void setBoundsX(int x) {
         this.boundsX = x;
     }
 
+    /**
+     * Asettaa alueen rajan y-koordinaatin.
+     *
+     * @param y alueen rajan y-koordinaatin arvo
+     */
     public void setBoundsY(int y) {
         this.boundsY = y;
     }
@@ -52,6 +70,11 @@ public class Seinanpystyttaja {
         this.seinat.add(seina);
     }
 
+    /**
+     * Palauttaa listan rakennetuista seinistä.
+     *
+     * @return lista seinistä
+     */
     public ArrayList<Seina> getSeinat() {
         return this.seinat;
     }

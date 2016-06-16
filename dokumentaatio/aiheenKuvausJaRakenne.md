@@ -18,7 +18,6 @@ Pelaaja
 - Maailmassa liikkuminen
 - Pelin hahmojen kanssa vuorovaikuttaminen
 - Pelissä olevien poimittavien esineiden poimiminen
-- Pelissä olevien käytettävien esineiden käyttäminen/objektien aktivaatio
 
 ###Luokkakaavio (Deadline 4):
 
