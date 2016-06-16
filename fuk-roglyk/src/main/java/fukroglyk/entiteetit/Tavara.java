@@ -100,11 +100,11 @@ public class Tavara extends Piirrettava implements Laatta {
     @Override
     public void piirra(Graphics graphics) {
         if (poimittu() && piirretaanko()) {
-            graphics.setColor(Color.BLACK);
+            graphics.setColor(Color.white);
             graphics.drawString("You picked up: " + this.nimi, 20, 400);
             noDraw();
         }
-        graphics.setColor(Color.BLACK);
+        graphics.setColor(Color.YELLOW);
         graphics.fillOval(x * 15, y * 15, 10, 10);
 
     }

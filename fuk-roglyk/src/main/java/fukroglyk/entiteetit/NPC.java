@@ -129,7 +129,7 @@ public class NPC extends Hahmo implements Laatta {
     @Override
     public void piirra(Graphics graphics) {
         if (getMet()) {
-            graphics.setColor(Color.black);
+            graphics.setColor(Color.white);
             graphics.drawString(this.tervehdys, 20, 400);
         }
         if (getMission()) {
@@ -138,9 +138,9 @@ public class NPC extends Hahmo implements Laatta {
 
         } else {
             if (!this.missionexists) {
-                graphics.setColor(Color.orange);
+                graphics.setColor(Color.RED);
             } else {
-                graphics.setColor(Color.BLUE);
+                graphics.setColor(Color.ORANGE);
             }
             graphics.fillOval(x * 15, y * 15, 10, 10);
         }

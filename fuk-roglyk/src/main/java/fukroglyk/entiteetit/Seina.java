@@ -28,7 +28,7 @@ public class Seina extends Piirrettava implements Laatta {
 
     @Override
     public void piirra(Graphics graphics) {
-        graphics.setColor(Color.BLACK);
+        graphics.setColor(Color.DARK_GRAY);
         graphics.fillRect(x * 15, y * 15, 10, 10);
     }
 

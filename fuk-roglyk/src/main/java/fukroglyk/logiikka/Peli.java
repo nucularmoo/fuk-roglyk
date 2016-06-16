@@ -17,7 +17,6 @@ public class Peli {
     private Maailma maailma;
     private Alue alue;
     private Liikkeenhallinta lh;
-    private Alueenhallinta ah;
 
     public Peli() {
 

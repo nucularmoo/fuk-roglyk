@@ -16,7 +16,7 @@ public class Piirtoalusta extends JPanel {
     private ArrayList<Piirrettava> piirrettavat;
 
     public Piirtoalusta(ArrayList<Piirrettava> piirrettavat) {
-        super.setBackground(Color.WHITE);
+        super.setBackground(Color.BLACK);
         this.piirrettavat = piirrettavat;
     }
     
