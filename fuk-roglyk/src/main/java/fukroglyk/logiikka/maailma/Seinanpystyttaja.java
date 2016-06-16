@@ -43,8 +43,8 @@ public class Seinanpystyttaja {
      * Kasaa aluetta ympäröivät seinät.
      */
     public void generoiSeinat() {
-        for (int i = 0; i < boundsY + 1; i++) {
-            for (int j = 0; j < boundsX + 1; j++) {
+        for (int i = 0; i <= boundsY; i++) {
+            for (int j = 0; j <= boundsX; j++) {
                 if (i == 0) {
                     teeSeina(i, j);
                 } else if (i == boundsY) {

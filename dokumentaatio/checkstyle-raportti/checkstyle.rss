@@ -25,8 +25,8 @@ under the License.
     <language>en-us</language>
     <copyright>&#169;2016</copyright>
     <item>
-      <title>File: 21,
-             Errors: 0,
+      <title>File: 25,
+             Errors: 12,
              Warnings: 0,
              Infos: 0
       </title>
@@ -102,6 +102,146 @@ under the License.
               </tr>
                           <tr>
                 <td>
+                  <a href="${project.url}/checkstyle.html#fukroglyk.entiteetit.Ovi.java">fukroglyk/entiteetit/Ovi.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#fukroglyk.entiteetit.Pelaaja.java">fukroglyk/entiteetit/Pelaaja.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#fukroglyk.kayttoliittyma.Piirtoalusta.java">fukroglyk/kayttoliittyma/Piirtoalusta.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#fukroglyk.logiikka.Alueenhallinta.java">fukroglyk/logiikka/Alueenhallinta.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#fukroglyk.kayttoliittyma.Karttatulostin.java">fukroglyk/kayttoliittyma/Karttatulostin.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#fukroglyk.logiikka.Liikkeenhallinta.java">fukroglyk/logiikka/Liikkeenhallinta.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  5
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#fukroglyk.logiikka.maailma.Maailmakehys.java">fukroglyk/logiikka/maailma/Maailmakehys.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#fukroglyk.entiteetit.Seina.java">fukroglyk/entiteetit/Seina.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#fukroglyk.logiikka.maailma.Laatta.java">fukroglyk/logiikka/maailma/Laatta.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#fukroglyk.logiikka.maailma.Toiminto.java">fukroglyk/logiikka/maailma/Toiminto.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
                   <a href="${project.url}/checkstyle.html#fukroglyk.kayttoliittyma.Pelialusta.java">fukroglyk/kayttoliittyma/Pelialusta.java</a>
                 </td>
                 <td>
@@ -158,20 +298,6 @@ under the License.
               </tr>
                           <tr>
                 <td>
-                  <a href="${project.url}/checkstyle.html#fukroglyk.entiteetit.Ovi.java">fukroglyk/entiteetit/Ovi.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-              </tr>
-                          <tr>
-                <td>
                   <a href="${project.url}/checkstyle.html#fukroglyk.logiikka.maailma.Maailma.java">fukroglyk/logiikka/maailma/Maailma.java</a>
                 </td>
                 <td>
@@ -181,26 +307,12 @@ under the License.
                   0
                 </td>
                 <td>
-                  0
+                  2
                 </td>
               </tr>
                           <tr>
                 <td>
-                  <a href="${project.url}/checkstyle.html#fukroglyk.entiteetit.Pelaaja.java">fukroglyk/entiteetit/Pelaaja.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-              </tr>
-                          <tr>
-                <td>
-                  <a href="${project.url}/checkstyle.html#fukroglyk.kayttoliittyma.Piirtoalusta.java">fukroglyk/kayttoliittyma/Piirtoalusta.java</a>
+                  <a href="${project.url}/checkstyle.html#fukroglyk.logiikka.maailma.Alueenrakentaja.java">fukroglyk/logiikka/maailma/Alueenrakentaja.java</a>
                 </td>
                 <td>
                   0
@@ -228,48 +340,6 @@ under the License.
               </tr>
                           <tr>
                 <td>
-                  <a href="${project.url}/checkstyle.html#fukroglyk.kayttoliittyma.Karttatulostin.java">fukroglyk/kayttoliittyma/Karttatulostin.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-              </tr>
-                          <tr>
-                <td>
-                  <a href="${project.url}/checkstyle.html#fukroglyk.logiikka.Liikkeenhallinta.java">fukroglyk/logiikka/Liikkeenhallinta.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-              </tr>
-                          <tr>
-                <td>
-                  <a href="${project.url}/checkstyle.html#fukroglyk.entiteetit.Seina.java">fukroglyk/entiteetit/Seina.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-              </tr>
-                          <tr>
-                <td>
                   <a href="${project.url}/checkstyle.html#fukroglyk.entiteetit.Piirrettava.java">fukroglyk/entiteetit/Piirrettava.java</a>
                 </td>
                 <td>
@@ -284,21 +354,7 @@ under the License.
               </tr>
                           <tr>
                 <td>
-                  <a href="${project.url}/checkstyle.html#fukroglyk.logiikka.maailma.Laatta.java">fukroglyk/logiikka/maailma/Laatta.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-              </tr>
-                          <tr>
-                <td>
-                  <a href="${project.url}/checkstyle.html#fukroglyk.logiikka.maailma.Toiminto.java">fukroglyk/logiikka/maailma/Toiminto.java</a>
+                  <a href="${project.url}/checkstyle.html#fukroglyk.logiikka.maailma.Seinanpystyttaja.java">fukroglyk/logiikka/maailma/Seinanpystyttaja.java</a>
                 </td>
                 <td>
                   0
@@ -335,7 +391,7 @@ under the License.
                   0
                 </td>
                 <td>
-                  0
+                  5
                 </td>
               </tr>
                       </tbody>

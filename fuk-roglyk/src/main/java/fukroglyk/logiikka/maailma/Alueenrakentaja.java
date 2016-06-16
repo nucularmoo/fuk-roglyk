@@ -18,6 +18,8 @@ public class Alueenrakentaja {
     private Alue alue;
     private int[] x;
     private int[] y;
+    private int boundsX;
+    private int boundsY;
 
     /**
      * Konstruktori alustaa listat alueen laatoille ja piirrettäville.
@@ -26,6 +28,24 @@ public class Alueenrakentaja {
 
         this.laatat = new ArrayList();
         this.piirrettavat = new ArrayList();
+        this.boundsX = 20;
+        this.boundsY = 20;
+    }
+    
+    public void setBoundsX(int boundsX) {
+        this.boundsX = boundsX;
+    }
+    
+    public void setBoundsY(int boundsY) {
+        this.boundsY = boundsY;
+    }
+    
+    public int getBoundsX() {
+        return this.boundsX;
+    }
+    
+    public int getBoundsY() {
+        return this.boundsX;
     }
 
     /**
@@ -87,8 +107,8 @@ public class Alueenrakentaja {
      */
     public void pystytaSeinat() {
         Seinanpystyttaja sp = new Seinanpystyttaja();
-        sp.setBoundsX(this.alue.getBoundsX());
-        sp.setBoundsY(this.alue.getBoundsY());
+        sp.setBoundsX(this.boundsX);
+        sp.setBoundsY(this.boundsY);
         sp.generoiSeinat();
         this.laatat.addAll(sp.getSeinat());
         this.piirrettavat.addAll(sp.getSeinat());

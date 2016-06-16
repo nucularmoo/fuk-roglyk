@@ -1,5 +1,6 @@
 package fukroglyk.entiteetit;
 
+import fukroglyk.logiikka.Laukku;
 import java.awt.Color;
 import java.awt.Graphics;
 
