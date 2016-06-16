@@ -16,7 +16,7 @@ public abstract class Piirrettava {
     /**
      * Piirtää piirrettävän olion ilmentymän käyttöliittymän ikkunaan.
      *
-     * @param graphics
+     * @param graphics renderöivä olio
      */
     public abstract void piirra(Graphics graphics);
 

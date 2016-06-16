@@ -7,7 +7,7 @@ import fukroglyk.logiikka.Peli;
 import java.util.ArrayList;
 
 /**
- * Luokka luo sekä hallinnoi pelin maailmassa olevia alueita
+ * Luokka luo sekä hallinnoi pelin maailmassa olevia alueita.
  *
  * @author NukeCow
  */
@@ -24,7 +24,7 @@ public class Maailma {
         this.pelaaja = pelaaja;
         this.alueet = new ArrayList();
     }
-    
+
     public Pelaaja getPelaaja() {
         return this.pelaaja;
     }
@@ -41,8 +41,13 @@ public class Maailma {
         this.ah = ah;
     }
 
-    public void refresh() {
-        this.peli.refreshAlue();
+    public boolean refresh() {
+        if (this.peli == null) {
+            return false;
+        } else {
+            this.peli.refreshAlue();
+            return true;
+        }
     }
 
     /**
@@ -55,23 +60,17 @@ public class Maailma {
         this.ah.setOvienAlueenhallinta();
         this.alueet = this.mk.getAlueet();
         this.currentalue = this.alueet.get(0);
-    }
+        getCurrentLaatat();
 
-    public void setCurrentAlue(Alue alue) {
-        this.currentalue = alue;
     }
 
     /**
-     * Palauttaa pelin viimeisen mahdollisen alueen id:n.
+     * Asettaa parametrina annetun alueen maailman aktiiviseksi alueeksi.
      *
-     * @return
+     * @param alue haluttu aktiivinen alue
      */
-    public int getMaxZone() {
-        return this.alueet.size() - 1;
-    }
-
-    public int getAlueidenMaara() {
-        return this.alueet.size();
+    public void setCurrentAlue(Alue alue) {
+        this.currentalue = alue;
     }
 
     /**

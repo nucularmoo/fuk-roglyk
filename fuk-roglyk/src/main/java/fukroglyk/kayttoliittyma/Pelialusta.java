@@ -26,13 +26,16 @@ public class Pelialusta extends Canvas implements Runnable {
     public boolean kaynnissa = false;
 
     public Peli peli;
-    
+
     public Piirtoalusta piirtoalusta;
 
     public Pelialusta() {
 
         this.peli = new Peli();
         this.peli.init();
+        peli.luoMaailmanHallinta();
+        peli.luoMaailma();
+
     }
 
     /**
@@ -97,12 +100,12 @@ public class Pelialusta extends Canvas implements Runnable {
         init();
         kaynnissa = true;
         new Thread(this).start();
+
         while (kaynnissa) {
 
             peli.piirra();
             this.piirtoalusta.setPiirrettavat(peli.getPiirrettavat());
-            
-            
+
         }
     }
 

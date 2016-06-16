@@ -16,9 +16,14 @@ public class Maailmakehys {
     }
 
     public void kansoita(Alue alue, int[] x, int[] y) {
-        alue.setHahmoX(x);
-        alue.setHahmoY(y);
-        alue.generoiLaatat();
+        Alueenrakentaja ar = new Alueenrakentaja();
+        ar.setAlue(alue);
+        alue.setAlueenrakentaja(ar);
+        ar.setHahmoX(x);
+        ar.setHahmoY(y);
+        ar.generoiLaatat();
+        alue.haeLaatat();
+        alue.haePiirrettavat();
     }
 
     public void teeMaailmaKehys() {
@@ -29,6 +34,7 @@ public class Maailmakehys {
         kansoita(nilnil, x, y);
         nilnil.setId(0);
         this.alueet.add(nilnil);
+        nilnil.haeLaatat();
 
         int[] z = new int[]{4, 6};
         int[] s = new int[]{5, 2};

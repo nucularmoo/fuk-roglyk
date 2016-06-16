@@ -72,11 +72,6 @@ public class TavaraTest {
         assertTrue("Palauttaa väärän merkin", ttdef.getChar() == '?');
     }
     
-    @Test
-    public void piirretaankoPalauttaaOikeinKunPoimittu() {
-        ttdef.poimi();
-        assertFalse("Piirto palauttaa väärin", ttdef.piirretaanko());
-    }
     
     @Test
     public void tavarallaEiOleCollisionPaalla() {

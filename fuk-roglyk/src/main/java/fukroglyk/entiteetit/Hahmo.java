@@ -10,11 +10,6 @@ import java.awt.Graphics;
  */
 public abstract class Hahmo extends Piirrettava implements Laatta {
 
-    private int id;
-    private int x;
-    private int y;
-    private String nimi;
-
     public Hahmo() {
 
     }

@@ -30,10 +30,21 @@ public class Alueenhallinta {
     }
 
     public void vaihdaAluettaByOvi(Ovi ovi) {
+        vaihdaMaailmanAktiivinenAlue(ovi);
+        asetaPelaajanKoordinaatit(ovi);
+        paivitaMaailma();
+    }
+    
+    public void vaihdaMaailmanAktiivinenAlue(Ovi ovi) {
         this.maailma.setCurrentAlue(ovi.getAlue());
-        System.out.println(this.maailma.getCurrentAlue().getId());
+    }
+
+    public void asetaPelaajanKoordinaatit(Ovi ovi) {
         this.maailma.getPelaaja().setX(ovi.getX());
         this.maailma.getPelaaja().setY(ovi.getY());
+    }
+
+    public void paivitaMaailma() {
         this.maailma.refresh();
     }
 

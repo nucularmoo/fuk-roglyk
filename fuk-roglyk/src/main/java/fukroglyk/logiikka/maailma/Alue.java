@@ -2,8 +2,6 @@ package fukroglyk.logiikka.maailma;
 
 import fukroglyk.entiteetit.Ovi;
 import fukroglyk.entiteetit.Piirrettava;
-import fukroglyk.logiikka.Hahmogeneraattori;
-import fukroglyk.logiikka.Tavarageneraattori;
 import java.util.ArrayList;
 
 /**
@@ -24,6 +22,7 @@ public class Alue {
     private int aloitusY;
     private int boundsX;
     private int boundsY;
+    private Alueenrakentaja ar;
 
     public Alue() {
         this.aloitusX = 1;
@@ -33,6 +32,8 @@ public class Alue {
         this.piirrettavat = new ArrayList();
         this.laatat = new ArrayList();
         this.ovet = new ArrayList();
+        this.ar = new Alueenrakentaja();
+        this.ar.setAlue(this);
     }
 
     public void setId(int id) {
@@ -47,6 +48,14 @@ public class Alue {
         this.y = y;
     }
 
+    public int[] getHahmoX() {
+        return this.x;
+    }
+
+    public int[] getHahmoY() {
+        return this.y;
+    }
+
     /**
      * Palauttaa alueen id:n.
      *
@@ -56,42 +65,16 @@ public class Alue {
         return this.id;
     }
 
-    public void pystytaSeinat() {
-        Seinanpystyttaja sp = new Seinanpystyttaja();
-        sp.setBoundsX(this.boundsX);
-        sp.setBoundsY(this.boundsX);
-        sp.generoiSeinat();
-        this.laatat.addAll(sp.getSeinat());
-        this.piirrettavat.addAll(sp.getSeinat());
+    public void setAlueenrakentaja(Alueenrakentaja ar) {
+        this.ar = ar;
     }
 
-    /**
-     * Generoi kaikki alueen laatat.
-     */
-    public void generoiLaatat() {
-        pystytaSeinat();
-        generoiTavarat();
-        generoiHahmot();
+    public void haeLaatat() {
+        this.laatat = this.ar.getLaatat();
     }
 
-    /**
-     * Generoi alueen hahmot alueen koordinaattilistojen mukaan.
-     */
-    public void generoiHahmot() {
-        Hahmogeneraattori hage = new Hahmogeneraattori(this.x, this.y);
-        hage.generoi();
-        this.laatat.addAll(hage.getHahmot());
-        this.piirrettavat.addAll(hage.getHahmot());
-    }
-
-    /**
-     * Generoi alueen tavarat.
-     */
-    public void generoiTavarat() {
-        Tavarageneraattori tage = new Tavarageneraattori();
-        tage.generoi();
-        this.laatat.addAll(tage.getTavarat());
-        this.piirrettavat.addAll(tage.getTavarat());
+    public void haePiirrettavat() {
+        this.piirrettavat = this.ar.getPiirrettavat();
     }
 
     /**
@@ -106,7 +89,7 @@ public class Alue {
     /**
      * Palauttaa tiedon alueelle saapuvan pelaajan halutusta x-koordinaatista.
      *
-     * @return halutin x-koordinaatin arvo
+     * @return halutun x-koordinaatin arvo
      */
     public int getAloitusX() {
         return this.aloitusX;
@@ -115,7 +98,7 @@ public class Alue {
     /**
      * Palauttaa tiedon alueelle saapuvan pelaajan halutusta y-koordinaatista.
      *
-     * @return
+     * @return halutun y-koordinaatin arvo
      */
     public int getAloitusY() {
         return this.aloitusY;

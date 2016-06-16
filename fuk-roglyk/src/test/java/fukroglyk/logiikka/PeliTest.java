@@ -41,11 +41,11 @@ public class PeliTest {
         assertTrue("Laukussa ei tavaraa", this.peli.getLaukku().tavaroitaLaukussa() == 1);
         
     }
-    @Test
-    public void getAluePalauttaaAloitusAlueen() {
-        Alue alue = this.peli.getAlue();
-        assertTrue("Aloitusalue ei ole oikea alue", alue.getId() == 0);
-    }
+//    @Test
+//    public void getAluePalauttaaAloitusAlueen() {
+//        Alue alue = this.peli.getAlue();
+//        assertTrue("Aloitusalue ei ole oikea alue", alue.getId() == 0);
+//    }
     @Test
     public void pelillaOnLiikkeenhallintaInitinJalkeen() {
         this.peli.init();

@@ -24,7 +24,6 @@ public class Hahmogeneraattori {
         this.x = x;
         this.y = y;
         this.tervehdykset = new ArrayList();
-
         this.random = new Random();
     }
 
