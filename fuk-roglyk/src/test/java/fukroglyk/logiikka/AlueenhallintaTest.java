@@ -37,7 +37,7 @@ public class AlueenhallintaTest {
     @Before
     public void setUp() {
         
-        this.pelaaja = new Pelaaja(0, "Pelaaja", 5, 5);
+        this.pelaaja = new Pelaaja(0, 5, 5);
         this.maailma = new Maailma(this.pelaaja);
         this.ah = new Alueenhallinta(this.maailma);
         this.o1 = new Ovi(4, 4);

@@ -24,16 +24,11 @@ public class PelaajaTest {
 
     @Before
     public void setUp() {
-        tpdef = new Pelaaja(20, "tpdef", 67, 23);
+        tpdef = new Pelaaja(20, 67, 23);
     }
 
     @After
     public void tearDown() {
-    }
-
-    @Test
-    public void pelaajanGetNimiPalauttaaOikein() {
-        assertTrue("Palauttaa väärän nimen", tpdef.getNimi() == "tpdef");
     }
 
     @Test
@@ -43,7 +38,7 @@ public class PelaajaTest {
 
     @Test
     public void pelaajaLiikkuuKaskynMukaanX() {
-        Pelaaja tp = new Pelaaja(0, "tp", 0, 0);
+        Pelaaja tp = new Pelaaja(0, 0, 0);
         tp.moveX(4);
         tp.moveX(-3);
         int liike = 4 + (-3);
@@ -53,7 +48,7 @@ public class PelaajaTest {
 
     @Test
     public void pelaajaLiikkuuKaskynMukaanY() {
-        Pelaaja tp = new Pelaaja(0, "tp", 0, 0);
+        Pelaaja tp = new Pelaaja(0, 0, 0);
         tp.moveY(6);
         tp.moveY(-334);
         int liike = 6 + (-334);
@@ -80,5 +75,10 @@ public class PelaajaTest {
     @Test
     public void pelaajanIdPalauttaaOikein() {
         assertTrue("Pelaajan id palautuu väärin", tpdef.getId() == 20);
+    }
+    
+    @Test
+    public void pelaajanNimiPalautuuOikein() {
+        assertTrue("Pelaajan nimi on väärin", tpdef.getNimi() == "Player");
     }
 }

@@ -77,4 +77,10 @@ public class TavaraTest {
     public void tavarallaEiOleCollisionPaalla() {
         assertFalse("Tavaralla on collision päällä", ttdef.collision());
     }
+    
+    @Test
+    public void noDrawAsettaaDrawOikein() {
+        ttdef.noDraw();
+        assertFalse("Tavara piirretaan vaikka ei pitaisi", ttdef.piirretaanko());
+    }
 }

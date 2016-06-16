@@ -34,7 +34,7 @@ public class LiikkeenhallintaTest {
     @Before
     public void setUp() {
         this.lhtdef = new Liikkeenhallinta();
-        this.pelaaja = new Pelaaja(0, "tp", 5, 7);
+        this.pelaaja = new Pelaaja(0, 5, 7);
         this.alue = new Alue();
         this.alue.setId(10);
         this.testilaattalista = new ArrayList();

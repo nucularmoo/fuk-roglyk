@@ -112,7 +112,6 @@ public class NPC extends Hahmo implements Laatta {
         } else {
             if (!this.missionexists) {
                 graphics.setColor(Color.orange);
-                
             } else {
                 graphics.setColor(Color.BLUE);
             }

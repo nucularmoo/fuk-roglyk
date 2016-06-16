@@ -13,9 +13,7 @@ public class Pelaaja extends Hahmo {
     private int id;
     private int x;
     private int y;
-    private String nimi;
     private Color color;
-
     private boolean draw;
 
     /**
@@ -23,12 +21,10 @@ public class Pelaaja extends Hahmo {
      * asettaa pelaajan aina piirrettäväksi sekä pelaajan värin.
      *
      * @param id pelaajan tunniste
-     * @param nimi pelaajan nimi
      * @param x pelaajan luomisvaiheen x-koordinaatin arvo
      * @param y pelaajan luomisvaiheen y-koordinaatin arvo
      */
-    public Pelaaja(int id, String nimi, int x, int y) {
-        this.nimi = nimi;
+    public Pelaaja(int id, int x, int y) {
         this.id = id;
         this.x = x;
         this.y = y;
@@ -74,7 +70,7 @@ public class Pelaaja extends Hahmo {
 
     @Override
     public String getNimi() {
-        return this.nimi;
+        return "Player";
     }
 
     @Override

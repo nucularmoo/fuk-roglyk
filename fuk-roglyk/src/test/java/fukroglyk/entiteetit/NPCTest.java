@@ -80,4 +80,42 @@ public class NPCTest {
     public void eiPelattavanHahmonCollisionPalauttaaAinaTrue() {
         assertTrue("Collision on false", tnpcdef.collision());
     }
+    
+    @Test
+    public void getMetPalauttaaFalse() {
+        assertFalse("getMet palauttaa oletuksena true", tnpcdef.getMet());
+    }
+    
+    @Test
+    public void getMetPalauttaaTrueKunNPCTavataan() {
+        tnpcdef.setMet();
+        assertTrue("getMet palauttaa tavatessa false", tnpcdef.getMet());
+    }
+    
+    @Test
+    public void getMetPalauttaaFalseKunNPCOnTavattuJaPoistuttuLaheisyydesta() {
+        tnpcdef.setMet();
+        tnpcdef.setMet();
+        assertFalse("getMet palauttaa true kun pitäisi palauttaa false", tnpcdef.getMet());
+    }
+    
+    @Test
+    public void toimintoEiVaihdaSetMetJosNPCEiOmaaMission() {
+        tnpcdef.toiminto();
+        assertFalse("getMet palauttaa true kun pitäisi palauttaa false", tnpcdef.getMet());
+    }
+    @Test
+    public void toimintoVaihtaaSetMetJosNPCOmaamIssion() {
+        tnpcdef.setMissionexists();
+        tnpcdef.toiminto();
+        assertTrue("getMet palauttaa false kun pitäisi palauttaa true", tnpcdef.getMet());
+    }
+    @Test
+    public void toimintoSuorittaadisMissionJosMissionOnOlemassa() {
+        tnpcdef.setMissionexists();
+        tnpcdef.setMission();
+        tnpcdef.toiminto();
+        assertFalse("Mission on olemassa vaikka sen ei pitäisi enää olla", tnpcdef.getMission());
+    }
+           
 }

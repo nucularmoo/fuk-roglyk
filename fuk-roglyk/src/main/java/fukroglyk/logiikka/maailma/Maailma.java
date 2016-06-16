@@ -20,6 +20,11 @@ public class Maailma {
     private Alueenhallinta ah;
     private Peli peli;
 
+    /**
+     * Konstruktori ottaa pelin pelaajan sekä alustaa listan maailman alueista.
+     *
+     * @param pelaaja pelin pelaaja
+     */
     public Maailma(Pelaaja pelaaja) {
         this.pelaaja = pelaaja;
         this.alueet = new ArrayList();
@@ -41,6 +46,11 @@ public class Maailma {
         this.ah = ah;
     }
 
+    /**
+     * Metodi lähettää päivityskäskyn pelille.
+     *
+     * @return tieto siitä pystyttiinkö peli päivittämään
+     */
     public boolean refresh() {
         if (this.peli == null) {
             return false;

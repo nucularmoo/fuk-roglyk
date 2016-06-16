@@ -26,7 +26,7 @@ public class MaailmaTest {
 
     @Before
     public void setUp() {
-        this.pt = new Pelaaja(0, "Pelaaja", 5, 3);
+        this.pt = new Pelaaja(0, 5, 3);
         this.maailmatest = new Maailma(this.pt);
         this.maailmatest.luoMaailma();
     }

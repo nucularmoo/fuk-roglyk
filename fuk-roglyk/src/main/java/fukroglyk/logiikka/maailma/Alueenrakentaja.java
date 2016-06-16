@@ -5,64 +5,87 @@ import fukroglyk.logiikka.Hahmogeneraattori;
 import fukroglyk.logiikka.Tavarageneraattori;
 import java.util.ArrayList;
 
+/**
+ * Luokka vastaa alueen olioiden rakentamisesta ja näiden olioiden
+ * palauttamisesta kyseiselle alueelle luonnin jälkeen.
+ *
+ * @author NukeCow
+ */
 public class Alueenrakentaja {
 
     private ArrayList<Laatta> laatat;
     private ArrayList<Piirrettava> piirrettavat;
     private Alue alue;
-    private int boundsX;
-    private int boundsY;
     private int[] x;
     private int[] y;
 
+    /**
+     * Konstruktori alustaa listat alueen laatoille ja piirrettäville.
+     */
     public Alueenrakentaja() {
 
         this.laatat = new ArrayList();
         this.piirrettavat = new ArrayList();
-        this.boundsX = 20;
-        this.boundsY = 20;
 
     }
 
+    /**
+     * Taulukko alueen hahmojen x-koordinaattien arvoista.
+     *
+     * @param x alueen hahmojen x-koordinaatit
+     */
     public void setHahmoX(int[] x) {
         this.x = x;
     }
 
+    /**
+     * Taulukko alueen hahmojen y-koordinaattien arvoista.
+     *
+     * @param y alueen hahmojen y-koordinaatit
+     */
     public void setHahmoY(int[] y) {
         this.y = y;
     }
 
+    /**
+     * Asettaa alueenrakentajan alueen.
+     *
+     * @param alue alue jonka oliot alueenrakentaja rakentaa.
+     */
     public void setAlue(Alue alue) {
         this.alue = alue;
     }
 
-    public void setBoundsX() {
-
-    }
-
-    public void getBoundsX(int x) {
-        this.boundsX = x;
-
-    }
-
-    public void getBoundsY(int y) {
-        this.boundsY = y;
-    }
-
+    /**
+     * Metodi käskee generaattoreita luomaan alueen oliot.
+     */
     public void generoiLaatat() {
         pystytaSeinat();
         generoiTavarat();
         generoiHahmot();
     }
 
+    /**
+     * Palauttaa listan rakennetuista piirrettävistä.
+     *
+     * @return lista piirrettävistä
+     */
     public ArrayList<Piirrettava> getPiirrettavat() {
         return this.piirrettavat;
     }
 
+    /**
+     * Palauttaa listan rakennetuista laatoista.
+     *
+     * @return lista laatoista
+     */
     public ArrayList<Laatta> getLaatat() {
         return this.laatat;
     }
 
+    /**
+     * Pystyttää alueen seinät.
+     */
     public void pystytaSeinat() {
         Seinanpystyttaja sp = new Seinanpystyttaja();
         sp.setBoundsX(this.alue.getBoundsX());

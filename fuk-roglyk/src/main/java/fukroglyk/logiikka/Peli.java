@@ -23,7 +23,7 @@ public class Peli {
 
     public Peli() {
 
-        this.pelaaja = new Pelaaja(0, "Pelaaja", 10, -1);
+        this.pelaaja = new Pelaaja(0, 10, -1);
         this.laukku = new Laukku();
         this.piirrettavat = new ArrayList();
         this.laatat = new ArrayList();

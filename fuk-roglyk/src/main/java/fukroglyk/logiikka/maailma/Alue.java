@@ -12,9 +12,6 @@ import java.util.ArrayList;
 public class Alue {
 
     private int id;
-    private String nimi;
-    private int[] x;
-    private int[] y;
     private ArrayList<Piirrettava> piirrettavat;
     private ArrayList<Laatta> laatat;
     private ArrayList<Ovi> ovet;
@@ -24,6 +21,11 @@ public class Alue {
     private int boundsY;
     private Alueenrakentaja ar;
 
+    /**
+     * Konstruktori asettaa alueen raja-arvot, koordinaatit haluttuun pelaajan
+     * aloituskohtaan sekä alustaa listat piirrettäviä, laattoja sekä ovia
+     * varten.
+     */
     public Alue() {
         this.aloitusX = 1;
         this.aloitusY = 1;
@@ -32,28 +34,15 @@ public class Alue {
         this.piirrettavat = new ArrayList();
         this.laatat = new ArrayList();
         this.ovet = new ArrayList();
-        this.ar = new Alueenrakentaja();
-        this.ar.setAlue(this);
     }
 
+    /**
+     * Asettaa alueelle tunnisteen.
+     *
+     * @param id alueen tunniste
+     */
     public void setId(int id) {
         this.id = id;
-    }
-
-    public void setHahmoX(int[] x) {
-        this.x = x;
-    }
-
-    public void setHahmoY(int[] y) {
-        this.y = y;
-    }
-
-    public int[] getHahmoX() {
-        return this.x;
-    }
-
-    public int[] getHahmoY() {
-        return this.y;
     }
 
     /**
@@ -65,14 +54,25 @@ public class Alue {
         return this.id;
     }
 
+    /**
+     * Asettaa alueelle alueen rakennukseen käytettävän alueenrakentajan.
+     *
+     * @param ar käytössä oleva alueenrakentaja
+     */
     public void setAlueenrakentaja(Alueenrakentaja ar) {
         this.ar = ar;
     }
 
+    /**
+     * Hakee listan laatoista alueenrakentajalta.
+     */
     public void haeLaatat() {
         this.laatat = this.ar.getLaatat();
     }
 
+    /**
+     * Hakee listan piirrettävistä olioista alueenrakentajalta.
+     */
     public void haePiirrettavat() {
         this.piirrettavat = this.ar.getPiirrettavat();
     }
@@ -122,10 +122,23 @@ public class Alue {
         return this.boundsY;
     }
 
-    ArrayList<Laatta> getLaatat() {
+    /**
+     * Palauttaa tiedon alueen laatoista.
+     *
+     * @return lista alueen laatioista
+     */
+    public ArrayList<Laatta> getLaatat() {
         return this.laatat;
     }
 
+    /**
+     * Rakentaa alueelle oven parametreina annettuun x- ja y-koordinaattiin
+     * annetulla siirtymäarvolla.
+     *
+     * @param x oven x-koordinaatti
+     * @param y oven y-koordinaatti
+     * @param siirtyma oven siirtymäarvo
+     */
     public void teeOvi(int x, int y, int siirtyma) {
         Ovi ovi = new Ovi(x, y);
         ovi.setAlue(this);
@@ -136,6 +149,11 @@ public class Alue {
 
     }
 
+    /**
+     * Palauttaa listan alueen ovista.
+     *
+     * @return lista alueen ovista
+     */
     public ArrayList<Ovi> getOvet() {
         return this.ovet;
     }

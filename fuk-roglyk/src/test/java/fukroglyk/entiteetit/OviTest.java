@@ -41,7 +41,7 @@ public class OviTest {
         this.otdef = new Ovi(5, 2);
         this.o2 = new Ovi(4, 3);
 
-        this.pelaaja = new Pelaaja(0, "Pelaaja", 5, 5);
+        this.pelaaja = new Pelaaja(0, 5, 5);
         this.maailma = new Maailma(this.pelaaja);
         this.ah = new Alueenhallinta(this.maailma);
         this.o3 = new Ovi(4, 4);
