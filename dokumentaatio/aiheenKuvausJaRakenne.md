@@ -19,6 +19,6 @@ Pelaaja
 - Pelin hahmojen kanssa vuorovaikuttaminen
 - Pelissä olevien poimittavien esineiden poimiminen
 
-###Luokkakaavio (Deadline 4):
+###Luokkakaavio (Deadline 5):
 
-![Luokkaakavio DL 4](Luokkakaavio_v4.png)
+![Luokkaakavio DL 5](Luokkakaavio_v4.png)
