@@ -9,6 +9,9 @@ import java.awt.Graphics;
  */
 public abstract class Piirrettava {
 
+    /**
+     * Piirrettavan konstruktori on tyhjä.
+     */
     public Piirrettava() {
 
     }

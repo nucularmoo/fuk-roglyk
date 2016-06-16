@@ -18,6 +18,15 @@ public class Pelaaja extends Hahmo {
 
     private boolean draw;
 
+    /**
+     * Konstruktori ottaa vastaan pelaajan tunnisteen, nimen, koordinaatit sekä
+     * asettaa pelaajan aina piirrettäväksi sekä pelaajan värin.
+     *
+     * @param id pelaajan tunniste
+     * @param nimi pelaajan nimi
+     * @param x pelaajan luomisvaiheen x-koordinaatin arvo
+     * @param y pelaajan luomisvaiheen y-koordinaatin arvo
+     */
     public Pelaaja(int id, String nimi, int x, int y) {
         this.nimi = nimi;
         this.id = id;
@@ -45,26 +54,6 @@ public class Pelaaja extends Hahmo {
         this.y += ya;
     }
 
-    @Override
-    public char getChar() {
-        return '@';
-    }
-
-    @Override
-    public int getId() {
-        return this.id;
-    }
-
-    @Override
-    public int getX() {
-        return this.x;
-    }
-
-    @Override
-    public int getY() {
-        return this.y;
-    }
-
     /**
      * Asettaa pelaajan x-koordinaatin parametrina annetuksi arvoksi.
      *
@@ -83,14 +72,29 @@ public class Pelaaja extends Hahmo {
         this.y = ny;
     }
 
-    /**
-     * Palauttaa pelaajan nimen.
-     *
-     * @return Pelaajan nimi
-     */
     @Override
     public String getNimi() {
         return this.nimi;
+    }
+
+    @Override
+    public char getChar() {
+        return '@';
+    }
+
+    @Override
+    public int getId() {
+        return this.id;
+    }
+
+    @Override
+    public int getX() {
+        return this.x;
+    }
+
+    @Override
+    public int getY() {
+        return this.y;
     }
 
     @Override

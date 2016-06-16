@@ -12,6 +12,10 @@ public class Tavarageneraattori {
 
     private ArrayList<Tavara> tavarat;
 
+    /**
+     * Konstruktori luo tyhjän listan johon generaattori luo ja josta se
+     * palauttaa halutut tavara-oliot.
+     */
     public Tavarageneraattori() {
         this.tavarat = new ArrayList();
 

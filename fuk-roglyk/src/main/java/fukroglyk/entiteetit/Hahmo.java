@@ -10,6 +10,9 @@ import java.awt.Graphics;
  */
 public abstract class Hahmo extends Piirrettava implements Laatta {
 
+    /**
+     * Hahmon konstruktori on tyhjä.
+     */
     public Hahmo() {
 
     }
@@ -21,6 +24,11 @@ public abstract class Hahmo extends Piirrettava implements Laatta {
      */
     public abstract char getChar();
 
+    /**
+     * Palauttaa Hahmo-olion tunnisteen.
+     *
+     * @return olion tunniste
+     */
     public abstract int getId();
 
     /**
@@ -54,7 +62,7 @@ public abstract class Hahmo extends Piirrettava implements Laatta {
 
     @Override
     public void toiminto() {
-       
+
     }
 
 }

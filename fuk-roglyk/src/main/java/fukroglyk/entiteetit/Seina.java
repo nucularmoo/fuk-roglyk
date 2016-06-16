@@ -15,6 +15,12 @@ public class Seina extends Piirrettava implements Laatta {
     private int x;
     private int y;
 
+    /**
+     * Seinän konstruktori ottaa vastaan seinän x- ja y-koordinaattien arvot.
+     *
+     * @param x x-koordinaatin arvo
+     * @param y y-koordinaatin arvo
+     */
     public Seina(int x, int y) {
         this.x = x;
         this.y = y;

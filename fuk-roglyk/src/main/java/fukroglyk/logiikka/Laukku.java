@@ -12,6 +12,9 @@ public class Laukku {
 
     private ArrayList<Tavara> laukku;
 
+    /**
+     * Konstruktori alustaa laukkuna käytetyn listan.
+     */
     public Laukku() {
         this.laukku = new ArrayList();
     }

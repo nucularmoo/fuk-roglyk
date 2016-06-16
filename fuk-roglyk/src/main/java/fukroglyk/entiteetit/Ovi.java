@@ -22,6 +22,12 @@ public class Ovi extends Piirrettava implements Laatta {
     private Alueenhallinta ah;
     private boolean ahSet;
 
+    /**
+     * Konstruktori luo oven sille annetuilla x- ja y-koordinaattiarvoilla.
+     *
+     * @param x oven x-koordinaatti
+     * @param y oven y-koordinaatti
+     */
     public Ovi(int x, int y) {
         this.x = x;
         this.y = y;
@@ -41,10 +47,20 @@ public class Ovi extends Piirrettava implements Laatta {
 
     /**
      * Palauttaa tiedon siitä, onko ovelle asetettu alueenhallintaa vaiko ei.
+     *
      * @return tieto onko ovelle asetettu alueenhallinta vai ei
      */
     public boolean getAhSet() {
         return this.ahSet;
+    }
+
+    /**
+     * Palauttaa tiedon siitä millä alueella ovi on.
+     *
+     * @return alue jolla ovi sijaitsee
+     */
+    public Alue getAlue() {
+        return this.alue;
     }
 
     /**
@@ -58,6 +74,7 @@ public class Ovi extends Piirrettava implements Laatta {
 
     /**
      * Asettaa ovelle siirtymäarvon oven ja sen uloskäynnin linkitystä varten.
+     *
      * @param siirtyma siirtymän arvo (id)
      */
     public void setSiirtyma(int siirtyma) {
@@ -66,6 +83,7 @@ public class Ovi extends Piirrettava implements Laatta {
 
     /**
      * Palauttaa oven siirtymän arvon oven ja sen uloskäynnin linkitystä varten.
+     *
      * @return siirtymän arvo (id)
      */
     public int getSiirtyma() {
@@ -74,6 +92,7 @@ public class Ovi extends Piirrettava implements Laatta {
 
     /**
      * Asettaa ovelle uloskäynnin.
+     *
      * @param uloskaynti oven haluttu uloskäynti
      */
     public void setUloskaynti(Ovi uloskaynti) {
@@ -82,6 +101,7 @@ public class Ovi extends Piirrettava implements Laatta {
 
     /**
      * Palauttaa oven joka toimii kyseisen oven uloskäyntinä.
+     *
      * @return oven uloskäynti
      */
     public Ovi getUloskaynti() {
@@ -104,15 +124,6 @@ public class Ovi extends Piirrettava implements Laatta {
      */
     public void setY(int ny) {
         this.y = ny;
-    }
-
-    /**
-     * Palauttaa tiedon siitä millä alueella ovi on.
-     *
-     * @return alue jolla ovi sijaitsee
-     */
-    public Alue getAlue() {
-        return this.alue;
     }
 
     @Override
@@ -147,6 +158,7 @@ public class Ovi extends Piirrettava implements Laatta {
         this.ah.vaihdaAluettaByOvi(this.uloskaynti);
     }
 
+    @Override
     public boolean equals(Object o) {
 
         if (o == null) {

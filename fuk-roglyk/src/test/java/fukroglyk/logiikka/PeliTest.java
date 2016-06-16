@@ -39,23 +39,21 @@ public class PeliTest {
         Tavara tavara = new Tavara(2, "tavara", 4, 3);
         this.peli.poimi(tavara);
         assertTrue("Laukussa ei tavaraa", this.peli.getLaukku().tavaroitaLaukussa() == 1);
-        
+
     }
-//    @Test
-//    public void getAluePalauttaaAloitusAlueen() {
-//        Alue alue = this.peli.getAlue();
-//        assertTrue("Aloitusalue ei ole oikea alue", alue.getId() == 0);
-//    }
+
     @Test
     public void pelillaOnLiikkeenhallintaInitinJalkeen() {
         this.peli.init();
         assertTrue("Liikkeenhallintaa ei ole olemassa", this.peli.getLH() != null);
     }
+
     @Test
     public void pelillaOnPiirrettavatInitinJalkeen() {
         this.peli.init();
         assertTrue("Piirrettavia ei ole", !this.peli.getPiirrettavat().isEmpty());
     }
+
     @Test
     public void pelillaOnLaatatInitinJalkeen() {
         this.peli.init();

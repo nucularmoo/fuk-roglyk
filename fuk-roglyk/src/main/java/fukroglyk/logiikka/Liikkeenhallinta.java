@@ -122,10 +122,8 @@ public class Liikkeenhallinta {
      * @param ya haluttu muutos y-koordinaattiin
      */
     public void move(int xa, int ya) {
-
         int nx = this.pelaaja.getX() + xa;
         int ny = this.pelaaja.getY() + ya;
-
         if (!collision(nx, ny)) {
             this.pelaaja.moveX(xa);
             this.pelaaja.moveY(ya);
@@ -165,7 +163,6 @@ public class Liikkeenhallinta {
             return true;
         }
         if (y > this.alue.getBoundsY() - 1) {
-
             return true;
         }
         return false;
