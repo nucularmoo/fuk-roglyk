@@ -11,25 +11,25 @@ import java.util.ArrayList;
  * @author NukeCow
  */
 public class Liikkeenhallinta {
-    
+
     private ArrayList<Laatta> laatat;
     private Peli peli;
     private Pelaaja pelaaja;
     private Alue alue;
     private boolean playerSet;
     private Tapahtumankasittelija tk;
-    
+
     public Liikkeenhallinta() {
-        
+
     }
-    
+
     public Liikkeenhallinta(Peli peli) {
         this.playerSet = false;
         this.peli = peli;
         this.alue = this.peli.getAlue();
         this.laatat = new ArrayList();
     }
-    
+
     public void setTapahtumankasittelija(Tapahtumankasittelija tk) {
         this.tk = tk;
     }
@@ -42,7 +42,7 @@ public class Liikkeenhallinta {
     public void setAlue(Alue alue) {
         this.alue = alue;
     }
-    
+
     public Alue getAlue() {
         return this.alue;
     }
@@ -64,11 +64,11 @@ public class Liikkeenhallinta {
     public void setPelaaja(Pelaaja pelaaja) {
         this.pelaaja = pelaaja;
     }
-    
+
     public boolean getPlayerSet() {
         return this.playerSet;
     }
-    
+
     public void setPlayerSet() {
         this.playerSet = true;
     }
@@ -90,9 +90,9 @@ public class Liikkeenhallinta {
      * @param pelaaja pelin pelaaja
      */
     public void validoiPelaaja(Pelaaja pelaaja) {
-        int px = haePelaajanX();
-        int py = haePelaajanY();
-        
+        int px = pelaaja.getX();
+        int py = pelaaja.getY();
+
         if (lowerBoundsCheck(px, py)) {
             resetPlayerByAlue();
         } else if (upperBoundsCheck(px, py)) {
@@ -102,13 +102,13 @@ public class Liikkeenhallinta {
         }
         setPlayerSet();
     }
-    
-    public int haePelaajanX() {
-        return this.pelaaja.getX();
+
+    public int laskePelaajanUusiX(int xa) {
+        return this.pelaaja.getX() + xa;
     }
-    
-    public int haePelaajanY() {
-        return this.pelaaja.getY();
+
+    public int laskePelaajanUusiY(int ya) {
+        return this.pelaaja.getY() + ya;
     }
 
     /**
@@ -127,8 +127,8 @@ public class Liikkeenhallinta {
      * @param ya haluttu muutos y-koordinaattiin
      */
     public void move(int xa, int ya) {
-        int nx = this.pelaaja.getX() + xa;
-        int ny = this.pelaaja.getY() + ya;
+        int nx = laskePelaajanUusiX(xa);
+        int ny = laskePelaajanUusiY(ya);
         if (!collision(nx, ny)) {
             this.pelaaja.moveX(xa);
             this.pelaaja.moveY(ya);
@@ -191,5 +191,5 @@ public class Liikkeenhallinta {
         }
         return false;
     }
-    
+
 }

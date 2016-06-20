@@ -2,6 +2,7 @@ package fukroglyk.logiikka;
 
 import fukroglyk.entiteetit.NPC;
 import fukroglyk.entiteetit.Pelaaja;
+import fukroglyk.entiteetit.Tavara;
 import fukroglyk.logiikka.maailma.Alue;
 import fukroglyk.logiikka.maailma.Laatta;
 import java.util.ArrayList;
@@ -19,6 +20,11 @@ public class LiikkeenhallintaTest {
     Alue alue;
     NPC testilaatta;
     ArrayList<Laatta> testilaattalista;
+    ArrayList<Laatta> tavaratestilaattalista;
+    Tavara testitavara;
+    Laatta tavara;
+    Tapahtumankasittelija tk;
+    Peli peli;
 
     public LiikkeenhallintaTest() {
     }
@@ -34,12 +40,21 @@ public class LiikkeenhallintaTest {
     @Before
     public void setUp() {
         this.lhtdef = new Liikkeenhallinta();
+        this.tk = new Tapahtumankasittelija();
         this.pelaaja = new Pelaaja(0, 5, 7);
         this.alue = new Alue();
         this.alue.setId(10);
         this.testilaattalista = new ArrayList();
         this.testilaatta = new NPC(1, "testinpc", 5, 7);
         this.testilaattalista.add(this.testilaatta);
+        
+        this.testitavara = new Tavara(2, "derp", 1, 1);
+        this.tavara = (Laatta) this.testitavara;
+        this.tavaratestilaattalista = new ArrayList();
+        this.tavaratestilaattalista.add(this.tavara);
+        this.peli = new Peli();
+        this.tk.setPeli(this.peli);
+        
     }
 
     @After
@@ -55,18 +70,6 @@ public class LiikkeenhallintaTest {
     public void kunPelaajaOnAsetettuplayerSetPalauttaaTrue() {
         this.lhtdef.setPlayerSet();
         assertTrue("Pelaajan setPlayer palauttaa väärin", this.lhtdef.getPlayerSet());
-    }
-
-    @Test
-    public void liikkeenHallintaAsettaaPelaajanXOikein() {
-        this.lhtdef.setPelaaja(this.pelaaja);
-        assertTrue("Pelaaja ei asettunut oikein", this.pelaaja.getX() == this.lhtdef.haePelaajanX());
-    }
-
-    @Test
-    public void liikkeenHallintaAsettaaPelaajanYOikein() {
-        this.lhtdef.setPelaaja(this.pelaaja);
-        assertTrue("Pelaaja ei asettunut oikein", this.pelaaja.getY() == this.lhtdef.haePelaajanY());
     }
 
     @Test
@@ -95,8 +98,8 @@ public class LiikkeenhallintaTest {
         this.lhtdef.setPelaaja(this.pelaaja);
         this.lhtdef.setAlue(this.alue);
         this.lhtdef.resetPlayerByAlue();
-        assertTrue("Pelaajan x-koordinaatti ei asettunut oikein", this.lhtdef.haePelaajanX() == 1);
-        assertTrue("Pelaajan y-koordinaatti ei asettunut oikein", this.lhtdef.haePelaajanY() == 1);
+        assertTrue("Pelaajan x-koordinaatti ei asettunut oikein", this.pelaaja.getX() == 1);
+        assertTrue("Pelaajan y-koordinaatti ei asettunut oikein", this.pelaaja.getY() == 1);
         
     }
     
@@ -205,6 +208,29 @@ public class LiikkeenhallintaTest {
         this.lhtdef.init();
         this.lhtdef.move(0, 1);
         assertTrue("move liikuttaa pelaajaa väärin Y", this.pelaaja.getY() == 2);
+    }
+    
+    @Test
+    public void laskePelaajanUusiXLaskeeUudenXOikein() {
+        this.lhtdef.setPelaaja(this.pelaaja);
+        int uusiX = this.lhtdef.laskePelaajanUusiX(5);
+        assertTrue("Pelaajan uusi X on väärin", uusiX == 10);
+    }
+    
+    @Test
+    public void laskePelaajanUusiYLaskeeUudenYOikein() {
+        this.lhtdef.setPelaaja(this.pelaaja);
+        int uusiY = this.lhtdef.laskePelaajanUusiY(5);
+        assertTrue("Pelaajan uusi X on väärin", uusiY == 12);
+    }
+    
+    @Test
+    public void collisionTekeeLaatalleToiminnon() {
+        this.lhtdef.setTapahtumankasittelija(this.tk);
+        this.lhtdef.setLaatat(this.tavaratestilaattalista);
+        this.lhtdef.setPlayerSet();
+        this.lhtdef.collision(1, 1);
+        assertTrue("Tavara on poimittu", this.testitavara.poimittu());
     }
 
 }
