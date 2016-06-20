@@ -60,10 +60,10 @@ public class Alueenhallinta {
      *
      * @param ovi uloskäynti
      */
-    public void vaihdaAluettaByOvi(Ovi ovi) {
+    public boolean vaihdaAluettaByOvi(Ovi ovi) {
         vaihdaMaailmanAktiivinenAlue(ovi);
         asetaPelaajanKoordinaatit(ovi);
-        paivitaMaailma();
+        return paivitaMaailma();
     }
 
     /**
@@ -90,8 +90,8 @@ public class Alueenhallinta {
     /**
      * Lähettää päivityskäskyn maailmalle alueen vaihduttua.
      */
-    public void paivitaMaailma() {
-        this.maailma.refresh();
+    public boolean paivitaMaailma() {
+        return this.maailma.refresh();
     }
 
 }

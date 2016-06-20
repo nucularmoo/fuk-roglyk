@@ -86,8 +86,8 @@ public class AlueenhallintaTest {
     
     @Test
     public void vaihdaAluettaByOviPaivittaaMaailman() {
-        this.ah.vaihdaAluettaByOvi(o1);
-        assertFalse("Maailma ei ilmoita itsestään", this.maailma.refresh());
+       
+        assertFalse("Maailma ei ilmoita itsestään", this.ah.vaihdaAluettaByOvi(o1));
     }
     
     

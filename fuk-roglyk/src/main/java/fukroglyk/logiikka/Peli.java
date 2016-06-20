@@ -15,7 +15,6 @@ public class Peli {
     private ArrayList<Piirrettava> piirrettavat;
     private ArrayList<Laatta> laatat;
     private Maailma maailma;
-    private Alue alue;
     private Liikkeenhallinta lh;
     private Tapahtumankasittelija tk;
 
@@ -37,7 +36,6 @@ public class Peli {
 
     public void luoMaailma() {
         this.maailma.luoMaailma();
-        this.alue = getAlue();
     }
 
     /**
@@ -60,8 +58,7 @@ public class Peli {
      * piirrettävistä.
      */
     public void refreshAlue() {
-        setAlue(getAlue());
-        this.lh.setAlue(this.alue);
+        this.lh.setAlue(getCurrentAlue());
         haeAlueenLaatat();
         setPiirrettavat();
         setLiikkeenhallinta();
@@ -79,7 +76,7 @@ public class Peli {
      *
      * @return Alue jolla pelissä tällähetkellä ollaan.
      */
-    public Alue getAlue() {
+    public Alue getCurrentAlue() {
         return this.maailma.getCurrentAlue();
     }
 
@@ -90,15 +87,6 @@ public class Peli {
      */
     public Liikkeenhallinta getLH() {
         return this.lh;
-    }
-
-    /**
-     * Asettaa pelin alueen syötteen mukaiseksi.
-     *
-     * @param alue Syötteenä annettu alue
-     */
-    public void setAlue(Alue alue) {
-        this.alue = alue;
     }
 
     public void generoiTapahtumankasittelija() {
@@ -144,11 +132,6 @@ public class Peli {
      */
     public void poimi(Tavara tavara) {
         this.laukku.lisaaTavara(tavara);
-        for (Tavara derp : this.laukku.getLaukku()) {
-            System.out.println(derp.getNimi());
-
-        }
-        System.out.println("");
     }
 
     /**
@@ -167,6 +150,11 @@ public class Peli {
         return this.laatat;
     }
 
+    /**
+     * Palauttaa pelin pelaajan käyttämän laukun.
+     *
+     * @return pelaajan käyttämä laukku
+     */
     public Laukku getLaukku() {
         return this.laukku;
     }

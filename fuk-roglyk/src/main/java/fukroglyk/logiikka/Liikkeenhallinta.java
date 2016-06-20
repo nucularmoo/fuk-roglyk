@@ -26,7 +26,7 @@ public class Liikkeenhallinta {
     public Liikkeenhallinta(Peli peli) {
         this.playerSet = false;
         this.peli = peli;
-        this.alue = this.peli.getAlue();
+        this.alue = this.peli.getCurrentAlue();
         this.laatat = new ArrayList();
     }
 
