@@ -36,7 +36,7 @@ public class AlueenhallintaTest {
 
     @Before
     public void setUp() {
-        
+
         this.pelaaja = new Pelaaja(0, 5, 5);
         this.maailma = new Maailma(this.pelaaja);
         this.ah = new Alueenhallinta(this.maailma);
@@ -62,7 +62,7 @@ public class AlueenhallintaTest {
         this.ah.setOvet(ovet);
         assertFalse("Ovilista on tyhja", this.ah.getOvet().isEmpty());
     }
-    
+
     @Test
     public void setAlueenHallintaAsettaaOikeinAlueHallinnan() {
         this.ah.setOvet(ovet);
@@ -70,26 +70,23 @@ public class AlueenhallintaTest {
         assertTrue("Ovella on alueenhallinta asetettu", this.o1.getAhSet());
         assertTrue("Ovella on alueenhallinta asetettu", this.o2.getAhSet());
     }
-    
+
     @Test
     public void vaihdaAluettaByOviAsettaaCurrentAlueenMaailmalleOikein() {
         this.ah.vaihdaAluettaByOvi(o1);
         assertTrue("Alue ei vaihtunut oikein", this.maailma.getCurrentAlue().getId() == 1);
     }
-    
+
     @Test
     public void asetaPelaajanKoordinaatitAsettaaPelaajanKoordinaatitOikein() {
         this.ah.vaihdaAluettaByOvi(o1);
         assertTrue("Pelaajan X ei vaihtunut", this.pelaaja.getX() == this.o1.getX());
         assertTrue("Pelaajan Y ei vaihtunut", this.pelaaja.getY() == this.o1.getY());
     }
-    
+
     @Test
     public void vaihdaAluettaByOviPaivittaaMaailman() {
-       
         assertFalse("Maailma ei ilmoita itsestään", this.ah.vaihdaAluettaByOvi(o1));
     }
-    
-    
-    
+
 }
