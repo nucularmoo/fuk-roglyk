@@ -11,22 +11,27 @@ import java.util.ArrayList;
  * @author NukeCow
  */
 public class Liikkeenhallinta {
-
+    
     private ArrayList<Laatta> laatat;
     private Peli peli;
     private Pelaaja pelaaja;
     private Alue alue;
     private boolean playerSet;
-
+    private Tapahtumankasittelija tk;
+    
     public Liikkeenhallinta() {
-
+        
     }
-
+    
     public Liikkeenhallinta(Peli peli) {
         this.playerSet = false;
         this.peli = peli;
         this.alue = this.peli.getAlue();
         this.laatat = new ArrayList();
+    }
+    
+    public void setTapahtumankasittelija(Tapahtumankasittelija tk) {
+        this.tk = tk;
     }
 
     /**
@@ -37,7 +42,7 @@ public class Liikkeenhallinta {
     public void setAlue(Alue alue) {
         this.alue = alue;
     }
-
+    
     public Alue getAlue() {
         return this.alue;
     }
@@ -59,11 +64,11 @@ public class Liikkeenhallinta {
     public void setPelaaja(Pelaaja pelaaja) {
         this.pelaaja = pelaaja;
     }
-
+    
     public boolean getPlayerSet() {
         return this.playerSet;
     }
-
+    
     public void setPlayerSet() {
         this.playerSet = true;
     }
@@ -87,7 +92,7 @@ public class Liikkeenhallinta {
     public void validoiPelaaja(Pelaaja pelaaja) {
         int px = haePelaajanX();
         int py = haePelaajanY();
-
+        
         if (lowerBoundsCheck(px, py)) {
             resetPlayerByAlue();
         } else if (upperBoundsCheck(px, py)) {
@@ -97,11 +102,11 @@ public class Liikkeenhallinta {
         }
         setPlayerSet();
     }
-
+    
     public int haePelaajanX() {
         return this.pelaaja.getX();
     }
-
+    
     public int haePelaajanY() {
         return this.pelaaja.getY();
     }
@@ -179,12 +184,12 @@ public class Liikkeenhallinta {
         for (Laatta laatta : this.laatat) {
             if (x == laatta.getX() && y == laatta.getY()) {
                 if (getPlayerSet()) {
-                    laatta.toiminto();
+                    this.tk.kasitteleToiminto(laatta);
                 }
                 return laatta.collision();
             }
         }
         return false;
     }
-
+    
 }

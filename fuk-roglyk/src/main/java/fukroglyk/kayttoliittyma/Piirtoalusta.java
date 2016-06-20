@@ -24,6 +24,7 @@ public class Piirtoalusta extends JPanel {
         this.piirrettavat = pir;
     }
 
+    @Override
     protected void paintComponent(Graphics graphics) {
 
         super.paintComponent(graphics);

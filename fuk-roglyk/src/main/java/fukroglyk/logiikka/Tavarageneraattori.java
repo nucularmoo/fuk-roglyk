@@ -18,7 +18,6 @@ public class Tavarageneraattori {
      */
     public Tavarageneraattori() {
         this.tavarat = new ArrayList();
-
     }
 
     /**

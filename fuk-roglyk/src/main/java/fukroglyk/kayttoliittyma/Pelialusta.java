@@ -35,7 +35,6 @@ public class Pelialusta extends Canvas implements Runnable {
         this.peli.init();
         peli.luoMaailmanHallinta();
         peli.luoMaailma();
-
     }
 
     /**
@@ -55,7 +54,6 @@ public class Pelialusta extends Canvas implements Runnable {
         setMinimumSize(new Dimension(WIDTH * SCALE, HEIGHT * SCALE));
         setMaximumSize(new Dimension(WIDTH * SCALE, HEIGHT * SCALE));
         setPreferredSize(new Dimension(WIDTH * SCALE, HEIGHT * SCALE));
-
     }
 
     /**
@@ -75,7 +73,6 @@ public class Pelialusta extends Canvas implements Runnable {
         frame.setResizable(false);
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);
-
     }
 
     /**
@@ -102,10 +99,8 @@ public class Pelialusta extends Canvas implements Runnable {
         new Thread(this).start();
 
         while (kaynnissa) {
-
             peli.piirra();
             this.piirtoalusta.setPiirrettavat(peli.getPiirrettavat());
-
         }
     }
 

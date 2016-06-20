@@ -17,6 +17,7 @@ public class Peli {
     private Maailma maailma;
     private Alue alue;
     private Liikkeenhallinta lh;
+    private Tapahtumankasittelija tk;
 
     public Peli() {
 
@@ -25,7 +26,6 @@ public class Peli {
         this.piirrettavat = new ArrayList();
         this.laatat = new ArrayList();
         this.maailma = new Maailma(this.pelaaja);
-        
 
     }
 
@@ -49,17 +49,22 @@ public class Peli {
         luoMaailma();
         haeAlueenLaatat();
         setPiirrettavat();
+        generoiTapahtumankasittelija();
         generoiLiikkeenhallinta();
         setLiikkeenhallinta();
     }
 
+    /**
+     * Aluetta vaihdettaessa päivittää pelin aktiivisen alueen, päivittää
+     * liikkeenhallinnan aktiivisen alueen sekä hakee listat alueen laatoista ja
+     * piirrettävistä.
+     */
     public void refreshAlue() {
         setAlue(getAlue());
         this.lh.setAlue(this.alue);
         haeAlueenLaatat();
         setPiirrettavat();
         setLiikkeenhallinta();
-
     }
 
     /**
@@ -96,17 +101,22 @@ public class Peli {
         this.alue = alue;
     }
 
+    public void generoiTapahtumankasittelija() {
+        this.tk = new Tapahtumankasittelija();
+        this.tk.setPeli(this);
+    }
+
     /**
      * Luo maailman tapahtumien hallinnoivan kartta-olion.
      */
     public void generoiLiikkeenhallinta() {
         this.lh = new Liikkeenhallinta(this);
+        this.lh.setTapahtumankasittelija(this.tk);
         this.lh.setPelaaja(pelaaja);
     }
 
     public void setLiikkeenhallinta() {
         this.lh.setLaatat(this.laatat);
-        this.lh.init();
     }
 
     /**
@@ -134,6 +144,11 @@ public class Peli {
      */
     public void poimi(Tavara tavara) {
         this.laukku.lisaaTavara(tavara);
+        for (Tavara derp : this.laukku.getLaukku()) {
+            System.out.println(derp.getNimi());
+
+        }
+        System.out.println("");
     }
 
     /**

@@ -53,7 +53,6 @@ public class Maailmakehys {
         kansoita(nilnil, x, y);
         nilnil.setId(0);
         this.alueet.add(nilnil);
-        nilnil.haeLaatat();
 
         int[] z = new int[]{4, 6};
         int[] s = new int[]{5, 2};
