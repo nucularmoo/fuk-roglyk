@@ -41,16 +41,4 @@ public class HahmogeneraattoriTest {
     public void tearDown() {
     }
 
-    @Test
-    public void alustaHahmotTyhjentaaHahmoListan() {
-        ArrayList<Hahmo> tl = new ArrayList();
-        NPC derp = new NPC(1, "tnpc", 56, 23);
-        tl.add(derp);
-        hgt.setHahmot(tl);
-        hgt.alustaHahmot();
-        ArrayList<Hahmo> haehahmot = hgt.getHahmot();
-        assertTrue("Hahmolista ei tyhjä", haehahmot.isEmpty());
-        assertTrue("Hahmolista ei tyhjä", hgt.getHahmot().isEmpty());
-    }
-
 }

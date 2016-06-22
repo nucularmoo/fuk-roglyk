@@ -168,9 +168,6 @@ public class Ovi extends Piirrettava implements Laatta {
             return false;
         }
         Ovi verrattava = (Ovi) o;
-        if (this.x != verrattava.getX() || this.y != verrattava.getY()) {
-            return false;
-        }
-        return true;
+        return !(this.x != verrattava.getX() || this.y != verrattava.getY());
     }
 }

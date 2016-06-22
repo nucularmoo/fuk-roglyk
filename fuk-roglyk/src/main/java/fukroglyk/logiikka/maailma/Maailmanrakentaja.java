@@ -10,41 +10,31 @@ public class Maailmanrakentaja {
     private Gsonlukija lukija;
     private ArrayList<Alue> alueet;
     private ArrayList<Ovi> ovet;
+    private ArrayList<Alueenrakentaja> arlist;
 
     public Maailmanrakentaja() throws FileNotFoundException {
         this.lukija = new Gsonlukija();
         this.alueet = new ArrayList();
         this.ovet = new ArrayList();
+        this.arlist = new ArrayList();
     }
 
-    public void teeTaverna() throws FileNotFoundException {
-        Alue taverna = new Alue();
-        Alueenrakentaja ar = this.lukija.teeTaverna();
-        ar.luoTyhjaLaattaLista();
-        ar.luoTyhjaPiirrettavaLista();
-        ar.luoTyhjaOviLista();
-        ar.setAlue(taverna);
-        taverna.setAlueenrakentaja(ar);
-        ar.generoiLaatat();
-        taverna.haeLaatat();
-        taverna.haePiirrettavat();
-        taverna.haeOvet();
-        this.alueet.add(taverna);
+    public void haeAlueenrakentajat() throws FileNotFoundException {
+        this.lukija.lueAlueenakentajienTiedot();
+        this.arlist = this.lukija.getAR();
     }
-    
-    public void teeKaupunki() throws FileNotFoundException {
-        Alue kaupunki = new Alue();
-        Alueenrakentaja ar = this.lukija.teeKaupunki();
-        ar.luoTyhjaLaattaLista();
-        ar.luoTyhjaPiirrettavaLista();
-        ar.luoTyhjaOviLista();
-        ar.setAlue(kaupunki);
-        kaupunki.setAlueenrakentaja(ar);
-        ar.generoiLaatat();
-        kaupunki.haeLaatat();
-        kaupunki.haePiirrettavat();
-        kaupunki.haeOvet();
-        this.alueet.add(kaupunki);
+
+    public void rakennaMaailma() {
+        for (Alueenrakentaja ar : this.arlist) {
+            Alue alue = new Alue();
+            ar.alusta();
+            ar.setAlue(alue);
+            alue.setAlueenrakentaja(ar);
+            ar.generoiLaatat();
+            alue.haeLaatat();
+            alue.haeAlueenSisalto();
+            this.alueet.add(alue);
+        }
     }
 
     public void listaaOvet() {

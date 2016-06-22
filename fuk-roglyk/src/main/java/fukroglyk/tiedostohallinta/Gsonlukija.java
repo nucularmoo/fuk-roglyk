@@ -4,24 +4,35 @@ import com.google.gson.Gson;
 import fukroglyk.logiikka.maailma.Alueenrakentaja;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.util.ArrayList;
 
 public class Gsonlukija {
 
     private Gson geeson;
+    private ArrayList<Alueenrakentaja> arlist;
 
     public Gsonlukija() {
         this.geeson = new Gson();
-
+        this.arlist = new ArrayList();
     }
 
-    public Alueenrakentaja teeTaverna() throws FileNotFoundException {
+    public void lueAlueenakentajienTiedot() throws FileNotFoundException {
+        teeTaverna();
+        teeKaupunki();
+    }
+
+    public ArrayList<Alueenrakentaja> getAR() {
+        return this.arlist;
+    }
+
+    public void teeTaverna() throws FileNotFoundException {
         Alueenrakentaja ar = this.geeson.fromJson(new FileReader("src/main/resources/Taverna.json"), Alueenrakentaja.class);
-        return ar;
+        this.arlist.add(ar);
     }
 
-    public Alueenrakentaja teeKaupunki() throws FileNotFoundException {
+    public void teeKaupunki() throws FileNotFoundException {
         Alueenrakentaja ar = this.geeson.fromJson(new FileReader("src/main/resources/Kaupunki.json"), Alueenrakentaja.class);
-        return ar;
+        this.arlist.add(ar);
     }
 
 }

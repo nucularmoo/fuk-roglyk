@@ -57,6 +57,7 @@ public class Alueenrakentajatest {
         ar.setHahmoX(this.x);
         ar.setHahmoY(this.y);
         ar.setHahmoNimi(hahmoNimi);
+        ar.setTervehdykset(hahmoNimi);
         ar.generoiHahmot();
         assertFalse("Hahmoja ei generoitu", this.ar.getLaatat().isEmpty());
     }
@@ -83,6 +84,7 @@ public class Alueenrakentajatest {
         ar.setHahmoX(this.x);
         ar.setHahmoY(this.y);
         ar.setHahmoNimi(hahmoNimi);
+        ar.setTervehdykset(hahmoNimi);
         ar.setBoundsX(1);
         ar.setBoundsY(1);
         ar.setAlue(alue);

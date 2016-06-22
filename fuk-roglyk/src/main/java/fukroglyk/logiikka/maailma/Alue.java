@@ -27,8 +27,8 @@ public class Alue {
      * varten.
      */
     public Alue() {
-        this.aloitusX = 1;
-        this.aloitusY = 1;
+        this.aloitusX = 18;
+        this.aloitusY = 18;
         this.boundsX = 20;
         this.boundsY = 20;
         this.piirrettavat = new ArrayList();
@@ -43,6 +43,12 @@ public class Alue {
      */
     public void setId(int id) {
         this.id = id;
+    }
+    
+    public void haeAlueenSisalto() {
+        haeOvet();
+        haeLaatat();
+        haePiirrettavat();
     }
 
     /**

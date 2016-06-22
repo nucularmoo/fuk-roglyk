@@ -60,7 +60,4 @@ public class PeliTest {
         this.peli.init();
         assertTrue("Laattoja ei ole", !this.peli.getLaatat().isEmpty());
     }
-    
-   
-
 }

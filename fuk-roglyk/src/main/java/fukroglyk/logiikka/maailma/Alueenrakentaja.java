@@ -22,6 +22,7 @@ public class Alueenrakentaja {
     private int[] hahmoX;
     private int[] hahmoY;
     private String[] hahmoNimi;
+    private String[] hahmoTervehdys;
     private int[] oviX;
     private int[] oviY;
     private int[] siirtyma;
@@ -38,6 +39,12 @@ public class Alueenrakentaja {
         this.ovet = new ArrayList();
         this.boundsX = 20;
         this.boundsY = 20;
+    }
+    
+    public void alusta() {
+        this.laatat = new ArrayList();
+        this.ovet = new ArrayList();
+        this.piirrettavat = new ArrayList();
     }
 
     public void luoTyhjaLaattaLista() {
@@ -70,6 +77,10 @@ public class Alueenrakentaja {
 
     public void setSiirtyma(int[] siirtyma) {
         this.siirtyma = siirtyma;
+    }
+    
+    public void setTervehdykset(String[] tervehdykset) {
+        this.hahmoTervehdys = tervehdykset;
     }
     
     public void setOviX(int[] oviX) {
@@ -173,6 +184,7 @@ public class Alueenrakentaja {
         hage.setX(this.hahmoX);
         hage.setY(this.hahmoY);
         hage.setHahmoNimi(this.hahmoNimi);
+        hage.setTervehdykset(this.hahmoTervehdys);
         hage.generoi();
         this.laatat.addAll(hage.getHahmot());
         this.piirrettavat.addAll(hage.getHahmot());

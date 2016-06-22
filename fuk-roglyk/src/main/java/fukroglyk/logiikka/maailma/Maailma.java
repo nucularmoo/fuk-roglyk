@@ -38,7 +38,7 @@ public class Maailma {
     public void setPeli(Peli peli) {
         this.peli = peli;
     }
-    
+
     public void setMaailmanrakentaja() throws FileNotFoundException {
         this.mr = new Maailmanrakentaja();
     }
@@ -63,11 +63,11 @@ public class Maailma {
 
     /**
      * Luo tämänhetkisen maailman kaikki alueet.
+     * @throws java.io.FileNotFoundException
      */
     public void luoMaailma() throws FileNotFoundException {
-        
-        this.mr.teeTaverna();
-        this.mr.teeKaupunki();
+        this.mr.haeAlueenrakentajat();
+        this.mr.rakennaMaailma();
         this.ah.setOvet(this.mr.getLinkitetytOvet());
         this.ah.setOvienAlueenhallinta();
         this.alueet = this.mr.getAlueet();

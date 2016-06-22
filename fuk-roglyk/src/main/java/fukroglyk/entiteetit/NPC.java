@@ -94,11 +94,7 @@ public class NPC extends Hahmo implements Laatta {
      * Vaihtaa NPC:n tapaamistilan true:sta falseksi ja falsesta trueksi.
      */
     public void setMet() {
-        if (this.met == false) {
-            this.met = true;
-        } else {
-            this.met = false;
-        }
+        this.met = !this.met;
     }
 
     @Override
@@ -125,7 +121,7 @@ public class NPC extends Hahmo implements Laatta {
     public void piirra(Graphics graphics) {
         if (getMet()) {
             graphics.setColor(Color.white);
-            graphics.drawString(this.nimi + ": " + this.tervehdys, 20, 400);
+            graphics.drawString(this.nimi + this.tervehdys, 20, 400);
         }
         if (getMission()) {
             graphics.setColor(Color.GREEN);
