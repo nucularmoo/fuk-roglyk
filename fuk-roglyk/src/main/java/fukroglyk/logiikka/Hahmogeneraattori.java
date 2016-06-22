@@ -18,6 +18,7 @@ public class Hahmogeneraattori {
 
     private int[] x;
     private int[] y;
+    private String[] hahmoNimi;
 
     /**
      * Konstruktori ottaa taulukon luotavien hahmojen x-koordinaateista ja
@@ -27,12 +28,24 @@ public class Hahmogeneraattori {
      * @param x taulukko hahmojen x-koordinaatteja
      * @param y taulukko hahmojen y-koordinaatteja
      */
-    public Hahmogeneraattori(int[] x, int[] y) {
+    public Hahmogeneraattori() {
         this.hahmot = new ArrayList();
         this.x = x;
         this.y = y;
         this.tervehdykset = new ArrayList();
         this.random = new Random();
+    }
+    
+    public void setX(int[] x) {
+        this.x = x;
+    }
+    
+    public void setY(int[] y) {
+        this.y = y;
+    }
+    
+    public void setHahmoNimi(String[] hahmoNimi) {
+        this.hahmoNimi = hahmoNimi;
     }
 
     /**
@@ -45,10 +58,8 @@ public class Hahmogeneraattori {
         alustaHahmot();
 
         for (int i = 0; i < x.length; i++) {
-            String nimi = Integer.toString(i + 1);
-            NPC npc = new NPC(i + 1, nimi, this.x[i], this.y[i]);
+            NPC npc = new NPC(i + 1, this.hahmoNimi[i], this.x[i], this.y[i]);
             this.hahmot.add(npc);
-
             npc.setMissionexists();
             npc.setMission();
             int tervehdys = this.random.nextInt(this.tervehdykset.size());

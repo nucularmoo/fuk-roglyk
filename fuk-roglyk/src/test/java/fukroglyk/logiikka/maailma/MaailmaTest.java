@@ -1,6 +1,7 @@
 package fukroglyk.logiikka.maailma;
 
 import fukroglyk.entiteetit.Pelaaja;
+import java.io.FileNotFoundException;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -25,7 +26,7 @@ public class MaailmaTest {
     }
 
     @Before
-    public void setUp() {
+    public void setUp() throws FileNotFoundException {
         this.pt = new Pelaaja(0, 5, 3);
         this.maailmatest = new Maailma(this.pt);
         this.maailmatest.luoMaailma();

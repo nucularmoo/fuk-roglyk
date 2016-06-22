@@ -75,11 +75,6 @@ public class Pelaaja extends Hahmo {
     }
 
     @Override
-    public char getChar() {
-        return '@';
-    }
-
-    @Override
     public int getId() {
         return this.id;
     }

@@ -6,6 +6,7 @@ import javax.swing.JFrame;
 import java.awt.Canvas;
 import java.awt.Container;
 import java.awt.Dimension;
+import java.io.FileNotFoundException;
 
 /**
  * Luokka luo ja hallinnoi graafista käyttöliittymää.
@@ -29,8 +30,7 @@ public class Pelialusta extends Canvas implements Runnable {
 
     public Piirtoalusta piirtoalusta;
 
-    public Pelialusta() {
-
+    public Pelialusta() throws FileNotFoundException {
         this.peli = new Peli();
         this.peli.init();
         peli.luoMaailmanHallinta();

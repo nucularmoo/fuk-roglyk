@@ -2,6 +2,7 @@ package fukroglyk.logiikka;
 
 import fukroglyk.entiteetit.Tavara;
 import fukroglyk.logiikka.maailma.Alue;
+import java.io.FileNotFoundException;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -43,19 +44,19 @@ public class PeliTest {
     }
 
     @Test
-    public void pelillaOnLiikkeenhallintaInitinJalkeen() {
+    public void pelillaOnLiikkeenhallintaInitinJalkeen() throws FileNotFoundException {
         this.peli.init();
         assertTrue("Liikkeenhallintaa ei ole olemassa", this.peli.getLH() != null);
     }
 
     @Test
-    public void pelillaOnPiirrettavatInitinJalkeen() {
+    public void pelillaOnPiirrettavatInitinJalkeen() throws FileNotFoundException {
         this.peli.init();
         assertTrue("Piirrettavia ei ole", !this.peli.getPiirrettavat().isEmpty());
     }
 
     @Test
-    public void pelillaOnLaatatInitinJalkeen() {
+    public void pelillaOnLaatatInitinJalkeen() throws FileNotFoundException {
         this.peli.init();
         assertTrue("Laattoja ei ole", !this.peli.getLaatat().isEmpty());
     }

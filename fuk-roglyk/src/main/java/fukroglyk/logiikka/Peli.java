@@ -6,6 +6,7 @@ import fukroglyk.entiteetit.Pelaaja;
 import fukroglyk.entiteetit.Piirrettava;
 import fukroglyk.entiteetit.Tavara;
 import fukroglyk.logiikka.maailma.Laatta;
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 
 public class Peli {
@@ -28,21 +29,22 @@ public class Peli {
 
     }
 
-    public void luoMaailmanHallinta() {
-        this.maailma.setMaailmakehys();
+    public void luoMaailmanHallinta() throws FileNotFoundException {
+        this.maailma.setMaailmanrakentaja();
         this.maailma.setAlueenhallinta();
         this.maailma.setPeli(this);
     }
 
-    public void luoMaailma() {
+    public void luoMaailma() throws FileNotFoundException {
         this.maailma.luoMaailma();
     }
 
     /**
      * Hakee aktiivisen alueen laatat, asettaa piirrettävät käyttöliittymää
      * varten sekä luo liikkeenhallinnan näppäimistönkuuntelijaa varten.
+     * @throws java.io.FileNotFoundException
      */
-    public void init() {
+    public void init() throws FileNotFoundException {
         luoMaailmanHallinta();
         luoMaailma();
         haeAlueenLaatat();

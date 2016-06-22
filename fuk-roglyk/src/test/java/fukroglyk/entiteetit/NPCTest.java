@@ -52,12 +52,7 @@ public class NPCTest {
     public void npcnGetYPalauttaaOikein() {
         assertTrue("Palauttaa väärin Y", tnpcdef.getY() == 78);
     }
-
-    @Test
-    public void npcnGetCharPalauttaaOikein() {
-        assertTrue("Palauttaa char väärin", tnpcdef.getChar() == '3');
-    }
-
+    
     @Test
     public void setMissionAsettaaTrue() {
         tnpcdef.setMission();

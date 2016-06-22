@@ -138,7 +138,7 @@ public class Ovi extends Piirrettava implements Laatta {
 
     @Override
     public void piirra(Graphics graphics) {
-        graphics.setColor(Color.LIGHT_GRAY);
+        graphics.setColor(Color.GRAY);
         graphics.fillOval(x * 15, y * 15, 10, 10);
 
     }

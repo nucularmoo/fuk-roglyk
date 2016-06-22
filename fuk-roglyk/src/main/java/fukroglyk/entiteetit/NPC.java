@@ -122,15 +122,10 @@ public class NPC extends Hahmo implements Laatta {
     }
 
     @Override
-    public char getChar() {
-        return Character.forDigit(this.id, 10);
-    }
-
-    @Override
     public void piirra(Graphics graphics) {
         if (getMet()) {
             graphics.setColor(Color.white);
-            graphics.drawString(this.tervehdys, 20, 400);
+            graphics.drawString(this.nimi + ": " + this.tervehdys, 20, 400);
         }
         if (getMission()) {
             graphics.setColor(Color.GREEN);

@@ -18,3 +18,5 @@ Päivä | Tunnit | Kuvaus
 14.06.2016 | 5h | Ovet ja alueelta toiselle liikkuminen kuntoon
 15.06.2016 | 7h | Maailman ja alueen hallinnoinnin refaktorointia
 16.06.2016 | 7h | Palautus ja sen jutut
+20.06.2016 | 6h | Tapahtumakäsittelijä, testejä ja refaktorointia
+21.06.2016 | 5h | Jsonin ja Gsonin ihmettelyä

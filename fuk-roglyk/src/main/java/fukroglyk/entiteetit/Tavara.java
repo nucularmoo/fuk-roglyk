@@ -72,15 +72,6 @@ public class Tavara extends Piirrettava implements Laatta {
     }
 
     /**
-     * Palauttaa tavaran char-merkin.
-     *
-     * @return tavaran char-merkki
-     */
-    public char getChar() {
-        return '?';
-    }
-
-    /**
      * Asettaa tavaran tilaan jossa sitä ei piirretä.
      */
     public void noDraw() {

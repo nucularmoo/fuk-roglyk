@@ -1,7 +1,9 @@
 package fukroglyk.logiikka.maailma;
 
+import fukroglyk.entiteetit.Ovi;
 import fukroglyk.entiteetit.Piirrettava;
 import fukroglyk.logiikka.Hahmogeneraattori;
+import fukroglyk.logiikka.Ovigeneraattori;
 import fukroglyk.logiikka.Tavarageneraattori;
 import java.util.ArrayList;
 
@@ -15,9 +17,14 @@ public class Alueenrakentaja {
 
     private ArrayList<Laatta> laatat;
     private ArrayList<Piirrettava> piirrettavat;
+    private ArrayList<Ovi> ovet;
     private Alue alue;
-    private int[] x;
-    private int[] y;
+    private int[] hahmoX;
+    private int[] hahmoY;
+    private String[] hahmoNimi;
+    private int[] oviX;
+    private int[] oviY;
+    private int[] siirtyma;
     private int boundsX;
     private int boundsY;
 
@@ -31,19 +38,31 @@ public class Alueenrakentaja {
         this.boundsX = 20;
         this.boundsY = 20;
     }
-    
+
+    public void luoTyhjaLaattaLista() {
+        this.laatat = new ArrayList();
+    }
+
+    public void luoTyhjaPiirrettavaLista() {
+        this.piirrettavat = new ArrayList();
+    }
+
+    public void luoTyhjaOviLista() {
+        this.ovet = new ArrayList();
+    }
+
     public void setBoundsX(int boundsX) {
         this.boundsX = boundsX;
     }
-    
+
     public void setBoundsY(int boundsY) {
         this.boundsY = boundsY;
     }
-    
+
     public int getBoundsX() {
         return this.boundsX;
     }
-    
+
     public int getBoundsY() {
         return this.boundsX;
     }
@@ -63,7 +82,7 @@ public class Alueenrakentaja {
      * @param x alueen hahmojen x-koordinaatit
      */
     public void setHahmoX(int[] x) {
-        this.x = x;
+        this.hahmoX = x;
     }
 
     /**
@@ -72,7 +91,7 @@ public class Alueenrakentaja {
      * @param y alueen hahmojen y-koordinaatit
      */
     public void setHahmoY(int[] y) {
-        this.y = y;
+        this.hahmoY = y;
     }
 
     /**
@@ -82,6 +101,7 @@ public class Alueenrakentaja {
         pystytaSeinat();
         generoiTavarat();
         generoiHahmot();
+        generoiOvet();
     }
 
     /**
@@ -100,6 +120,10 @@ public class Alueenrakentaja {
      */
     public ArrayList<Laatta> getLaatat() {
         return this.laatat;
+    }
+
+    public ArrayList<Ovi> getOvet() {
+        return this.ovet;
     }
 
     /**
@@ -128,10 +152,26 @@ public class Alueenrakentaja {
      * Generoi alueen hahmot alueen koordinaattilistojen mukaan.
      */
     public void generoiHahmot() {
-        Hahmogeneraattori hage = new Hahmogeneraattori(this.x, this.y);
+        Hahmogeneraattori hage = new Hahmogeneraattori();
+        hage.setX(this.hahmoX);
+        hage.setY(this.hahmoY);
+        hage.setHahmoNimi(this.hahmoNimi);
         hage.generoi();
         this.laatat.addAll(hage.getHahmot());
         this.piirrettavat.addAll(hage.getHahmot());
+
+    }
+
+    public void generoiOvet() {
+        Ovigeneraattori oge = new Ovigeneraattori();
+        oge.setX(this.oviX);
+        oge.setY(this.oviY);
+        oge.setSiirtyma(this.siirtyma);
+        oge.setAlue(this.alue);
+        oge.generoi();
+        this.ovet.addAll(oge.getOvet());
+        this.laatat.addAll(oge.getOvet());
+        this.piirrettavat.addAll(oge.getOvet());
 
     }
 

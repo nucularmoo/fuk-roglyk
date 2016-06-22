@@ -18,13 +18,6 @@ public abstract class Hahmo extends Piirrettava implements Laatta {
     }
 
     /**
-     * Palauttaa Hahmo-olion char-merkin.
-     *
-     * @return Hahmon char-merkki
-     */
-    public abstract char getChar();
-
-    /**
      * Palauttaa Hahmo-olion tunnisteen.
      *
      * @return olion tunniste

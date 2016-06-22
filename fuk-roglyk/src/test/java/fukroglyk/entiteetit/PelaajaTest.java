@@ -32,11 +32,6 @@ public class PelaajaTest {
     }
 
     @Test
-    public void pelaajanGetCharPalauttaaOikein() {
-        assertTrue("Palauttaa väärän merkin", tpdef.getChar() == '@');
-    }
-
-    @Test
     public void pelaajaLiikkuuKaskynMukaanX() {
         Pelaaja tp = new Pelaaja(0, 0, 0);
         tp.moveX(4);

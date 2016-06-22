@@ -4,6 +4,7 @@ import fukroglyk.entiteetit.Pelaaja;
 import fukroglyk.entiteetit.Piirrettava;
 import fukroglyk.logiikka.Alueenhallinta;
 import fukroglyk.logiikka.Peli;
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 
 /**
@@ -16,9 +17,9 @@ public class Maailma {
     private Alue currentalue;
     private ArrayList<Alue> alueet;
     private Pelaaja pelaaja;
-    private Maailmakehys mk;
     private Alueenhallinta ah;
     private Peli peli;
+    private Maailmanrakentaja mr;
 
     /**
      * Konstruktori ottaa pelin pelaajan sekä alustaa listan maailman alueista.
@@ -37,9 +38,9 @@ public class Maailma {
     public void setPeli(Peli peli) {
         this.peli = peli;
     }
-
-    public void setMaailmakehys() {
-        this.mk = new Maailmakehys();
+    
+    public void setMaailmanrakentaja() throws FileNotFoundException {
+        this.mr = new Maailmanrakentaja();
     }
 
     public void setAlueenhallinta() {
@@ -63,12 +64,13 @@ public class Maailma {
     /**
      * Luo tämänhetkisen maailman kaikki alueet.
      */
-    public void luoMaailma() {
-
-        this.mk.teeMaailmaKehys();
-        this.ah.setOvet(this.mk.getLinkitetytOvet());
+    public void luoMaailma() throws FileNotFoundException {
+        
+        this.mr.teeTaverna();
+        this.mr.teeKaupunki();
+        this.ah.setOvet(this.mr.getLinkitetytOvet());
         this.ah.setOvienAlueenhallinta();
-        this.alueet = this.mk.getAlueet();
+        this.alueet = this.mr.getAlueet();
         this.currentalue = this.alueet.get(0);
         getCurrentLaatat();
 

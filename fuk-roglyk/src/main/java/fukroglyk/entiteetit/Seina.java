@@ -14,6 +14,7 @@ public class Seina extends Piirrettava implements Laatta {
 
     private int x;
     private int y;
+    private boolean draw;
 
     /**
      * Seinän konstruktori ottaa vastaan seinän x- ja y-koordinaattien arvot.
@@ -24,6 +25,11 @@ public class Seina extends Piirrettava implements Laatta {
     public Seina(int x, int y) {
         this.x = x;
         this.y = y;
+        this.draw = true;
+    }
+    
+    public void noDraw() {
+        this.draw = false;
     }
 
     @Override
@@ -34,7 +40,7 @@ public class Seina extends Piirrettava implements Laatta {
 
     @Override
     public boolean piirretaanko() {
-        return true;
+        return this.draw;
     }
 
     @Override

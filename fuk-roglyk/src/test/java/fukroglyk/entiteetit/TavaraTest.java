@@ -68,12 +68,6 @@ public class TavaraTest {
     }
     
     @Test
-    public void tavaranGetCharPalauttaaOikein() {
-        assertTrue("Palauttaa väärän merkin", ttdef.getChar() == '?');
-    }
-    
-    
-    @Test
     public void tavarallaEiOleCollisionPaalla() {
         assertFalse("Tavaralla on collision päällä", ttdef.collision());
     }

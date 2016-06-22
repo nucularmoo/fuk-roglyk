@@ -63,6 +63,10 @@ public class Alue {
         this.ar = ar;
     }
 
+    public void haeOvet() {
+        this.ovet = this.ar.getOvet();
+    }
+
     /**
      * Hakee listan laatoista alueenrakentajalta.
      */
