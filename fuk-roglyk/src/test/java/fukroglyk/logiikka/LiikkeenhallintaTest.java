@@ -98,8 +98,8 @@ public class LiikkeenhallintaTest {
         this.lhtdef.setPelaaja(this.pelaaja);
         this.lhtdef.setAlue(this.alue);
         this.lhtdef.resetPlayerByAlue();
-        assertTrue("Pelaajan x-koordinaatti ei asettunut oikein", this.pelaaja.getX() == 1);
-        assertTrue("Pelaajan y-koordinaatti ei asettunut oikein", this.pelaaja.getY() == 1);
+        assertTrue("Pelaajan x-koordinaatti ei asettunut oikein", this.pelaaja.getX() == 18);
+        assertTrue("Pelaajan y-koordinaatti ei asettunut oikein", this.pelaaja.getY() == 18);
         
     }
     
@@ -137,7 +137,7 @@ public class LiikkeenhallintaTest {
         this.lhtdef.setAlue(this.alue);
         this.lhtdef.setLaatat(this.testilaattalista);
         this.lhtdef.validoiPelaaja(this.pelaaja);
-        assertTrue("X ei reset", this.pelaaja.getX() == 1);
+        assertTrue("X ei reset", this.pelaaja.getX() == 18);
         
     }
     
@@ -148,7 +148,7 @@ public class LiikkeenhallintaTest {
         this.lhtdef.setAlue(this.alue);
         this.lhtdef.setLaatat(this.testilaattalista);
         this.lhtdef.validoiPelaaja(this.pelaaja);
-        assertTrue("Y ei reset", this.pelaaja.getY() == 1);
+        assertTrue("Y ei reset", this.pelaaja.getY() == 18);
         
     }
     
@@ -159,7 +159,7 @@ public class LiikkeenhallintaTest {
         this.lhtdef.setAlue(this.alue);
         this.lhtdef.setLaatat(this.testilaattalista);
         this.lhtdef.validoiPelaaja(this.pelaaja);
-        assertTrue("X ei reset", this.pelaaja.getX() == 1);
+        assertTrue("X ei reset", this.pelaaja.getX() == 18);
     }
     
     @Test
@@ -169,7 +169,7 @@ public class LiikkeenhallintaTest {
         this.lhtdef.setAlue(this.alue);
         this.lhtdef.setLaatat(this.testilaattalista);
         this.lhtdef.validoiPelaaja(this.pelaaja);
-        assertTrue("Y ei reset", this.pelaaja.getY() == 1);
+        assertTrue("Y ei reset", this.pelaaja.getY() == 18);
     }
     
     @Test
@@ -178,8 +178,8 @@ public class LiikkeenhallintaTest {
         this.lhtdef.setAlue(this.alue);
         this.lhtdef.setLaatat(this.testilaattalista);
         this.lhtdef.init();
-        assertTrue("X ei reset", this.pelaaja.getX() == 1);
-        assertTrue("Y ei reset", this.pelaaja.getY() == 1);
+        assertTrue("X ei reset", this.pelaaja.getX() == 18);
+        assertTrue("Y ei reset", this.pelaaja.getY() == 18);
     }
     @Test
     public void collisionPalauttaaFalseJosCollisioniaEiOle() {
@@ -198,7 +198,7 @@ public class LiikkeenhallintaTest {
         this.lhtdef.setLaatat(this.testilaattalista);
         this.lhtdef.init();
         this.lhtdef.move(1, 0);
-        assertTrue("move liikuttaa pelaajaa väärin X", this.pelaaja.getX() == 2);
+        assertTrue("move liikuttaa pelaajaa väärin X", this.pelaaja.getX() == 19);
     }
     @Test
     public void moveLiikuttaaPelaajaaOikeinY() {
@@ -207,7 +207,7 @@ public class LiikkeenhallintaTest {
         this.lhtdef.setLaatat(this.testilaattalista);
         this.lhtdef.init();
         this.lhtdef.move(0, 1);
-        assertTrue("move liikuttaa pelaajaa väärin Y", this.pelaaja.getY() == 2);
+        assertTrue("move liikuttaa pelaajaa väärin Y", this.pelaaja.getY() == 19);
     }
     
     @Test

@@ -132,6 +132,7 @@ public class Liikkeenhallinta {
         if (!collision(nx, ny)) {
             this.pelaaja.moveX(xa);
             this.pelaaja.moveY(ya);
+
         }
     }
 
