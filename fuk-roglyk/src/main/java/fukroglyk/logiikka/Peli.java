@@ -9,6 +9,12 @@ import fukroglyk.logiikka.maailma.Laatta;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 
+/**
+ * Vastaa pelin käyttämien palveluiden alustuksesta sekä hallinnoimisesta, sekä
+ * toimii yhdyskäytävänä käyttöliittymän ja logiikan luokkien välillä.
+ *
+ * @author NukeCow
+ */
 public class Peli {
 
     private Pelaaja pelaaja;
@@ -42,6 +48,7 @@ public class Peli {
     /**
      * Hakee aktiivisen alueen laatat, asettaa piirrettävät käyttöliittymää
      * varten sekä luo liikkeenhallinnan näppäimistönkuuntelijaa varten.
+     *
      * @throws java.io.FileNotFoundException
      */
     public void init() throws FileNotFoundException {
@@ -91,13 +98,16 @@ public class Peli {
         return this.lh;
     }
 
+    /**
+     * Luo pelin tapahtumia käsittelevän tapahtumakäsittelijän.
+     */
     public void generoiTapahtumankasittelija() {
         this.tk = new Tapahtumankasittelija();
         this.tk.setPeli(this);
     }
 
     /**
-     * Luo maailman tapahtumien hallinnoivan kartta-olion.
+     * Luo pelaajan liikehdintää hallinnoivan liikkeenhallinnan.
      */
     public void generoiLiikkeenhallinta() {
         this.lh = new Liikkeenhallinta(this);
@@ -105,6 +115,9 @@ public class Peli {
         this.lh.setPelaaja(pelaaja);
     }
 
+    /**
+     * Asettaa aktiivisen alueen listan laatoista liikkeenhallinnan käyttöön.
+     */
     public void setLiikkeenhallinta() {
         this.lh.setLaatat(this.laatat);
     }

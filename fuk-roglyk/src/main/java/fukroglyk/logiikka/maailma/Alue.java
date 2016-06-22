@@ -63,6 +63,9 @@ public class Alue {
         this.ar = ar;
     }
 
+    /**
+     * Hakee listan alueen ovista alueenrakentajalta.
+     */
     public void haeOvet() {
         this.ovet = this.ar.getOvet();
     }
@@ -133,24 +136,6 @@ public class Alue {
      */
     public ArrayList<Laatta> getLaatat() {
         return this.laatat;
-    }
-
-    /**
-     * Rakentaa alueelle oven parametreina annettuun x- ja y-koordinaattiin
-     * annetulla siirtymäarvolla.
-     *
-     * @param x oven x-koordinaatti
-     * @param y oven y-koordinaatti
-     * @param siirtyma oven siirtymäarvo
-     */
-    public void teeOvi(int x, int y, int siirtyma) {
-        Ovi ovi = new Ovi(x, y);
-        ovi.setAlue(this);
-        ovi.setSiirtyma(siirtyma);
-        this.ovet.add(ovi);
-        this.laatat.add(ovi);
-        this.piirrettavat.add(ovi);
-
     }
 
     /**

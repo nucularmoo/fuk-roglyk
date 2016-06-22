@@ -35,6 +35,7 @@ public class Alueenrakentaja {
 
         this.laatat = new ArrayList();
         this.piirrettavat = new ArrayList();
+        this.ovet = new ArrayList();
         this.boundsX = 20;
         this.boundsY = 20;
     }
@@ -67,6 +68,18 @@ public class Alueenrakentaja {
         return this.boundsX;
     }
 
+    public void setSiirtyma(int[] siirtyma) {
+        this.siirtyma = siirtyma;
+    }
+    
+    public void setOviX(int[] oviX) {
+        this.oviX = oviX;
+    }
+    
+    public void setOviY(int[] oviY) {
+        this.oviY = oviY;
+    }
+
     /**
      * Asettaa alueenrakentajan alueen.
      *
@@ -92,6 +105,10 @@ public class Alueenrakentaja {
      */
     public void setHahmoY(int[] y) {
         this.hahmoY = y;
+    }
+
+    public void setHahmoNimi(String[] nimet) {
+        this.hahmoNimi = nimet;
     }
 
     /**
@@ -162,6 +179,10 @@ public class Alueenrakentaja {
 
     }
 
+    /**
+     * Generoi ja listaa alueen ovet oven koordinaattilistojen mukaan, asettaa
+     * ovien alueen sekä niiden siirtymäarvon myöhempää linkitystä varten.
+     */
     public void generoiOvet() {
         Ovigeneraattori oge = new Ovigeneraattori();
         oge.setX(this.oviX);
