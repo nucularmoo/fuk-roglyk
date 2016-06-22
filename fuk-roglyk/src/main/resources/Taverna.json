@@ -1,9 +1,9 @@
 {
     "boundsX": 20,
     "boundsY": 20,
-    "hahmoX": [13, 14, 15, 2, 13, 4, 14, 12, 13, 15, 4, 9, 13],
-    "hahmoY": [2, 5, 7, 9, 10, 12, 12, 15, 15, 15, 17, 18, 18],
-    "hahmoNimi": ["Fajr", "zwiep", "daloc", "slug", "wilitus", "mez", "Sheepi", "b5k", "sandaker", "Humour", "toku", "slashi", "derrik"],
+    "hahmoX": [13, 14, 15, 2, 13, 4, 14, 12, 13, 15, 4, 9, 13, 3],
+    "hahmoY": [2, 5, 7, 9, 10, 12, 12, 15, 15, 15, 17, 18, 18, 16],
+    "hahmoNimi": ["Fajr", "zwiep", "daloc", "slug", "wilitus", "mez", "Sheepi", "b5k", "sandaker", "Humour", "toku", "slashi", "derrik", "Rhaegar"],
     "hahmoTervehdys": [": blood for the blood god",
         ": no boops for you!",
         " is enjoying his kahvihetki",
@@ -16,7 +16,8 @@
         ":  it isn't like bicycles have serial numbers, either",
         ": red pill, blue pill, ever tried a brown pill?",
         ": REEEEEEEEEEKT",
-        ": REKT"],
+        ": REKT",
+        ": IS MY RPG PRINCESS HAIR RIGHT??!!?!"],
     "oviX": [19],
     "oviY": [18],
     "siirtyma": [1]
