@@ -2,7 +2,7 @@
     "boundsX": 20,
     "boundsY": 20,
     "hahmoX": [13, 14, 15, 2],
-    "hahmoY": [2, 5, 7, 9],
+    "hahmoY": [2, 5, 17, 9],
     "hahmoNimi": ["Great oak tree", "Giraffe", "Mountain goat", "Wandering salesman"],
     "hahmoTervehdys": [" looks like your lumberjack skill isn't high enough just yet",
         " seems very misplaced in this environment",
