@@ -1,0 +1,14 @@
+{
+    "boundsX": 20,
+    "boundsY": 20,
+    "hahmoX": [13, 14, 15, 2],
+    "hahmoY": [2, 5, 7, 9],
+    "hahmoNimi": ["Great oak tree", "Giraffe", "Mountain goat", "Wandering salesman"],
+    "hahmoTervehdys": [" doesn't look like your lumberjack skill is high enough for it",
+        " seems very misplaced in this environment",
+        " bleats at you",
+        ": might I interest you in purchasing a season pass?"],
+    "oviX": [10],
+    "oviY": [1],
+    "siirtyma": [2]
+}
