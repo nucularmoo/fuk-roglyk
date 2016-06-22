@@ -20,6 +20,7 @@ public class Gsonlukija {
         teeTaverna();
         teeKaupunki();
         teeMaantie();
+        teeKyla();
     }
 
     public ArrayList<Alueenrakentaja> getAR() {
@@ -38,6 +39,11 @@ public class Gsonlukija {
     
     public void teeMaantie() throws FileNotFoundException {
         Alueenrakentaja ar = this.geeson.fromJson(new FileReader("src/main/resources/Maantie.json"), Alueenrakentaja.class);
+        this.arlist.add(ar);
+    }
+    
+    public void teeKyla() throws FileNotFoundException {
+        Alueenrakentaja ar = this.geeson.fromJson(new FileReader("src/main/resources/Kyla.json"), Alueenrakentaja.class);
         this.arlist.add(ar);
     }
 

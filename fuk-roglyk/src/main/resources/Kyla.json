@@ -1,0 +1,14 @@
+{
+    "boundsX": 20,
+    "boundsY": 20,
+    "hahmoX": [14, 13, 19, 2],
+    "hahmoY": [2, 2, 7, 4],
+    "hahmoNimi": ["Farmer", "Workhorse", "Unicorn", "Farmer"],
+    "hahmoTervehdys": [": those cabbages aren't going to water themselves, you know!",
+        " swats away some flies with his tail",
+        " makes you wonder if whoever writing the script has been fired yet",
+        ": are you here to plow the fields for us?"],
+    "oviX": [19],
+    "oviY": [17],
+    "siirtyma": [3]
+}

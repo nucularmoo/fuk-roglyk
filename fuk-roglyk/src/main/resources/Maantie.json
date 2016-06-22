@@ -4,11 +4,11 @@
     "hahmoX": [13, 14, 15, 2],
     "hahmoY": [2, 5, 7, 9],
     "hahmoNimi": ["Great oak tree", "Giraffe", "Mountain goat", "Wandering salesman"],
-    "hahmoTervehdys": [" doesn't look like your lumberjack skill is high enough for it",
+    "hahmoTervehdys": [" looks like your lumberjack skill isn't high enough just yet",
         " seems very misplaced in this environment",
         " bleats at you",
         ": might I interest you in purchasing a season pass?"],
-    "oviX": [10],
-    "oviY": [1],
-    "siirtyma": [2]
+    "oviX": [10, 1],
+    "oviY": [1, 17],
+    "siirtyma": [2, 3]
 }
