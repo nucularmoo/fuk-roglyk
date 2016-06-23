@@ -5,6 +5,11 @@ import java.io.File;
 import java.io.IOException;
 import javax.imageio.ImageIO;
 
+/**
+ * Luokka lukee ja palauttaa pelin aloituskuvan tiedostosta.
+ *
+ * @author NukeCow
+ */
 public class Kuvanlukija {
 
     private static final String polku = "src/main/resources/start.png";

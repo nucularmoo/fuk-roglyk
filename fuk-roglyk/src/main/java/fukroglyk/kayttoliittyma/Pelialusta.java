@@ -13,7 +13,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 
 /**
- * Luokka luo ja hallinnoi graafista kÃ¤yttÃ¶liittymÃ¤Ã¤.
+ * Luokka luo ja hallinnoi graafista käyttöliittymää.
  *
  * @author NukeCow
  */
@@ -31,7 +31,7 @@ public class Pelialusta extends Canvas implements Runnable {
 
     private Piirtoalusta alusta;
 
-    //peli kÃ¤ynnissÃ¤ vai ei
+    //peli käynnissä vai ei
     public boolean kaynnissa = false;
 
     public Peli peli;
@@ -78,7 +78,7 @@ public class Pelialusta extends Canvas implements Runnable {
     }
 
     /**
-     * Rakentaa pelin ikkunan ja tekee siitÃ¤ nÃ¤kyvÃ¤n.
+     * Rakentaa pelin ikkunan ja tekee siitä näkyvän.
      */
     public void rakennaKehys() {
         //luodaan ikkuna ja sen sulkeutuminen
@@ -106,8 +106,12 @@ public class Pelialusta extends Canvas implements Runnable {
         }
     }
 
+    /**
+     * Luo komponentit aloitusikkunalle.
+     *
+     * @param container
+     */
     public void luoAloitusIkkuna(Container container) {
-        
         JLabel label = new JLabel(new ImageIcon(this.image));
         container.add(label);
         this.derp = new Aloituskuuntelija(this);
@@ -115,8 +119,8 @@ public class Pelialusta extends Canvas implements Runnable {
     }
 
     /**
-     * Luo ikkunan komponentit piirrettÃ¤vien piirtÃ¤miselle sekÃ¤
-     * nÃ¤ppÃ¤imistÃ¶komnetojen kuuntelemiselle.
+     * Luo ikkunan komponentit piirrettävien piirtämiselle sekä
+     * näppäimistökomentojen kuuntelemiselle.
      *
      * @param container
      */

@@ -29,7 +29,7 @@ public class Pelaaja extends Hahmo {
         this.id = id;
         this.x = x;
         this.y = y;
-        this.color = Color.MAGENTA;
+        this.color = new Color(135, 101, 232);
         this.draw = true;
     }
 

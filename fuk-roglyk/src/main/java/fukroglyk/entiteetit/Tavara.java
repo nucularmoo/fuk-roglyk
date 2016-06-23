@@ -95,7 +95,7 @@ public class Tavara extends Piirrettava implements Laatta {
             graphics.drawString("You picked up: " + this.nimi, 20, 400);
             noDraw();
         }
-        graphics.setColor(Color.YELLOW);
+        graphics.setColor(new Color(183, 84, 44));
         graphics.fillOval(x * 15, y * 15, 10, 10);
 
     }
