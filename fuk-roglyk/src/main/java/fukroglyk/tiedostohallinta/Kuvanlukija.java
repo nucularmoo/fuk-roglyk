@@ -1,0 +1,30 @@
+package fukroglyk.tiedostohallinta;
+
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
+import javax.imageio.ImageIO;
+
+public class Kuvanlukija {
+
+    private static final String polku = "src/main/resources/start.png";
+    private BufferedImage image;
+
+    public Kuvanlukija() {
+
+    }
+
+    public void haeKuva() {
+        try {
+            this.image = ImageIO.read(new File(polku));
+        } catch (IOException e) {
+            System.out.println("Aloituskuva puuttuu");
+        }
+
+    }
+
+    public BufferedImage getKuva() {
+        return this.image;
+    }
+
+}

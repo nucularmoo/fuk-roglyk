@@ -124,14 +124,14 @@ public class NPC extends Hahmo implements Laatta {
             graphics.drawString(this.nimi + this.tervehdys, 20, 400);
         }
         if (getMission()) {
-            graphics.setColor(Color.GREEN);
+            graphics.setColor(Color.RED);
             graphics.fillOval(x * 15, y * 15, 10, 10);
 
         } else {
             if (!this.missionexists) {
                 graphics.setColor(Color.RED);
             } else {
-                graphics.setColor(Color.ORANGE);
+                graphics.setColor(Color.PINK);
             }
             graphics.fillOval(x * 15, y * 15, 10, 10);
         }

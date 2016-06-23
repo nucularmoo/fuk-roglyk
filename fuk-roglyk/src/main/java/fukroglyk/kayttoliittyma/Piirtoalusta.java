@@ -18,15 +18,16 @@ public class Piirtoalusta extends JPanel {
     public Piirtoalusta(ArrayList<Piirrettava> piirrettavat) {
         super.setBackground(Color.BLACK);
         this.piirrettavat = piirrettavat;
+
     }
-    
+
     public void setPiirrettavat(ArrayList<Piirrettava> pir) {
         this.piirrettavat = pir;
     }
 
     @Override
     protected void paintComponent(Graphics graphics) {
-
+        
         super.paintComponent(graphics);
         for (Piirrettava piirretaan : this.piirrettavat) {
             if (piirretaan.piirretaanko()) {
