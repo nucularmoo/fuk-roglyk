@@ -1,6 +1,6 @@
 package fukroglyk.logiikka;
 
-import com.sun.org.apache.xalan.internal.xsltc.compiler.util.Type;
+
 import fukroglyk.entiteetit.Hahmo;
 import fukroglyk.entiteetit.NPC;
 import fukroglyk.entiteetit.Pelaaja;

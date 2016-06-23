@@ -15,7 +15,7 @@ import java.util.ArrayList;
  * @author NukeCow
  */
 public class Gsonlukija {
-    
+
     private Gson geeson;
     private ArrayList<Alueenrakentaja> arlist;
 
@@ -32,7 +32,7 @@ public class Gsonlukija {
      * tiedostoista ja listaamaan ne.
      *
      */
-    public void lueAlueenakentajienTiedot(){
+    public void lueAlueenakentajienTiedot() {
         teeTaverna();
         teeKaupunki();
         teeMaantie();
@@ -103,5 +103,5 @@ public class Gsonlukija {
             System.exit(1);
         }
     }
-    
+
 }

@@ -2,7 +2,6 @@ package fukroglyk.logiikka;
 
 import fukroglyk.entiteetit.Tavara;
 import fukroglyk.logiikka.maailma.Alue;
-import java.io.FileNotFoundException;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -44,20 +43,55 @@ public class PeliTest {
     }
 
     @Test
-    public void pelillaOnLiikkeenhallintaInitinJalkeen() throws FileNotFoundException {
+    public void pelillaOnLiikkeenhallintaInitinJalkeen() {
         this.peli.init();
         assertTrue("Liikkeenhallintaa ei ole olemassa", this.peli.getLH() != null);
     }
 
     @Test
-    public void pelillaOnPiirrettavatInitinJalkeen() throws FileNotFoundException {
+    public void pelillaOnPiirrettavatInitinJalkeen() {
         this.peli.init();
         assertTrue("Piirrettavia ei ole", !this.peli.getPiirrettavat().isEmpty());
     }
 
     @Test
-    public void pelillaOnLaatatInitinJalkeen() throws FileNotFoundException {
+    public void pelillaOnLaatatInitinJalkeen(){
         this.peli.init();
         assertTrue("Laattoja ei ole", !this.peli.getLaatat().isEmpty());
+    }
+    @Test
+    public void maailmallaOnPeli() {
+        this.peli.init();
+        assertTrue("Maailmalla ei ole peliä", this.peli.getMaailma().refresh());
+        
+    }
+    @Test
+    public void peliAsettaaLiikkeenHallinnanLaatat() {
+        this.peli.init();
+        assertTrue("Liikkeenhallinnalla ei samat laatat", this.peli.getLH().getLaatat().equals(this.peli.getLaatat()));
+    }
+    @Test
+    public void getCurrentAlueToimii() {
+        this.peli.init();
+        assertFalse("CurrentAlue on null", this.peli.getCurrentAlue() == null);
+    }
+    @Test
+    public void tapahtumankasittelijallaOnPeli() {
+        this.peli.init();
+        assertTrue("Peliä ei ole", this.peli.getTK().getPeli().equals(this.peli));
+    }
+    @Test
+    public void refreshAluePaivittaaAlueen() {
+        this.peli.init();
+        Alue aluederr = this.peli.getCurrentAlue();
+        this.peli.getMaailma().refresh();
+        Alue alue = this.peli.getCurrentAlue();
+        assertTrue("Alueet eivät ole samat", aluederr.getLaatat().equals(this.peli.getLH().getLaatat()));
+    }
+    @Test
+    public void generoiLiikkeenhallintaTekeeJotainJarkevaaEhka() {
+        this.peli.init();
+        assertTrue("Liikkeenhallinnalla ei tapahtumakasittelijaa", this.peli.getLH().getTK().equals(this.peli.getTK()));
+        assertTrue("Liikkeenhallinnalla ei pelaajaa", this.peli.getLH().getPelaaja().equals(this.peli.getPelaaja()));
     }
 }

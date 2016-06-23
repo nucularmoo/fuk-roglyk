@@ -181,4 +181,18 @@ public class Peli {
         return this.laukku;
     }
 
+    public Maailma getMaailma() {
+        return this.maailma;
+    }
+    
+    public Tapahtumankasittelija getTK() {
+        return this.tk;
+    }
+    
+    public Pelaaja getPelaaja() {
+        return this.pelaaja;
+    }
+    
+    
+
 }

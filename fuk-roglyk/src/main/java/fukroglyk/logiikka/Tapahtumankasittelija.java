@@ -29,6 +29,10 @@ public class Tapahtumankasittelija {
         this.peli = peli;
     }
 
+    public Peli getPeli() {
+        return this.peli;
+    }
+
     /**
      * Käsittelee parametrina annetun laatan ja toteuttaa sen toiminnon.
      *

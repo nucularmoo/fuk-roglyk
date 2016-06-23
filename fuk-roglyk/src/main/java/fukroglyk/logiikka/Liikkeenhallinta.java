@@ -196,5 +196,17 @@ public class Liikkeenhallinta {
         }
         return false;
     }
+    
+    public ArrayList<Laatta> getLaatat() {
+        return this.laatat;
+    }
+    
+    public Tapahtumankasittelija getTK() {
+        return this.tk;
+    }
+    
+    public Pelaaja getPelaaja() {
+        return this.pelaaja;
+    }
 
 }
