@@ -26,4 +26,4 @@ Pelaaja
 ###Sekvenssikaaviot (Deadline 6):
 
 ![Sekvenssikaavio DL_6](sekvenssikaavio_pelaaja_liikkuu_v2.png)
-![Sekvenssikaavio DL_5](sekvenssikaavio_pelaaja_vaihtaa_aluetta.png)
+![Sekvenssikaavio DL_6](sekvenssikaavio_pelaaja_vaihtaa_aluetta_v2.png)
