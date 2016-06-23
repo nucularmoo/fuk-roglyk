@@ -33,30 +33,15 @@ public class Alueenrakentaja {
      * Konstruktori alustaa listat alueen laatoille ja piirrettäville.
      */
     public Alueenrakentaja() {
-
-        this.laatat = new ArrayList();
-        this.piirrettavat = new ArrayList();
-        this.ovet = new ArrayList();
-        this.boundsX = 20;
-        this.boundsY = 20;
     }
-    
+
+    /**
+     * Alustaa alueenrakentajan käyttämät listat.
+     */
     public void alusta() {
         this.laatat = new ArrayList();
         this.ovet = new ArrayList();
         this.piirrettavat = new ArrayList();
-    }
-
-    public void luoTyhjaLaattaLista() {
-        this.laatat = new ArrayList();
-    }
-
-    public void luoTyhjaPiirrettavaLista() {
-        this.piirrettavat = new ArrayList();
-    }
-
-    public void luoTyhjaOviLista() {
-        this.ovet = new ArrayList();
     }
 
     public void setBoundsX(int boundsX) {
@@ -78,15 +63,15 @@ public class Alueenrakentaja {
     public void setSiirtyma(int[] siirtyma) {
         this.siirtyma = siirtyma;
     }
-    
+
     public void setTervehdykset(String[] tervehdykset) {
         this.hahmoTervehdys = tervehdykset;
     }
-    
+
     public void setOviX(int[] oviX) {
         this.oviX = oviX;
     }
-    
+
     public void setOviY(int[] oviY) {
         this.oviY = oviY;
     }

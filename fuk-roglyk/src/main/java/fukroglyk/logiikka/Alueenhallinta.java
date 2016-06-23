@@ -59,6 +59,7 @@ public class Alueenhallinta {
      * annetun oven tietojen mukaan sekä lähettää maailmalle päivityskäskyn.
      *
      * @param ovi uloskäynti
+     * @return tieto siitä pystyttiinkö maailma päivittämään vai ei
      */
     public boolean vaihdaAluettaByOvi(Ovi ovi) {
         vaihdaMaailmanAktiivinenAlue(ovi);
@@ -89,6 +90,8 @@ public class Alueenhallinta {
 
     /**
      * Lähettää päivityskäskyn maailmalle alueen vaihduttua.
+     *
+     * @return tieto siitä pystyikö maailma päivittämään itsensä
      */
     public boolean paivitaMaailma() {
         return this.maailma.refresh();

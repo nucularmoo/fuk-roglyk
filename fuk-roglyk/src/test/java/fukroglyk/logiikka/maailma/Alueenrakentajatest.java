@@ -34,6 +34,9 @@ public class Alueenrakentajatest {
     @Before
     public void setUp() {
         this.ar = new Alueenrakentaja();
+        this.ar.alusta();
+        this.ar.setBoundsX(20);
+        this.ar.setBoundsY(20);
         this.x = new int[]{4, 3};
         this.y = new int[]{6, 2};
         this.hahmoNimi = new String[]{"a", "b"};

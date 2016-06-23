@@ -49,7 +49,7 @@ public class Peli {
      * Hakee aktiivisen alueen laatat, asettaa piirrettävät käyttöliittymää
      * varten sekä luo liikkeenhallinnan näppäimistönkuuntelijaa varten.
      *
-     * @throws java.io.FileNotFoundException
+     * @throws java.io.FileNotFoundException jos pelin tiedostoja ei löydy
      */
     public void init() throws FileNotFoundException {
         luoMaailmanHallinta();

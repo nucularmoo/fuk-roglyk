@@ -27,7 +27,10 @@ public class Seina extends Piirrettava implements Laatta {
         this.y = y;
         this.draw = true;
     }
-    
+
+    /**
+     * Asetetaan seinä näkymättömäksi eli että sitä ei piirretä.
+     */
     public void noDraw() {
         this.draw = false;
     }

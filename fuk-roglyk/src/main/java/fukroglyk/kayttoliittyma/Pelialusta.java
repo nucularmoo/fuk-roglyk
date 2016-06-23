@@ -9,7 +9,7 @@ import java.awt.Dimension;
 import java.io.FileNotFoundException;
 
 /**
- * Luokka luo ja hallinnoi graafista käyttöliittymää.
+ * Luokka luo ja hallinnoi graafista kÃ¤yttÃ¶liittymÃ¤Ã¤.
  *
  * @author NukeCow
  */
@@ -23,7 +23,7 @@ public class Pelialusta extends Canvas implements Runnable {
 
     private JFrame frame;
 
-    //peli käynnissä vai ei
+    //peli kÃ¤ynnissÃ¤ vai ei
     public boolean kaynnissa = false;
 
     public Peli peli;
@@ -57,7 +57,7 @@ public class Pelialusta extends Canvas implements Runnable {
     }
 
     /**
-     * Rakentaa pelin ikkunan ja tekee siitä näkyvän.
+     * Rakentaa pelin ikkunan ja tekee siitÃ¤ nÃ¤kyvÃ¤n.
      */
     public void rakennaKehys() {
         //luodaan ikkuna ja sen sulkeutuminen
@@ -76,22 +76,22 @@ public class Pelialusta extends Canvas implements Runnable {
     }
 
     /**
-     * Luo ikkunan komponentit piirrettävien piirtämiselle sekä
-     * näppäimistökomnetojen kuuntelemiselle.
+     * Luo ikkunan komponentit piirrettÃ¤vien piirtÃ¤miselle sekÃ¤
+     * nÃ¤ppÃ¤imistÃ¶komnetojen kuuntelemiselle.
      *
      * @param container
      */
     public void luoKomponetit(Container container) {
-        //Haetaan peliltä lista piirrettävistä
+        //Haetaan peliltÃ¤ lista piirrettÃ¤vistÃ¤
         this.piirtoalusta = new Piirtoalusta(peli.getPiirrettavat());
         container.add(this.piirtoalusta);
-        //Annetaan näppäimistönkuuntelijalle pelin kartta sekä äsken luotu piirtoalusta
+        //Annetaan nÃ¤ppÃ¤imistÃ¶nkuuntelijalle pelin kartta sekÃ¤ Ã¤sken luotu piirtoalusta
         Nappaimistonkuuntelija kuuntelija = new Nappaimistonkuuntelija(peli.getLH(), this.piirtoalusta);
         frame.addKeyListener(kuuntelija);
     }
 
     /**
-     * Käynnistää pelin
+     * KÃ¤ynnistÃ¤Ã¤ pelin
      */
     public synchronized void kaynnista() {
         init();

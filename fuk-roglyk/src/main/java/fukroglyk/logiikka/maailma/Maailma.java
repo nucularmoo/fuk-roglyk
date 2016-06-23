@@ -62,8 +62,9 @@ public class Maailma {
     }
 
     /**
-     * Luo tämänhetkisen maailman kaikki alueet.
-     * @throws java.io.FileNotFoundException
+     * Luo tämänhetkisen maailman kaikki alueet ja hakee aloitusalueen laatat.
+     *
+     * @throws java.io.FileNotFoundException jos tiedostoa ei löydy
      */
     public void luoMaailma() throws FileNotFoundException {
         this.mr.haeAlueenrakentajat();
