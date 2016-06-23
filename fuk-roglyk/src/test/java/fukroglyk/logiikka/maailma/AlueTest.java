@@ -1,5 +1,6 @@
 package fukroglyk.logiikka.maailma;
 
+import java.util.ArrayList;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -8,8 +9,10 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class AlueTest {
-    
-    Alue aluetest;
+
+    Alue alue;
+    Maailmanrakentaja mr;
+    ArrayList<Alue> alueet;
 
     public AlueTest() {
     }
@@ -24,16 +27,28 @@ public class AlueTest {
 
     @Before
     public void setUp() {
-       
+        this.mr = new Maailmanrakentaja();
+        this.mr.haeAlueenrakentajat();
+        this.mr.rakennaMaailma();
+        this.mr.getLinkitetytOvet();
+        this.alueet = this.mr.getAlueet();
+
     }
 
     @After
     public void tearDown() {
     }
 
-    // TODO add test methods here.
-    // The methods must be annotated with annotation @Test. For example:
-    //
-    // @Test
-    // public void hello() {}
+    @Test
+    public void hello() {
+        boolean ovi = false;
+        boolean laatta = false;
+        boolean piirrettava = false;
+        Alue testi = this.alueet.get(0);
+        for (Alue derp : this.alueet) {
+            
+        }
+        assertFalse("Ovia ei ole", testi.getOvet().isEmpty());
+        assertFalse("Laattoja ei ole", testi.getLaatat().isEmpty());
+    }
 }

@@ -46,15 +46,6 @@ public class Alue {
     }
 
     /**
-     * Hakee alueelle alueen sisällön alueen alueenrakentajalta.
-     */
-    public void haeAlueenSisalto() {
-        haeOvet();
-        haeLaatat();
-        haePiirrettavat();
-    }
-
-    /**
      * Palauttaa alueen id:n.
      *
      * @return alueen id

@@ -51,7 +51,8 @@ public class Maailmanrakentaja {
             alue.setAlueenrakentaja(ar);
             ar.generoiLaatat();
             alue.haeLaatat();
-            alue.haeAlueenSisalto();
+            alue.haeOvet();
+            alue.haePiirrettavat();
             this.alueet.add(alue);
         }
     }

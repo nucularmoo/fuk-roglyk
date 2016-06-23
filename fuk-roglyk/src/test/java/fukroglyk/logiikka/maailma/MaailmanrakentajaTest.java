@@ -1,10 +1,7 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package fukroglyk.logiikka.maailma;
 
+import fukroglyk.entiteetit.Ovi;
+import java.util.ArrayList;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -12,34 +9,42 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
-/**
- *
- * @author NukeCow
- */
 public class MaailmanrakentajaTest {
-    
+
+    Maailmanrakentaja mr;
+
     public MaailmanrakentajaTest() {
     }
-    
+
     @BeforeClass
     public static void setUpClass() {
     }
-    
+
     @AfterClass
     public static void tearDownClass() {
     }
-    
+
     @Before
     public void setUp() {
-    }
-    
-    @After
-    public void tearDown() {
+        this.mr = new Maailmanrakentaja();
+        this.mr.haeAlueenrakentajat();
+        this.mr.rakennaMaailma();
     }
 
-    // TODO add test methods here.
-    // The methods must be annotated with annotation @Test. For example:
-    //
-    // @Test
-    // public void hello() {}
+    @After
+    public void tearDown() {
+
+    }
+
+    @Test
+    public void luokkaTekeeOvia() {
+        ArrayList<Ovi> ovet = this.mr.getLinkitetytOvet();
+        Ovi eka = ovet.get(0);
+        Ovi toka = eka.getUloskaynti();
+        assertFalse("Ovia ei löydy", ovet.isEmpty());
+        assertFalse("Ovella ei ole uloskäyntiä", ovet.get(0).getUloskaynti() == null);
+        assertTrue("En keksi tähän mitään tekstiä", eka.getSiirtyma() == toka.getSiirtyma());
+        assertTrue("Nämä ovet ovat sama ovi", !eka.equals(toka));
+        assertTrue("Uloskäynti on väärä", eka.getUloskaynti() != null);
+    }
 }
