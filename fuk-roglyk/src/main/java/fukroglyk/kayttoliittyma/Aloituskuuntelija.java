@@ -3,10 +3,20 @@ package fukroglyk.kayttoliittyma;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
+/**
+ * Luokka kuuntelee näppäinkomentoa peliin siirtymiselle.
+ *
+ * @author NukeCow
+ */
 public class Aloituskuuntelija implements KeyListener {
 
     private Pelialusta alusta;
 
+    /**
+     * Konstruktori ottaa pelin pelialustan parametrina.
+     *
+     * @param alusta pelin pelialusta
+     */
     public Aloituskuuntelija(Pelialusta alusta) {
         this.alusta = alusta;
 

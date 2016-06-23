@@ -25,7 +25,9 @@ public class Tavarageneraattori {
      */
     public void generoi() {
         Tavara banaani = new Tavara(10, "Pineapple", 3, 2);
+        Tavara omena = new Tavara(9, "Pineapple", 8, 3);
         this.tavarat.add(banaani);
+        this.tavarat.add(omena);
     }
 
     /**

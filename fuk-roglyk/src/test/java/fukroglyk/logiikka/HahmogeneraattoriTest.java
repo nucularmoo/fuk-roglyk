@@ -1,5 +1,6 @@
 package fukroglyk.logiikka;
 
+import com.sun.org.apache.xalan.internal.xsltc.compiler.util.Type;
 import fukroglyk.entiteetit.Hahmo;
 import fukroglyk.entiteetit.NPC;
 import fukroglyk.entiteetit.Pelaaja;
@@ -18,11 +19,15 @@ public class HahmogeneraattoriTest {
 
     public HahmogeneraattoriTest() {
         this.tp = new Pelaaja(0, 1, 1);
-        int[] x = new int[]{13, 14, 15, 2, 13, 4, 14, 12, 13, 15, 4, 9, 13};
-        int[] y = new int[]{2, 5, 7, 9, 10, 12, 12, 15, 15, 15, 17, 18, 18};
+        int[] x = new int[]{13, 14};
+        int[] y = new int[]{2, 5};
+        String[] nimet = new String[] {"Pekka", "Matti"};
+        String[] tervehdykset = new String[] {"Anna", "Leipää"};
         this.hgt = new Hahmogeneraattori();
         this.hgt.setX(x);
         this.hgt.setY(y);
+        this.hgt.setHahmoNimi(nimet);
+        this.hgt.setTervehdykset(tervehdykset);
     }
 
     @BeforeClass
@@ -39,6 +44,18 @@ public class HahmogeneraattoriTest {
 
     @After
     public void tearDown() {
+    }
+    
+    @Test
+    
+    public void hahmoGeneraattoriTekeeJotain() {
+        ArrayList<Hahmo> hahmot = new ArrayList();
+        this.hgt.generoi();
+        hahmot.addAll(this.hgt.getHahmot());
+        NPC pekka = (NPC) hahmot.get(0);
+        assertTrue("Pekalla ei ole missiota", pekka.getMission());
+        assertTrue("Pekalla ei ole tervehdystä", pekka.getTervehdys() == "Anna");
+        assertTrue("Pekalla ei ole olemassa missiota", pekka.getMissionexists());
     }
 
 }

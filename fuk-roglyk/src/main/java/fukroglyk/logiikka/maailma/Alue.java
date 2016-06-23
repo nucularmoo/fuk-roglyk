@@ -45,6 +45,9 @@ public class Alue {
         this.id = id;
     }
 
+    /**
+     * Hakee alueelle alueen sisällön alueen alueenrakentajalta.
+     */
     public void haeAlueenSisalto() {
         haeOvet();
         haeLaatat();

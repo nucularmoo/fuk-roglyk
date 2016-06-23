@@ -18,6 +18,9 @@ public class Ovigeneraattori {
     private ArrayList<Ovi> ovet;
     private Alue alue;
 
+    /**
+     * Konstruktori luo tyhjän listan generaattorin luomia ovia varten.
+     */
     public Ovigeneraattori() {
         this.ovet = new ArrayList();
     }
@@ -39,10 +42,18 @@ public class Ovigeneraattori {
         this.y = y;
     }
 
+    /**
+     * Asettaa luotavien ovien siirtymäarvot sisältävän taulukon.
+     *
+     * @param siirtyma ovien siirtymäarvot
+     */
     public void setSiirtyma(int[] siirtyma) {
         this.siirtyma = siirtyma;
     }
 
+    /**
+     * Generoi alueen ovet alueenrakentajan antamien tietojen mukaan.
+     */
     public void generoi() {
         for (int i = 0; i < this.x.length; i++) {
             Ovi ovi = new Ovi(this.x[i], this.y[i]);

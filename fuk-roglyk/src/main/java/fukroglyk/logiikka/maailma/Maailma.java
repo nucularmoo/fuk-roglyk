@@ -4,7 +4,6 @@ import fukroglyk.entiteetit.Pelaaja;
 import fukroglyk.entiteetit.Piirrettava;
 import fukroglyk.logiikka.Alueenhallinta;
 import fukroglyk.logiikka.Peli;
-import java.io.FileNotFoundException;
 import java.util.ArrayList;
 
 /**
@@ -39,10 +38,17 @@ public class Maailma {
         this.peli = peli;
     }
 
-    public void setMaailmanrakentaja() throws FileNotFoundException {
+    /**
+     * Alustaa maailmanrakentajan.
+     *
+     */
+    public void setMaailmanrakentaja() {
         this.mr = new Maailmanrakentaja();
     }
 
+    /**
+     * Alustaa alueenhallinnan.
+     */
     public void setAlueenhallinta() {
         this.ah = new Alueenhallinta(this);
     }
@@ -64,9 +70,8 @@ public class Maailma {
     /**
      * Luo tämänhetkisen maailman kaikki alueet ja hakee aloitusalueen laatat.
      *
-     * @throws java.io.FileNotFoundException jos tiedostoa ei löydy
      */
-    public void luoMaailma() throws FileNotFoundException {
+    public void luoMaailma() {
         this.mr.haeAlueenrakentajat();
         this.mr.rakennaMaailma();
         this.ah.setOvet(this.mr.getLinkitetytOvet());

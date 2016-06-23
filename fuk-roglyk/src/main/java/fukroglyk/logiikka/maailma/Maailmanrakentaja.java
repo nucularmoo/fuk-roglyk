@@ -2,7 +2,6 @@ package fukroglyk.logiikka.maailma;
 
 import fukroglyk.entiteetit.Ovi;
 import fukroglyk.tiedostohallinta.Gsonlukija;
-import java.io.FileNotFoundException;
 import java.util.ArrayList;
 
 /**
@@ -19,7 +18,11 @@ public class Maailmanrakentaja {
     private ArrayList<Ovi> ovet;
     private ArrayList<Alueenrakentaja> arlist;
 
-    public Maailmanrakentaja() throws FileNotFoundException {
+    /**
+     * Konstruktori alustaa luokan käyttämät listat.
+     *
+     */
+    public Maailmanrakentaja() {
         this.lukija = new Gsonlukija();
         this.alueet = new ArrayList();
         this.ovet = new ArrayList();
@@ -30,9 +33,8 @@ public class Maailmanrakentaja {
      * Käskee tiedostonlukijaa lukemaan alueenrakentajien tiedot tiedostoista ja
      * hakee listan niistä maailman rakennusta varten.
      *
-     * @throws FileNotFoundException jos tiedostoa ei löydy
      */
-    public void haeAlueenrakentajat() throws FileNotFoundException {
+    public void haeAlueenrakentajat() {
         this.lukija.lueAlueenakentajienTiedot();
         this.arlist = this.lukija.getAR();
     }

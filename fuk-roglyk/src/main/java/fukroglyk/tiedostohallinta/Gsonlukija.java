@@ -1,6 +1,8 @@
 package fukroglyk.tiedostohallinta;
 
 import com.google.gson.Gson;
+import com.google.gson.JsonIOException;
+import com.google.gson.JsonSyntaxException;
 import fukroglyk.logiikka.maailma.Alueenrakentaja;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -13,7 +15,7 @@ import java.util.ArrayList;
  * @author NukeCow
  */
 public class Gsonlukija {
-
+    
     private Gson geeson;
     private ArrayList<Alueenrakentaja> arlist;
 
@@ -29,9 +31,8 @@ public class Gsonlukija {
      * Metodi käskee luokkaa lukemaan alueiden tiedot niille spesifisistä
      * tiedostoista ja listaamaan ne.
      *
-     * @throws FileNotFoundException jos tiedostoa ei löydy
      */
-    public void lueAlueenakentajienTiedot() throws FileNotFoundException {
+    public void lueAlueenakentajienTiedot(){
         teeTaverna();
         teeKaupunki();
         teeMaantie();
@@ -50,41 +51,57 @@ public class Gsonlukija {
     /**
      * Lukee tavernan tiedoston ja lisää sen alueenrakentajan listaan.
      *
-     * @throws FileNotFoundException jos tiedostoa ei löydy
      */
-    public void teeTaverna() throws FileNotFoundException {
-        Alueenrakentaja ar = this.geeson.fromJson(new FileReader("src/main/resources/Taverna.json"), Alueenrakentaja.class);
-        this.arlist.add(ar);
+    public void teeTaverna() {
+        try {
+            Alueenrakentaja ar = this.geeson.fromJson(new FileReader("src/main/resources/Taverna.json"), Alueenrakentaja.class);
+            this.arlist.add(ar);
+        } catch (FileNotFoundException | JsonSyntaxException | JsonIOException e) {
+            System.out.println("Tavernan tiedosto puuttuu");
+            System.exit(1);
+        }
     }
 
     /**
      * Lukee kaupungin tiedoston ja lisää sen alueenrakentajan listaan.
      *
-     * @throws FileNotFoundException jos tiedostoa ei löydy
      */
-    public void teeKaupunki() throws FileNotFoundException {
-        Alueenrakentaja ar = this.geeson.fromJson(new FileReader("src/main/resources/Kaupunki.json"), Alueenrakentaja.class);
-        this.arlist.add(ar);
+    public void teeKaupunki() {
+        try {
+            Alueenrakentaja ar = this.geeson.fromJson(new FileReader("src/main/resources/Kaupunki.json"), Alueenrakentaja.class);
+            this.arlist.add(ar);
+        } catch (FileNotFoundException | JsonSyntaxException | JsonIOException e) {
+            System.out.println("Kaupungin tiedosto puuttuu");
+            System.exit(1);
+        }
     }
 
     /**
      * Lukee maantien tiedoston ja lisää sen alueenrakentajan listaan.
      *
-     * @throws FileNotFoundException jos tiedostoa ei löydy
      */
-    public void teeMaantie() throws FileNotFoundException {
-        Alueenrakentaja ar = this.geeson.fromJson(new FileReader("src/main/resources/Maantie.json"), Alueenrakentaja.class);
-        this.arlist.add(ar);
+    public void teeMaantie() {
+        try {
+            Alueenrakentaja ar = this.geeson.fromJson(new FileReader("src/main/resources/Maantie.json"), Alueenrakentaja.class);
+            this.arlist.add(ar);
+        } catch (FileNotFoundException | JsonSyntaxException | JsonIOException e) {
+            System.out.println("Maantien tiedosto puuttuu");
+            System.exit(1);
+        }
     }
 
     /**
      * Lukee kylän tiedoston ja lisää sen alueenrakentajan listaan.
      *
-     * @throws FileNotFoundException jos tiedostoa ei löydy
      */
-    public void teeKyla() throws FileNotFoundException {
-        Alueenrakentaja ar = this.geeson.fromJson(new FileReader("src/main/resources/Kyla.json"), Alueenrakentaja.class);
-        this.arlist.add(ar);
+    public void teeKyla() {
+        try {
+            Alueenrakentaja ar = this.geeson.fromJson(new FileReader("src/main/resources/Kyla.json"), Alueenrakentaja.class);
+            this.arlist.add(ar);
+        } catch (FileNotFoundException | JsonSyntaxException | JsonIOException e) {
+            System.out.println("Kylän tiedosto puuttuu");
+            System.exit(1);
+        }
     }
-
+    
 }

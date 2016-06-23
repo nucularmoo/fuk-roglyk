@@ -47,7 +47,7 @@ public class Hahmogeneraattori {
      */
     public void generoi() {
         for (int i = 0; i < x.length; i++) {
-            NPC npc = new NPC(i + 1, this.hahmoNimi[i], this.x[i], this.y[i]);
+            NPC npc = new NPC(i, this.hahmoNimi[i], this.x[i], this.y[i]);
             this.hahmot.add(npc);
             npc.setMissionexists();
             npc.setMission();
@@ -64,12 +64,4 @@ public class Hahmogeneraattori {
         return this.hahmot;
     }
 
-    /**
-     * Asettaa hahmolistan halutuksi hahmolistaksi.
-     *
-     * @param lista lista hahmoja
-     */
-    public void setHahmot(ArrayList<Hahmo> lista) {
-        this.hahmot = lista;
-    }
 }

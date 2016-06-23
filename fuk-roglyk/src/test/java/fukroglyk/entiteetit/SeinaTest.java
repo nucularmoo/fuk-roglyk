@@ -50,5 +50,11 @@ public class SeinaTest {
     public void seinaPiirretaanAina() {
         assertTrue("Seinä ei piirry", this.stdef.piirretaanko());
     }
+    
+    @Test
+    public void seinaaEiPiirretaJosNoDraw() {
+        this.stdef.noDraw();
+        assertFalse("Seinä haluaa silti piirtyä", this.stdef.piirretaanko());
+    }
 
 }

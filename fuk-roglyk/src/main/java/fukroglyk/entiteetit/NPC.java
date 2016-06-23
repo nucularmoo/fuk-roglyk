@@ -71,6 +71,10 @@ public class NPC extends Hahmo implements Laatta {
     public void setMissionexists() {
         this.missionexists = true;
     }
+    
+    public boolean getMissionexists() {
+        return this.missionexists;
+    }
 
     /**
      * Asettaa NPC:lle halutun interaktio-viestin.
@@ -79,6 +83,10 @@ public class NPC extends Hahmo implements Laatta {
      */
     public void setTervehdys(String tervehdys) {
         this.tervehdys = tervehdys;
+    }
+    
+    public String getTervehdys() {
+        return this.tervehdys;
     }
 
     /**

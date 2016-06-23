@@ -24,6 +24,7 @@ public class Kuvanlukija {
             this.image = ImageIO.read(new File(polku));
         } catch (IOException e) {
             System.out.println("Aloituskuva puuttuu");
+            System.exit(1);
         }
 
     }

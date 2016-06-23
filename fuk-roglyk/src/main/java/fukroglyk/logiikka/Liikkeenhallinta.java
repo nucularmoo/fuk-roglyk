@@ -30,15 +30,15 @@ public class Liikkeenhallinta {
         this.laatat = new ArrayList();
     }
 
+    /**
+     * Asettaa liikkeenhallinnalle tapahtumakäsittelijän.
+     *
+     * @param tk pelin tapahtumakäsittelijä
+     */
     public void setTapahtumankasittelija(Tapahtumankasittelija tk) {
         this.tk = tk;
     }
 
-    /**
-     * Asettaa alueen jolla tällähetkellä liikutaan.
-     *
-     * @param alue aktiivinen alue
-     */
     public void setAlue(Alue alue) {
         this.alue = alue;
     }
@@ -47,20 +47,10 @@ public class Liikkeenhallinta {
         return this.alue;
     }
 
-    /**
-     * Asettaa halutun listan laatoista joilla liikutaan.
-     *
-     * @param laatat lista laatoista
-     */
     public void setLaatat(ArrayList<Laatta> laatat) {
         this.laatat = laatat;
     }
 
-    /**
-     * Asettaa halutun pelaajan liikuteltavaksi hahmoksi.
-     *
-     * @param pelaaja liikuteltava pelaaja
-     */
     public void setPelaaja(Pelaaja pelaaja) {
         this.pelaaja = pelaaja;
     }
@@ -69,6 +59,9 @@ public class Liikkeenhallinta {
         return this.playerSet;
     }
 
+    /**
+     * Liikkeenhallinta on asettanut pelaajan aloituspaikalleen.
+     */
     public void setPlayerSet() {
         this.playerSet = true;
     }
@@ -103,10 +96,22 @@ public class Liikkeenhallinta {
         setPlayerSet();
     }
 
+    /**
+     * Laskee x-koordinaatin johon pelaaja yrittää siirtyä.
+     *
+     * @param xa haluttu muutos x-koordinaattiin
+     * @return x-koordinaatti johon pelaaja yrittää siirtyä
+     */
     public int laskePelaajanUusiX(int xa) {
         return this.pelaaja.getX() + xa;
     }
 
+    /**
+     * Laskee y-koordinaatin johon pelaaja yrittää siirtyä.
+     *
+     * @param ya haluttu muutos y-koordinaattiin
+     * @return y-koordinaatti johon pelaaja yrittää siirtyä
+     */
     public int laskePelaajanUusiY(int ya) {
         return this.pelaaja.getY() + ya;
     }

@@ -8,7 +8,6 @@ import java.awt.Canvas;
 import java.awt.Container;
 import java.awt.Dimension;
 import java.awt.image.BufferedImage;
-import java.io.FileNotFoundException;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 
@@ -43,7 +42,7 @@ public class Pelialusta extends Canvas implements Runnable {
 
     public boolean start = false;
 
-    public Pelialusta() throws FileNotFoundException {
+    public Pelialusta() {
         this.peli = new Peli();
         this.peli.init();
         this.peli.luoMaailmanHallinta();

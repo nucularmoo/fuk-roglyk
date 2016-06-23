@@ -1,19 +1,14 @@
 package fukroglyk.main;
 
 import fukroglyk.kayttoliittyma.Pelialusta;
-import java.io.FileNotFoundException;
 
 public class NewMain {
 
-    public static void main(String[] args) throws FileNotFoundException {
-        
+    public static void main(String[] args) {
+
         Pelialusta pelialusta = new Pelialusta();
 
         pelialusta.kaynnista();
-        
-        
-        
-        
 
     }
 
