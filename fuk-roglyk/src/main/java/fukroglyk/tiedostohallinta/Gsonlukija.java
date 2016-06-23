@@ -4,9 +4,13 @@ import com.google.gson.Gson;
 import com.google.gson.JsonIOException;
 import com.google.gson.JsonSyntaxException;
 import fukroglyk.logiikka.maailma.Alueenrakentaja;
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.net.URISyntaxException;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  * Luokka lukee pelin alueiden tiedot json-tiedostoista pelin maailman ja sen
@@ -54,11 +58,17 @@ public class Gsonlukija {
      */
     public void teeTaverna() {
         try {
-            Alueenrakentaja ar = this.geeson.fromJson(new FileReader("src/main/resources/Taverna.json"), Alueenrakentaja.class);
+            ClassLoader cl = this.getClass().getClassLoader();
+            cl.getResource("/Taverna.json");
+            File f = new File(cl.getResource("Taverna.json").toURI());
+            Alueenrakentaja ar = this.geeson.fromJson(new FileReader(f), Alueenrakentaja.class);
             this.arlist.add(ar);
         } catch (FileNotFoundException | JsonSyntaxException | JsonIOException e) {
             System.out.println("Tavernan tiedosto puuttuu");
             System.exit(1);
+        } catch (URISyntaxException ex) {
+            Logger.getLogger(Gsonlukija.class.getName()).log(Level.SEVERE, null, ex);
+
         }
     }
 
@@ -68,11 +78,17 @@ public class Gsonlukija {
      */
     public void teeKaupunki() {
         try {
-            Alueenrakentaja ar = this.geeson.fromJson(new FileReader("src/main/resources/Kaupunki.json"), Alueenrakentaja.class);
+            ClassLoader cl = this.getClass().getClassLoader();
+            cl.getResource("/Kaupunki.json");
+            File f = new File(cl.getResource("Kaupunki.json").toURI());
+            Alueenrakentaja ar = this.geeson.fromJson(new FileReader(f), Alueenrakentaja.class);
             this.arlist.add(ar);
         } catch (FileNotFoundException | JsonSyntaxException | JsonIOException e) {
             System.out.println("Kaupungin tiedosto puuttuu");
             System.exit(1);
+        } catch (URISyntaxException ex) {
+            Logger.getLogger(Gsonlukija.class.getName()).log(Level.SEVERE, null, ex);
+
         }
     }
 
@@ -82,11 +98,17 @@ public class Gsonlukija {
      */
     public void teeMaantie() {
         try {
-            Alueenrakentaja ar = this.geeson.fromJson(new FileReader("src/main/resources/Maantie.json"), Alueenrakentaja.class);
+            ClassLoader cl = this.getClass().getClassLoader();
+            cl.getResource("/Maantie.json");
+            File f = new File(cl.getResource("Maantie.json").toURI());
+            Alueenrakentaja ar = this.geeson.fromJson(new FileReader(f), Alueenrakentaja.class);
             this.arlist.add(ar);
         } catch (FileNotFoundException | JsonSyntaxException | JsonIOException e) {
             System.out.println("Maantien tiedosto puuttuu");
             System.exit(1);
+        } catch (URISyntaxException ex) {
+            Logger.getLogger(Gsonlukija.class.getName()).log(Level.SEVERE, null, ex);
+
         }
     }
 
@@ -96,11 +118,17 @@ public class Gsonlukija {
      */
     public void teeKyla() {
         try {
-            Alueenrakentaja ar = this.geeson.fromJson(new FileReader("src/main/resources/Kyla.json"), Alueenrakentaja.class);
+            ClassLoader cl = this.getClass().getClassLoader();
+            cl.getResource("/Kyla.json");
+            File f = new File(cl.getResource("Kyla.json").toURI());
+            Alueenrakentaja ar = this.geeson.fromJson(new FileReader(f), Alueenrakentaja.class);
             this.arlist.add(ar);
         } catch (FileNotFoundException | JsonSyntaxException | JsonIOException e) {
-            System.out.println("Kylän tiedosto puuttuu");
+            System.out.println("Kylan tiedosto puuttuu");
             System.exit(1);
+        } catch (URISyntaxException ex) {
+            Logger.getLogger(Gsonlukija.class.getName()).log(Level.SEVERE, null, ex);
+
         }
     }
 

@@ -14,6 +14,7 @@ public class Kuvanlukija {
 
     private static final String polku = "src/main/resources/start.png";
     private BufferedImage image;
+ 
 
     public Kuvanlukija() {
 
@@ -21,7 +22,8 @@ public class Kuvanlukija {
 
     public void haeKuva() {
         try {
-            this.image = ImageIO.read(new File(polku));
+            ClassLoader cl = this.getClass().getClassLoader();
+            this.image = ImageIO.read(cl.getResource("start.png"));
         } catch (IOException e) {
             System.out.println("Aloituskuva puuttuu");
             System.exit(1);
