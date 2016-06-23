@@ -20,3 +20,4 @@ Päivä | Tunnit | Kuvaus
 16.06.2016 | 7h | Palautus ja sen jutut
 20.06.2016 | 6h | Tapahtumakäsittelijä, testejä ja refaktorointia
 21.06.2016 | 5h | Jsonin ja Gsonin ihmettelyä
+22.06.2016 | 8h | Json käyttöön ja alueiden kehittelyä

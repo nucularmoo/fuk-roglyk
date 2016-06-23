@@ -23,7 +23,7 @@ Pelaaja
 
 ![Luokkaakavio DL 5](Luokkakaavio_v4.png)
 
-###Sekvenssikaaviot (Deadline 5):
+###Sekvenssikaaviot (Deadline 6):
 
-![Sekvenssikaavio DL_5](sekvenssikaavio_pelaaja_liikkuu.png)
+![Sekvenssikaavio DL_6](sekvenssikaavio_pelaaja_liikkuu_v2.png)
 ![Sekvenssikaavio DL_5](sekvenssikaavio_pelaaja_vaihtaa_aluetta.png)
